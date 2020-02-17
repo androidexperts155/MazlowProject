@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/margin20">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.mazlow.customclasses.MediumTextView
+                    android:layout_marginTop="@dimen/margin15"
+                    android:id="@+id/lasttwodigits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:text="@string/what_s_your_home_address"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/countrty"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin15"
+                    android:layout_marginRight="@dimen/margin15"
+
+                    android:layout_height="wrap_content">
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:textSize="@dimen/NormalTextSize"
+                        android:drawableRight="@drawable/ic_search"
+                        android:textColorHint="@color/textcolor"
+                        android:hint="@string/country"
+                        android:paddingBottom="@dimen/margin15"
+                        android:id="@+id/et_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/margin10"
+                    android:id="@+id/postal_code"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin15"
+                    android:layout_marginRight="@dimen/margin15"
+                    android:layout_height="wrap_content">
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:textSize="@dimen/NormalTextSize"
+                        android:drawableRight="@drawable/country_shape"
+                        android:textColorHint="@color/textcolor"
+                        android:hint="@string/postal_code"
+                        android:paddingBottom="@dimen/margin15"
+                        android:id="@+id/et_pstalcoe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/margin10"
+                    android:id="@+id/street"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin15"
+                    android:layout_marginRight="@dimen/margin15"
+                    android:layout_height="wrap_content">
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/NormalTextSize"
+                        android:maxLength="10"
+                        android:textColorHint="@color/textcolor"
+                        android:hint="@string/street_and_number"
+                        android:paddingBottom="@dimen/margin15"
+                        android:singleLine="true"
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/margin10"
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin15"
+                    android:layout_marginRight="@dimen/margin15"
+                    android:layout_height="wrap_content">
+
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/NormalTextSize"
+                        android:maxLength="10"
+                        android:textColorHint="@color/textcolor"
+                        android:hint="@string/address_line_2_optional"
+                        android:paddingBottom="@dimen/margin15"
+                        android:id="@+id/et_address"
+                        android:singleLine="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/margin10"
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin15"
+                    android:layout_marginRight="@dimen/margin15"
+                    android:layout_height="wrap_content">
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:textColorHint="@color/textcolor"
+                        android:hint="@string/city"
+                        android:textSize="@dimen/NormalTextSize"
+                        android:paddingBottom="@dimen/margin15"
+                        android:id="@+id/et_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mazlow.customclasses.MediumTextView
+                    android:gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="@dimen/margin15"
+                    android:layout_width="wrap_content"
+                    android:text="@string/wearerequredbylow"
+                    android:textSize="@dimen/NormalTextSize"
+                    android:layout_above="@+id/continue_btn"
+                    android:textColor="@color/textcolor"
+                    android:layout_height="wrap_content"/>
+
+                <com.mazlow.customclasses.MediumButton
+                    android:layout_gravity="center"
+                    android:id="@+id/continue_btn"
+                    android:background="@drawable/continue_btn"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/margin15"
+                    android:paddingRight="40dp"
+                    android:textAllCaps="false"
+                    android:paddingLeft="40dp"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/textcolor"
+                    android:text="Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

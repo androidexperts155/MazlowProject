@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:id="@+id/main_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.mazlow.customclasses.MediumTextView
+            android:id="@+id/lasttwodigits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/enter_the_6_digit_code_we_ve_sent_to_88"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|center"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:clickable="false"
+                                android:id="@+id/otp_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp">
+
+                                <requestFocus />
+
+                            </com.mazlow.customclasses.MediumEdittext>
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="match_parent" />
+
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:id="@+id/otp_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp" />
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="match_parent" />
+
+                          
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:id="@+id/otp_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp" />
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="match_parent" />
+
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:id="@+id/otp_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp" />
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="match_parent" />
+
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:id="@+id/otp_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp" />
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="match_parent" />
+
+                            <com.mazlow.customclasses.MediumEdittext
+                                android:id="@+id/otp_6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint=""
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textColorHint="@android:color/transparent"
+                                android:textCursorDrawable="@android:color/transparent"
+                                android:textSize="25sp"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <com.mazlow.customclasses.MediumTextView
+            android:id="@+id/resendotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Resend"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/main_lay"
+        android:layout_above="@id/continue_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/margin20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/one"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="1"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/two"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="2"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/three"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="3"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/four"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="4"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/five"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="5"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/six"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="6"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/seven"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="7"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/eight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="8"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/nine"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:text="9"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:visibility="invisible">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:id="@+id/point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:text="."
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/zero"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_22sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/clear"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/_10sdp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/icon_clear"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <com.mazlow.customclasses.MediumButton
+        android:layout_marginBottom="@dimen/margin15"
+        android:id="@+id/continue_btn"
+        android:background="@drawable/continue_btn"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:paddingRight="40dp"
+        android:textAllCaps="false"
+        android:paddingLeft="40dp"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/textcolor"
+        android:text="Continue"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_36sdp"/>
+
+
+</RelativeLayout>

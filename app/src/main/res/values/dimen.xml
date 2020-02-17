@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navigation_drawer_width">300dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin5">5sp</dimen>
+    <dimen name="marginRight">10sp</dimen>
+    <dimen name="margin20">20sp</dimen>
+    <dimen name="TitleTextSize">16sp</dimen>
+    <dimen name="TitleTexthightlight">18sp</dimen>
+    <dimen name="bigsize">25sp</dimen>
+    <dimen name="NormalTextSize">14sp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="smallTextSize10">10sp</dimen>
+    <dimen name="ButtonSize">40dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin80dp">80dp</dimen>
+    <dimen name="margin60dp">60dp</dimen>
+    <dimen name="edit_width">40dp</dimen>
+    <dimen name="margine100">100dp</dimen>
+    <dimen name="margine5">5dp</dimen>
+    <dimen name="view_size">1dp</dimen>
+    <dimen name="view_size2dp">2dp</dimen>
+    <dimen name="margine36">36dp</dimen>
+    <dimen name="margine30">30dp</dimen>
+
+</resources>
