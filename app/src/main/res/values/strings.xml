@@ -3,25 +3,25 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="enter_your_passcode_for_your_maslife_account">Enter your Passcode for your MashLife account</string>
+    <string name="enter_your_passcode_for_your_maslife_account">Enter your Passcode for your MasLife account</string>
     <string name="valid_phone">Please enter valid phone</string>
     <string name="valid_otp">Please Enter OTP</string>
     <string name="otp6_digit">Please Enter valid OTP</string>
     <string name="entersixdigitscode">Enter the 6-digit code we\'ve sent to +</string>
-    <string name="mashlife">MashLife</string>
-    <string name="join_mashlife">Join MashLife</string>
+    <string name="MasLife">MasLife</string>
+    <string name="join_MasLife">Join MasLife</string>
     <string name="login">Login</string>
     <string name="to_get_started_enter_your_mobile_number">To get started, enter your Mobile number</string>
     <string name="enter_the_6_digit_code_we_ve_sent_to_88">Enter the 6-digit code we’ve sent to +88**********</string>
     <string name="create_our_passcode_for_your_masslife_account">Create our Passcode for your MassLife account</string>
     <string name="idverificationtext"><![CDATA[ID verification &   Facial comparison]]></string>
-    <string name="maskife_text">Last step, for your security and ours MashLife uses Onfido integration to fully verify your identiy in minutes.</string>
+    <string name="maskife_text">Last step, for your security and ours MasLife uses Onfido integration to fully verify your identiy in minutes.</string>
     <string name="worldleadingdocument"><![CDATA[A world leading document ID verification & facial biometrics technology.]]></string>
     <string name="verify_my_identity">Verify my identity</string>
     <string name="skip_and_explore">Skip and explore</string>
-    <string name="internet_string"><![CDATA[Unable to connect to MashLife .Check your internet connection & try again]]></string>
+    <string name="internet_string"><![CDATA[Unable to connect to MasLife .Check your internet connection & try again]]></string>
     <string name="ok">OK</string>
-    <string name="reenterpasscode">Re-enter your passcode for your MashLife account</string>
+    <string name="reenterpasscode">Re-enter your passcode for your MasLife account</string>
     <string name="codenotmatched">code is not matched</string>
     <string name="country">Country</string>
     <string name="postal_code">Postal code</string>
@@ -35,4 +35,15 @@
     <string name="date_of_birth">Date of birth</string>
     <string name="email_address">Email address</string>
     <string name="re_enter_email_address">Re-enter email address</string>
+    <string name="anterfirstname">Please enter first name</string>
+    <string name="enterlastname">Please enter last name</string>
+    <string name="entervalidemail">enter valid email address</string>
+    <string name="emptyemail">Please enter email address</string>
+    <string name="emptyretypemail">Please retype enter email address</string>
+    <string name="choosedate">Please select your date of birth</string>
+    <string name="emailnotnatched">email not matched</string>
+    <string name="choosecountry">Please choose your country</string>
+    <string name="enterpostalcode">Please enter postal code</string>
+    <string name="enteremailandphone">Please enter your city and email address</string>
+    <string name="entercity">Please enter city name</string>
 </resources>

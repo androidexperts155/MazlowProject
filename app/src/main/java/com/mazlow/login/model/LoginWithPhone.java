@@ -1,4 +1,7 @@
-package com.mazlow.signup;
+package com.mazlow.login.model;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -9,20 +12,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.Mazlow.R;
 import com.hbb20.CountryCodePicker;
-import com.mazlow.login.PassCodeActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
+import com.mazlow.login.LoginPresenterImple;
+import com.mazlow.login.LoginView;
+import com.mazlow.login.PassCodeActivity;
 import com.mazlow.otp.OtpActivity;
+import com.mazlow.signup.SignupActivity;
+import com.mazlow.signup.SignupPresenterImple;
 import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.ui.users.activities.SignupPage;
+import com.mazlow.updatePassCode.CreateSecondPassword;
 
 import butterknife.BindView;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener, SignupView{
-
+public class LoginWithPhone extends AppCompatActivity implements View.OnClickListener, LoginView {
     EditText oneEditText;
     @BindView(R.id.otp_2)
     EditText twoEditText;
@@ -65,12 +71,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     String phonenumber,country_code;
     CountryCodePicker ccp;
     String TYPE;
-    SignupPresenterImple signupPresenterImple;
+    LoginPresenterImple loginPresenterImple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mobile_number);
+        setContentView(R.layout.activity_login_with_phone);
         oneEditText = findViewById(R.id.et_phone);
         initilize();
         setListeners();
@@ -125,7 +131,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.continue_btn:
-               SignupApi();
+                SignupApi();
                 break;
             case R.id.one:
                 oneEditText.append("1");
@@ -162,10 +168,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.resendotp:
                 check = true;
-            break;
+                break;
             case R.id.img_back:
                 finish();
-            break;
+                break;
         }
     }
     private void SignupApi() {
@@ -175,14 +181,15 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             M.showToast(this,getResources().getString(R.string.valid_phone));
         else
         {
-                signupCall();
+            LoginApi();
         }
     }
 
-    private void signupCall() {
-        signupPresenterImple =new SignupPresenterImple(this,this);
-        signupPresenterImple.doSignup(phonenumber,country_code);
+    private void LoginApi() {
+        loginPresenterImple=new LoginPresenterImple(this,this);
+        loginPresenterImple.doLoginWithPhone(phonenumber,country_code);
     }
+
 
     private void crealLastDigits() {
         phonenumber = oneEditText.getText().toString().trim();
@@ -197,21 +204,23 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void redirectuserToNextScreen() {
-        Intent i=new Intent(getApplicationContext(), OtpActivity.class);
-        i.putExtra(Bean.MOBILE_NUMBER,phonenumber);
-        startActivity(i);
-        finish();
+        Intent intent =new Intent(LoginWithPhone.this, PassCodeActivity.class);
+        intent.putExtra(Bean.MOBILE_NUMBER,phonenumber);
+        intent.putExtra(Bean.COUNTRYCODE,country_code);
+        startActivity(intent);
     }
 
+
     @Override
-    public void onSuccess(SignupResponseModel signupResponseModel) {
+    public void onSuccess(LoginResponseModel LoginResponseModel) {
         redirectuserToNextScreen();
     }
 
     @Override
     public void onError(String error) {
-        M.showToast(SignupActivity.this,error);
+        M.showToast(this,error);
     }
+
 
     @Override
     public void noInternet(String tag) {

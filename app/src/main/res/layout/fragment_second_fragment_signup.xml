@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="@dimen/margin10"
+            android:padding="@dimen/margin15"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/circle_solid"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+        </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -33,20 +71,19 @@
                     android:layout_marginLeft="@dimen/margin15"
                     android:layout_marginRight="@dimen/margin15"
                     android:singleLine="true"
-
                     android:layout_height="wrap_content">
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
                         android:textSize="@dimen/NormalTextSize"
+                        android:inputType="textPersonName"
                         android:maxLength="10"
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/legal_first_name"
                         android:paddingBottom="@dimen/margin15"
-                        android:id="@+id/et_country"
+                        android:id="@+id/et_firstname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
-
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_marginTop="@dimen/margin10"
@@ -57,13 +94,13 @@
                     android:layout_height="wrap_content">
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
-                        android:maxLength="10"
+                        android:inputType="textPersonName"
                         android:textSize="@dimen/NormalTextSize"
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/legal_last_name"
                         android:paddingBottom="@dimen/margin15"
                         android:singleLine="true"
-                        android:id="@+id/et_pstalcoe"
+                        android:id="@+id/et_lastname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -80,14 +117,14 @@
                         android:textSize="@dimen/NormalTextSize"
                         android:maxLength="10"
                         android:singleLine="true"
+                        android:focusable="false"
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/date_of_birth"
                         android:paddingBottom="@dimen/margin15"
-                        android:id="@+id/et_phone"
+                        android:id="@+id/et_datebirth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
-
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_marginTop="@dimen/margin10"
@@ -99,12 +136,12 @@
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
                         android:textSize="@dimen/NormalTextSize"
-                        android:maxLength="10"
+                        android:inputType="textEmailAddress"
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/email_address"
                         android:paddingBottom="@dimen/margin15"
                         android:singleLine="true"
-                        android:id="@+id/et_address"
+                        android:id="@+id/email_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -118,19 +155,18 @@
                     android:layout_height="wrap_content">
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
-                        android:maxLength="10"
                         android:textSize="@dimen/NormalTextSize"
+                        android:inputType="textEmailAddress"
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/re_enter_email_address"
                         android:paddingBottom="@dimen/margin15"
-                        android:id="@+id/et_city"
+                        android:id="@+id/retypeemailaddress"
                         android:singleLine="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-
             <LinearLayout
                 android:orientation="vertical"
                 android:gravity="center"
@@ -138,10 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
-
                 <com.mazlow.customclasses.MediumButton
-
                     android:layout_gravity="center"
                     android:id="@+id/continue_btn"
                     android:background="@drawable/continue_btn"
@@ -156,13 +189,7 @@
                     android:text="Continue"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/_36sdp"/>
-
             </LinearLayout>
-
-
         </RelativeLayout>
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.Mazlow.R;
 import com.mazlow.customclasses.Bean;
+import com.mazlow.login.model.LoginWithPhone;
 import com.mazlow.signup.SignupActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void intentTosignupScreen() {
-        Intent intent =new Intent(MainActivity.this, SignupActivity.class);
+        Intent intent =new Intent(MainActivity.this, LoginWithPhone.class);
         intent.putExtra(Bean.LOGINTYPE,"1");
         startActivity(intent);
     }

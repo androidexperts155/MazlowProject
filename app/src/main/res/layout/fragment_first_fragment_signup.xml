@@ -3,8 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rootlayout"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_marginRight="@dimen/margin20">
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="@dimen/margin10"
+            android:padding="@dimen/margin15"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_solid"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -38,7 +78,6 @@
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
                         android:singleLine="true"
-                        android:maxLength="10"
                         android:textSize="@dimen/NormalTextSize"
                         android:drawableRight="@drawable/ic_search"
                         android:textColorHint="@color/textcolor"
@@ -59,7 +98,7 @@
                     android:layout_height="wrap_content">
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
-                        android:maxLength="10"
+                        android:maxLength="6"
                         android:singleLine="true"
                         android:textSize="@dimen/NormalTextSize"
                         android:drawableRight="@drawable/country_shape"
@@ -87,7 +126,7 @@
                         android:hint="@string/street_and_number"
                         android:paddingBottom="@dimen/margin15"
                         android:singleLine="true"
-                        android:id="@+id/et_phone"
+                        android:id="@+id/et_streetand_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         />
@@ -108,7 +147,7 @@
                         android:textColorHint="@color/textcolor"
                         android:hint="@string/address_line_2_optional"
                         android:paddingBottom="@dimen/margin15"
-                        android:id="@+id/et_address"
+                        android:id="@+id/et_address2"
                         android:singleLine="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

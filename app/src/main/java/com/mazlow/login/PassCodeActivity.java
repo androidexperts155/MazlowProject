@@ -13,6 +13,8 @@ import com.mazlow.Networking.RestApiClientAuth;
 import com.mazlow.Networking.RestApiInterface;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
+import com.mazlow.customclasses.Prefs;
+import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.ui.users.activities.SignupPage;
 import retrofit2.Call;
@@ -26,6 +28,7 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
     public static final String TAG = "PinLockView";
     String phone,countycode;
     LoginPresenterImple loginPresenterImple;
+    Prefs prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +36,12 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         setContentView(R.layout.activity_pass_code);
         initView();
         getDataFromIntent();
+
     }
 
     private void initView()
-    {
+      {
+          prefs = new Prefs(PassCodeActivity.this);
         PinLockListener mPinLockListener = new PinLockListener() {
             @Override
             public void onComplete(String pin) {
@@ -68,15 +73,16 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         loginPresenterImple.doLogin(phone,countycode,pin);
     }
 
-    @Override
-    public void onSuccess(SignupResponseModel signupResponseModel) {
-        redirectuserToNextScreen();
-    }
-
-    private void redirectuserToNextScreen() {
+    private void redirectuserToNextScreen(LoginResponseModel loginResponseModel) {
+        prefs.setString(Bean.ACCESS_TOKEN, loginResponseModel.getToken());
         Intent i=new Intent(getApplicationContext(),SignupPage.class);
         startActivity(i);
         finish();
+    }
+
+    @Override
+    public void onSuccess(LoginResponseModel LoginResponseModel) {
+        redirectuserToNextScreen(LoginResponseModel);
     }
 
     @Override

@@ -6,7 +6,7 @@ import android.util.Log;
 import com.mazlow.Networking.RestApiClientAuth;
 import com.mazlow.Networking.RestApiInterface;
 import com.mazlow.customclasses.M;
-import com.mazlow.signup.models.SignupResponseModel;
+import com.mazlow.login.model.LoginResponseModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,30 +25,30 @@ public class LoginPresenterImple implements LoginPresenter {
           if (M.isNetworkAvailable(context)){
               dialog.show();
               RestApiInterface apiInterface = RestApiClientAuth.Retrofit().create(RestApiInterface.class);
-              Call<SignupResponseModel> call = apiInterface.login(phonenumber,ccode,pcode);
-              call.enqueue(new Callback<SignupResponseModel>() {
+              Call<LoginResponseModel> call = apiInterface.login(phonenumber,ccode,pcode);
+              call.enqueue(new Callback<LoginResponseModel>() {
                   @Override
-                  public void onResponse(Call<SignupResponseModel> call, Response<SignupResponseModel> response) {
+                  public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
                       dialog.dismiss();
                       if (response.isSuccessful()) {
-                          SignupResponseModel signupResponseModel=response.body();
+                          LoginResponseModel LoginResponseModel=response.body();
                           if (response!=null&&response.body().getSuccess()==true) {
                               if (response.body().getMessage().equals("User logIn successfully")){
-                                      loginView.onSuccess(signupResponseModel);
+                                      loginView.onSuccess(LoginResponseModel);
                               }
                               else
                                   {
-                                  loginView.onError(signupResponseModel.getMessage());
+                                  loginView.onError(LoginResponseModel.getMessage());
                               }
                           }
                           else
                           {
-                              loginView.onError(signupResponseModel.getMessage());
+                              loginView.onError(LoginResponseModel.getMessage());
                           }
                       }
                   }
                   @Override
-                  public void onFailure(Call<SignupResponseModel> call, Throwable t) {
+                  public void onFailure(Call<LoginResponseModel> call, Throwable t) {
 
                       loginView.onError(t.getMessage());
                       Log.e("error", String.valueOf(t));
@@ -60,5 +60,48 @@ public class LoginPresenterImple implements LoginPresenter {
           else{
               loginView.noInternet("login");
           }
+    }
+
+    @Override
+    public void doLoginWithPhone(String phonenumber, String ccode) {
+        if (M.isNetworkAvailable(context)){
+            dialog.show();
+            RestApiInterface apiInterface = RestApiClientAuth.Retrofit().create(RestApiInterface.class);
+            Call<LoginResponseModel> call = apiInterface.loginwithphone(phonenumber,ccode);
+            call.enqueue(new Callback<LoginResponseModel>() {
+                @Override
+                public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
+                    dialog.dismiss();
+                    if (response.isSuccessful()) {
+                        LoginResponseModel LoginResponseModel=response.body();
+                        if (response!=null&&response.body().getSuccess()==true) {
+                            if (response.body().getMessage().equals("User logIn successfully")){
+                                loginView.onSuccess(LoginResponseModel);
+                            }
+                            else
+                            {
+                                loginView.onError(LoginResponseModel.getMessage());
+                            }
+                        }
+                        else
+                        {
+                            loginView.onError(LoginResponseModel.getMessage());
+                        }
+                    }
+                }
+                @Override
+                public void onFailure(Call<LoginResponseModel> call, Throwable t) {
+
+                    loginView.onError(t.getMessage());
+                    Log.e("error", String.valueOf(t));
+                    dialog.dismiss();
+                }
+            });
+
+        }
+        else{
+            loginView.noInternet("login");
+        }
+
     }
 }

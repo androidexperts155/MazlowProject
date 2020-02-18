@@ -52,7 +52,7 @@
         android:background="@drawable/btn_shape"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:text="Join MashLife"
+        android:text="Join MasLife"
         android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|center"

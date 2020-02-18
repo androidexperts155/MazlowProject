@@ -1,6 +1,7 @@
 package com.mazlow.customclasses;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
@@ -14,11 +15,17 @@ import android.net.Uri;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
+
 import com.Mazlow.R;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 public class M {
     public static String TOPIC = "9";
@@ -39,6 +46,7 @@ public class M {
     public static void hideloader(Activity loginActivity) {
         progressDialog.dismiss();
     }
+
     public static void launchActivity(Context context, Class<?> launchingActivity) {
         (context).startActivity(new Intent(context, launchingActivity));
     }
@@ -121,7 +129,7 @@ public class M {
         return date1[0];
     }
 
-    public static  String chngeTime12to24(String inputString) {
+    public static String chngeTime12to24(String inputString) {
 
         //Format of the date defined in the input String
         DateFormat df = new SimpleDateFormat("hh:mm aa");
@@ -129,19 +137,20 @@ public class M {
         DateFormat outputformat = new SimpleDateFormat("HH:mm");
         Date date = null;
         String output = null;
-        try{
+        try {
             //Converting the input String to Date
-            date= df.parse(inputString);
+            date = df.parse(inputString);
             //Changing the format of date and storing it in String
             output = outputformat.format(date);
             //Displaying the date
             System.out.println(output);
-        }catch(ParseException pe){
+        } catch (ParseException pe) {
             pe.printStackTrace();
         }
         return output;
     }
-    public static  String chngeTime24to12(String inputString) {
+
+    public static String chngeTime24to12(String inputString) {
 
         //Format of the date defined in the input String
         DateFormat df = new SimpleDateFormat("HH:mm");
@@ -149,17 +158,39 @@ public class M {
         DateFormat outputformat = new SimpleDateFormat("hh:mm aa");
         Date date = null;
         String output = null;
-        try{
+        try {
             //Converting the input String to Date
-            date= df.parse(inputString);
+            date = df.parse(inputString);
             //Changing the format of date and storing it in String
             output = outputformat.format(date);
             //Displaying the date
             System.out.println(output);
-        }catch(ParseException pe){
+        } catch (ParseException pe) {
             pe.printStackTrace();
         }
         return output;
     }
 
+    public static void datePiker(FragmentActivity activity, EditText et_datebirth) {
+         int mYear, mMonth, mDay, mHour, mMinute;
+
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(activity,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+
+                        et_datebirth.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+    }
 }

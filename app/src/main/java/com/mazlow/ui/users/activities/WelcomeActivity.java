@@ -20,7 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
             "wellbeing, \n" +
             "comes great\n" +
             "finance","Your full potential","Empowering Tools", "Community"};
-    private String[] message_array={"","MashLife is not just a bank, we believe that our customers deserve more than just financial services. Our goal is to enable you to get the most out of life.","The MshLife app provides tools for managing your spending but also your wellbeing. It’s a personal mentor and one stop house for your financial, physical and mental wellbeing.","Community is at the centre of what MashLife does. Your MashLife card is not just a keycard to success, but to a likeminded community."};
+    private String[] message_array={"","MasLife is not just a bank, we believe that our customers deserve more than just financial services. Our goal is to enable you to get the most out of life.","The MshLife app provides tools for managing your spending but also your wellbeing. It’s a personal mentor and one stop house for your financial, physical and mental wellbeing.","Community is at the centre of what MasLife does. Your MasLife card is not just a keycard to success, but to a likeminded community."};
     ViewPagerAdapter viewPagerAdapter;
 
 
