@@ -61,6 +61,7 @@
             app:keypadHorizontalSpacing="@dimen/_20sdp"
             app:keypadVerticalSpacing="@dimen/margin15"
             app:keypadShowDeleteButton="true"
+
             app:keypadDeleteButtonDrawable="@drawable/icon_clear"
             app:keypadDeleteButtonPressedColor="@color/textcolor"
             app:dotEmptyBackground="@drawable/circle_blank"

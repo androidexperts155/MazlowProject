@@ -6,6 +6,7 @@ import com.mazlow.Networking.RestApiClientAuth;
 import com.mazlow.Networking.RestApiInterface;
 import com.mazlow.customclasses.M;
 import com.mazlow.signup.models.SignupResponseModel;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,7 +32,6 @@ public class SignupPresenterImple implements SignupPresenter {
                 public void onResponse(Call<SignupResponseModel> call, Response<SignupResponseModel> response) {
                     dialog.dismiss();
                     if (response.isSuccessful()) {
-
                         SignupResponseModel signupResponseModel = response.body();
                         if (response != null && response.body().getSuccess() == true) {
                             if (response.body().getMessage().equals("Successfully registered, for verification please enter verification code")) {

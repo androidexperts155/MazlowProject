@@ -181,6 +181,7 @@
         </LinearLayout>
         <com.mazlow.customclasses.MediumTextView
             android:id="@+id/resendotp"
+            android:padding="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

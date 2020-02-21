@@ -3,7 +3,7 @@ package com.mazlow.adduserdetails.model;
 
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings("unused")
+
 public class UpdateUserDetails {
 
     @SerializedName("message")

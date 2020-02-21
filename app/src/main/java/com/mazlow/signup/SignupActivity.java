@@ -12,12 +12,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.Mazlow.R;
 import com.hbb20.CountryCodePicker;
-import com.mazlow.login.PassCodeActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.otp.OtpActivity;
 import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.ui.users.activities.SignupPage;
 
 import butterknife.BindView;
 
@@ -199,8 +197,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private void redirectuserToNextScreen() {
         Intent i=new Intent(getApplicationContext(), OtpActivity.class);
         i.putExtra(Bean.MOBILE_NUMBER,phonenumber);
+        i.putExtra(Bean.COUNTRYCODE,country_code);
         startActivity(i);
-        finish();
+
     }
 
     @Override

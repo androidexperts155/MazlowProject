@@ -17,17 +17,14 @@
             android:layout_height="match_parent" />
 
         <com.rd.PageIndicatorView
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="@dimen/_350sdp"
+            android:layout_alignParentBottom="true"
             android:id="@+id/pageIndicatorView"
             android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_100sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             attrs:piv_padding="10dp"
             attrs:piv_radius="6dp" />
 
     </RelativeLayout>
-
-
-
 </LinearLayout>

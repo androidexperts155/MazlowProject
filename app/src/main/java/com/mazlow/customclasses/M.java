@@ -22,6 +22,8 @@ import android.widget.Toast;
 import androidx.fragment.app.FragmentActivity;
 
 import com.Mazlow.R;
+import com.mazlow.search_address.SearchAddressView;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -75,8 +77,8 @@ public class M {
         return status;
     }
 
-    public static void networkDialog(Activity AddAListin) {
-        final Dialog dialog = new Dialog(AddAListin);
+    public static void networkDialog(Activity activity) {
+        final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.internetlayout);
@@ -179,6 +181,10 @@ public class M {
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
 
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(0);
+        cal.set(mYear-18, mMonth, mDay, 0, 0, 0);
+
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(activity,
                 new DatePickerDialog.OnDateSetListener() {
@@ -186,11 +192,18 @@ public class M {
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
-
                         et_datebirth.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                     }
                 }, mYear, mMonth, mDay);
+        datePickerDialog.getDatePicker().setMaxDate(cal.getTimeInMillis());
+
+        //arguments are   year , month , date (use for setting custom max date)
+//        datePickerDialog.getDatePicker().setMaxDate(2017,8,7);
         datePickerDialog.show();
     }
+
+
 }
+
+

@@ -1,5 +1,4 @@
 package com.mazlow.otp;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,11 +20,14 @@ import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.otp.models.CheckOtpResponseModel;
+import com.mazlow.otp.resendotp.ResendOtpPresenterImplementation;
+import com.mazlow.otp.resendotp.ResendOtpView;
+import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.ui.users.activities.CreateFirstPassword;
 import butterknife.BindView;
 
 
-public class OtpActivity extends AppCompatActivity implements View.OnClickListener,OtpView {
+public class OtpActivity extends AppCompatActivity implements View.OnClickListener,OtpView, ResendOtpView {
     @BindView(R.id.otp_1)
     EditText oneEditText;
     @BindView(R.id.otp_2)
@@ -65,7 +67,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     @BindView(R.id.resendotp)
     TextView resendotp;
 
-    String getphoenumber;
+    String getphoenumber,countrycode;
     String text;
     Boolean check = false;
     TextView lastwtodigits;
@@ -76,6 +78,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     Prefs prefs;
 
     OtpPresenterImple otpPresenterImple;
+    ResendOtpPresenterImplementation resendOtpPresenterImplementation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +127,7 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         prefs=new Prefs(this);
         lastwtodigits = findViewById(R.id.lasttwodigits);
         getphoenumber = getIntent().getStringExtra(Bean.MOBILE_NUMBER);
+        countrycode = getIntent().getStringExtra(Bean.COUNTRYCODE);
         int firstnumber = Integer.parseInt(getphoenumber.substring(0, 1));
         first = String.valueOf(firstnumber);
         int firstsecon = Integer.parseInt(getphoenumber.substring(1, 2));
@@ -520,7 +524,9 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.resendotp: {
-                check = true;
+                resendOtpPresenterImplementation = new ResendOtpPresenterImplementation(this,this);
+                resendOtpPresenterImplementation.ResendOtp(countrycode,getphoenumber);
+
             }
             break;
         }
@@ -534,12 +540,12 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
             if (mOtp.length() == 6) {
                 otpPresenterImple =new OtpPresenterImple(this,this);
                 otpPresenterImple.doOtp(getphoenumber,mOtp);
+
             } else {
                 Toast.makeText(OtpActivity.this, getResources().getString(R.string.otp6_digit), Toast.LENGTH_SHORT).show();
             }
         }
     }
-
 
     @Override
     public void onSuccess(CheckOtpResponseModel checkOtpResponseModel) {
@@ -547,10 +553,12 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     private void redirectuserToNextScreen(CheckOtpResponseModel checkOtpResponseModel) {
+        prefs.clearPref();
         M.showToast(OtpActivity.this,checkOtpResponseModel.getMessage());
         prefs.setString(Bean.ACCESS_TOKEN, checkOtpResponseModel.getToken());
         Intent intent =new Intent(OtpActivity.this, CreateFirstPassword.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -560,6 +568,21 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void noInternet(String tag) {
+        M.networkDialog(this);
+    }
+
+    @Override
+    public void onSuccessResend(SignupResponseModel checkOtpResponseModel) {
+        M.showToast(OtpActivity.this,checkOtpResponseModel.getMessage());
+    }
+
+    @Override
+    public void onErrorResend(String error) {
+        M.showToast(OtpActivity.this,error);
+    }
+
+    @Override
+    public void noInternetResend(String tag) {
         M.networkDialog(this);
     }
 

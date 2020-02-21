@@ -52,8 +52,9 @@
 
                     <com.mazlow.customclasses.MediumTextView
                         android:textColor="@color/textcolor"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:text="Country"
+                        android:gravity="center"
                         android:layout_height="wrap_content"/>
 
                     <com.hbb20.CountryCodePicker
@@ -78,31 +79,31 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="@dimen/_25sdp"
                     android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.mazlow.customclasses.MediumTextView
+                        android:textColor="@color/textcolor"
+                        android:layout_width="wrap_content"
+                        android:text="Phone Number"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"/>
+
+
+                    <com.mazlow.customclasses.MediumEdittext
+                        android:textColor="@color/textcolor"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:clickable="false"
+                        android:maxLength="10"
+                        android:textColorHint="@color/textcolor"
+                        android:paddingBottom="13dp"
+                        android:id="@+id/et_phone"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/input_layout_password"
-                            android:layout_width="match_parent"
-                            android:layout_marginLeft="@dimen/margin20"
-                            android:textColorHint="@color/textcolor"
-                            android:layout_height="wrap_content">
-                            <com.mazlow.customclasses.MediumEdittext
-                                android:textColor="@color/textcolor"
-                                android:focusable="false"
-                                android:clickable="false"
-                                android:maxLength="10"
-                                android:textColorHint="@color/textcolor"
-                                android:hint="Phone Number"
-                                android:paddingBottom="13dp"
-                                android:id="@+id/et_phone"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                />
-
-                        </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="wrap_content"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -114,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Change your Number?"
+            android:text="Changed your number?"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/_12sdp" />
 

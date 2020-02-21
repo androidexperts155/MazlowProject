@@ -6,4 +6,5 @@ public interface SignupView {
     void onSuccess(SignupResponseModel signupResponseModel);
     void onError(String error);
     void noInternet(String  tag);
+
 }

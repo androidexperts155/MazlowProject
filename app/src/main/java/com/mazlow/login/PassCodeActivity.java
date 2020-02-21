@@ -1,7 +1,7 @@
 package com.mazlow.login;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import android.app.Dialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,17 +9,11 @@ import com.Mazlow.R;
 import com.andrognito.pinlockview.IndicatorDots;
 import com.andrognito.pinlockview.PinLockListener;
 import com.andrognito.pinlockview.PinLockView;
-import com.mazlow.Networking.RestApiClientAuth;
-import com.mazlow.Networking.RestApiInterface;
+import com.mazlow.adduserdetails.FirstPageActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.login.model.LoginResponseModel;
-import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.ui.users.activities.SignupPage;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class PassCodeActivity extends AppCompatActivity implements LoginView {
 
@@ -34,6 +28,7 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass_code);
+
         initView();
         getDataFromIntent();
 
@@ -42,7 +37,7 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
     private void initView()
       {
           prefs = new Prefs(PassCodeActivity.this);
-        PinLockListener mPinLockListener = new PinLockListener() {
+          PinLockListener mPinLockListener = new PinLockListener() {
             @Override
             public void onComplete(String pin) {
                 Login(phone,countycode,pin);
@@ -53,6 +48,7 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
             }
             @Override
             public void onPinChange(int pinLength, String intermediatePin) {
+
             }
         };
         mPinLockView = findViewById(R.id.pin_lock_view);
@@ -75,9 +71,20 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
 
     private void redirectuserToNextScreen(LoginResponseModel loginResponseModel) {
         prefs.setString(Bean.ACCESS_TOKEN, loginResponseModel.getToken());
-        Intent i=new Intent(getApplicationContext(),SignupPage.class);
+        prefs.setString(Bean.FIRST_NAME,loginResponseModel.getUserInfo().getFirstName());
+        prefs.setString(Bean.LAST_NAME,loginResponseModel.getUserInfo().getLastName());
+        prefs.setString(Bean.EMAIL_ADDRESS,loginResponseModel.getUserInfo().getEmail());
+        prefs.setString(Bean.COUNTRY,loginResponseModel.getUserInfo().getCountry());
+        prefs.setString(Bean.CITY,loginResponseModel.getUserInfo().getCity());
+        prefs.setString(Bean.COUNTRYCODE,loginResponseModel.getUserInfo().getCountryCode());
+        prefs.setString(Bean.POSTALCODE,loginResponseModel.getUserInfo().getPostalCode());
+        prefs.setString(Bean.ADDRESS,loginResponseModel.getUserInfo().getAddress());
+        prefs.setString(Bean.ADDRESS_LINE2,loginResponseModel.getUserInfo().getAddressline2());
+        prefs.setString(Bean.DATEOF_BIRTH,loginResponseModel.getUserInfo().getDob());
+        Intent i=new Intent(getApplicationContext(), FirstPageActivity.class);
         startActivity(i);
         finish();
+
     }
 
     @Override

@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.Mazlow.R;
+import com.mazlow.adduserdetails.FirstPageActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.login.model.LoginWithPhone;
-import com.mazlow.signup.SignupActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_login;
-    TextView  tv_join;
+    Button  tv_join;
 
 
     @Override
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intentToWelcomeScreen();
                 break;
         }
-
     }
 
     private void intentToWelcomeScreen() {
@@ -58,5 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent =new Intent(MainActivity.this, LoginWithPhone.class);
         intent.putExtra(Bean.LOGINTYPE,"1");
         startActivity(intent);
+
+//        Intent intent =new Intent(MainActivity.this, FirstPageActivity.class);
+//        intent.putExtra(Bean.LOGINTYPE,"1");
+//        startActivity(intent);
+
     }
 }

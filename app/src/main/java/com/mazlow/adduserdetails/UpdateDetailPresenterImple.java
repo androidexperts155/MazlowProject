@@ -20,7 +20,6 @@ public class UpdateDetailPresenterImple implements UpdateDetailPresenter {
         this.context= activity1;
         this.addDetailsView = addDetailsView;
         dialog = M.showloader(context, "", false, false);
-
     }
     @Override
     public void doUpdate(String accesstoken ,String firstname, String lastname, String dateofbirth, String emailaddress, String country, String postalcode, String Address, String Address2, String City,String Devectoken,String devicetype) {

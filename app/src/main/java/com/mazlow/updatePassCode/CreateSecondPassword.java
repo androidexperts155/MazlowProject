@@ -13,11 +13,11 @@ import com.andrognito.pinlockview.IndicatorDots;
 import com.andrognito.pinlockview.PinLockListener;
 import com.andrognito.pinlockview.PinLockView;
 import com.Mazlow.R;
+import com.mazlow.adduserdetails.FirstPageActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.ui.users.activities.SignupPage;
 
 public class CreateSecondPassword extends AppCompatActivity implements View.OnClickListener,PassCodeView {
 
@@ -112,7 +112,11 @@ public class CreateSecondPassword extends AppCompatActivity implements View.OnCl
     }
 
     private void redirectuserToNextScreen() {
-        startActivity(new Intent(CreateSecondPassword.this, SignupPage.class));
+
+        Intent intent=new Intent(CreateSecondPassword.this, FirstPageActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 
     @Override

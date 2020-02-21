@@ -20,11 +20,7 @@ import com.mazlow.customclasses.M;
 import com.mazlow.login.LoginPresenterImple;
 import com.mazlow.login.LoginView;
 import com.mazlow.login.PassCodeActivity;
-import com.mazlow.otp.OtpActivity;
-import com.mazlow.signup.SignupActivity;
-import com.mazlow.signup.SignupPresenterImple;
-import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.updatePassCode.CreateSecondPassword;
+
 
 import butterknife.BindView;
 

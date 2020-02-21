@@ -32,6 +32,7 @@ public class CreateFirstPassword extends AppCompatActivity  {
                 Intent intent =new Intent(CreateFirstPassword.this, CreateSecondPassword.class);
                 intent.putExtra(Bean.PASSCODE,pin);
                 startActivity(intent);
+                finish();
             }
             @Override
             public void onEmpty() {

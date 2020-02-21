@@ -6,7 +6,10 @@ import com.mazlow.otp.models.CheckOtpResponseModel;
 import com.mazlow.search_address.model.AddressZipcodeResponse;
 import com.mazlow.signup.models.SignupResponseModel;
 
+import org.json.JSONObject;
+
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -17,6 +20,7 @@ import retrofit2.http.Query;
 import static com.mazlow.Networking.Constants.Signup;
 import static com.mazlow.Networking.Constants.checkotp;
 import static com.mazlow.Networking.Constants.login;
+import static com.mazlow.Networking.Constants.resenotp;
 import static com.mazlow.Networking.Constants.update_profile;
 import static com.mazlow.Networking.Constants.zipcodeaddress;
 
@@ -71,5 +75,19 @@ public interface RestApiInterface {
     @GET(zipcodeaddress)
     Call<AddressZipcodeResponse> searchAddresszipcode(@Header("Authorization")String accesstoken,
                                                       @Query("zipCode") String zipcode);
+
+    //resend otp
+    @FormUrlEncoded
+    @POST(resenotp)
+    Call<SignupResponseModel> resendotp(@Body JSONObject phone);
+
+    //resend otp
+    @FormUrlEncoded
+    @POST(resenotp)
+    Call<SignupResponseModel> resendotp(@Field("countryCode") String coutrycode,
+                                        @Field("phoneNumber") String phone);
+
+
+
 }
 

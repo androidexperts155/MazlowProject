@@ -9,12 +9,18 @@ public class Bean {
     public static String MOBILE_NUMBER="mobile";
     public static String COUNTRYCODE="countycode";
 
-    public static String FIRST_NAME="countycode";
-    public static String LAST_NAME="countycode";
-    public static String DATEOF_BIRTH="countycode";
-    public static String EMAIL_ADDRESS="countycode";
+    public static String FIRST_NAME="firstname";
+    public static String LAST_NAME="lastname";
+    public static String DATEOF_BIRTH="datebirth";
+    public static String EMAIL_ADDRESS="email";
     public static String RETYP_EMAILADDRESS="countycode";
-    public static String DEVICETYPE="ANDROID";
+    public static String DEVICETYPE="Android";
+
+    public static String COUNTRY="country";
+    public static String ADDRESS="address";
+    public static String ADDRESS_LINE2="addresslin";
+    public static String CITY="city";
+    public static String POSTALCODE="postalcode";
 
 
     }

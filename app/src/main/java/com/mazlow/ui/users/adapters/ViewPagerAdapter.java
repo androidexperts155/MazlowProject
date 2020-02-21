@@ -2,6 +2,9 @@ package com.mazlow.ui.users.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +54,31 @@ public class ViewPagerAdapter extends PagerAdapter {
         TextView tv_title = itemView.findViewById(R.id.tv_title);
         TextView tv_message = itemView.findViewById(R.id.tv_message);
         Button btn_join = itemView.findViewById(R.id.btn_join);
-        tv_title.setText(Stringtitle[position]);
+//        tv_title.setText(Stringtitle[position]);
         tv_message.setText(Stringmessage[position]);
+
+        if (position==0)
+        {
+
+            String str = "With great<br><b>wellbeing,<br></b> comes great <br><b>finance</b>";
+//            String str = "<a>With great \n<b>wellbeing,\n </b>comes great\n<b>finance</b></a>";
+
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                tv_title.setText(Html.fromHtml(str, Html.FROM_HTML_MODE_COMPACT));
+            }
+            else
+            {
+                tv_title.setText(Html.fromHtml(str));
+            }
+
+
+        }
+        else
+        {
+            tv_title.setText(Stringtitle[position]);
+        }
+
 
         if (position==3)
         {
@@ -75,6 +101,8 @@ public class ViewPagerAdapter extends PagerAdapter {
         container.addView(itemView);
         return itemView;
     }
+
+
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
