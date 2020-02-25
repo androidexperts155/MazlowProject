@@ -20,6 +20,7 @@ import com.mazlow.customclasses.M;
 import com.mazlow.login.LoginPresenterImple;
 import com.mazlow.login.LoginView;
 import com.mazlow.login.PassCodeActivity;
+import com.mazlow.ui.users.changephonenumber.ChangePhonenumber;
 
 
 import butterknife.BindView;
@@ -59,7 +60,7 @@ public class LoginWithPhone extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.continue_btn)
     Button submitlay;
     @BindView(R.id.resendotp)
-    TextView resendotp;
+    TextView changenumber;
     String text;
     Boolean check = false;
     TextView lastwtodigits;
@@ -82,7 +83,7 @@ public class LoginWithPhone extends AppCompatActivity implements View.OnClickLis
 
     private void setListeners() {
         submitlay.setOnClickListener(this);
-        resendotp.setOnClickListener(this);
+        changenumber.setOnClickListener(this);
         one.setOnClickListener(this);
         two.setOnClickListener(this);
         three.setOnClickListener(this);
@@ -106,7 +107,7 @@ public class LoginWithPhone extends AppCompatActivity implements View.OnClickLis
         lastwtodigits = findViewById(R.id.lasttwodigits);
         ic_arrow_back = findViewById(R.id.img_back);
         submitlay = findViewById(R.id.continue_btn);
-        resendotp = findViewById(R.id.resendotp);
+        changenumber = findViewById(R.id.resendotp);
 
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
@@ -163,12 +164,17 @@ public class LoginWithPhone extends AppCompatActivity implements View.OnClickLis
                 crealLastDigits();
                 break;
             case R.id.resendotp:
-                check = true;
+                intenttoChangePhone();
+
                 break;
             case R.id.img_back:
                 finish();
                 break;
         }
+    }
+    private void intenttoChangePhone() {
+        Intent i=new Intent(getApplicationContext(), ChangePhonenumber.class);
+        startActivity(i);
     }
     private void SignupApi() {
         country_code="+"+ccp.getSelectedCountryCode().toString();

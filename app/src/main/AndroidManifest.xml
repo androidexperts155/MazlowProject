@@ -7,6 +7,16 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+
+
+
+
 
     <application
         android:name="androidx.multidex.MultiDexApplication"
@@ -18,32 +28,47 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:supportsRtl">
-        <activity android:name="com.mazlow.adduserdetails.PrivacyPolicyActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name="com.mazlow.adduserdetails.FourthSignupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.adduserdetails.SecondPageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.adduserdetails.FirstPageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.login.model.LoginWithPhone"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.login.PassCodeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.otp.OtpActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.signup.SignupActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.ui.users.activities.WelcomeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.ui.users.activities.CreateFirstPassword"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.updatePassCode.CreateSecondPassword"
-            android:screenOrientation="portrait"/>
+        <activity android:name="com.mazlow.ui.users.activities.CheckEmailActivity"></activity>
+        <activity android:name="com.mazlow.ui.users.changephonenumber.ChangePhonenumber" />
         <activity
-            android:name="com.mazlow.ui.users.activities.MainActivity"
+            android:name="com.mazlow.adduserdetails.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+<!--        <activity-->
+<!--            android:name="com.mazlow.adduserdetails.FourthSignupActivity"-->
+<!--            android:screenOrientation="portrait" />-->
+        <activity
+            android:name="com.mazlow.adduserdetails.SecondPageActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.mazlow.adduserdetails.FirstPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.login.model.LoginWithPhone"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.login.PassCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.otp.OtpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.signup.SignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.mazlow.ui.users.activities.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.ui.users.activities.CreateFirstPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.updatePassCode.CreateSecondPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.adduserdetails.FourthSignupActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,6 +95,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <receiver android:name="com.mazlow.customclasses.MySMSBroadCastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>

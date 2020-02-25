@@ -69,7 +69,9 @@
                         app:ccp_textGravity="CENTER"
                         android:paddingRight="@dimen/_10sdp"
                         android:autofillHints="Country"
-                        app:ccp_defaultNameCode="US"
+                        app:ccp_autoDetectCountry="true"
+
+                        android:focusedByDefault="true"
                         app:ccp_showNameCode="false" />
 
                     <View

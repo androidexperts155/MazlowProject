@@ -1,6 +1,8 @@
 package com.mazlow.otp;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,16 +16,34 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.Mazlow.R;
+import com.google.android.gms.auth.api.phone.SmsRetriever;
+import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
+import com.mazlow.customclasses.MySMSBroadCastReceiver;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.otp.models.CheckOtpResponseModel;
 import com.mazlow.otp.resendotp.ResendOtpPresenterImplementation;
 import com.mazlow.otp.resendotp.ResendOtpView;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.ui.users.activities.CreateFirstPassword;
+import com.stfalcon.smsverifycatcher.OnSmsCatchListener;
+import com.stfalcon.smsverifycatcher.SmsVerifyCatcher;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import butterknife.BindView;
 
 
@@ -80,6 +100,8 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     OtpPresenterImple otpPresenterImple;
     ResendOtpPresenterImplementation resendOtpPresenterImplementation;
 
+    MySMSBroadCastReceiver smsVerificationReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +111,10 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         sixEditText = findViewById(R.id.otp_6);
         img_back =findViewById(R.id.img_back);
 
+        smsVerificationReceiver =new MySMSBroadCastReceiver();
+
+        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
+        registerReceiver(smsVerificationReceiver, intentFilter);
 
         initilize();
         setListeners();
@@ -97,11 +123,32 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         twoEditText.addTextChangedListener(new GenericTextWatcher(twoEditText));
         threeEditText.addTextChangedListener(new GenericTextWatcher(threeEditText));
         fourEditText.addTextChangedListener(new GenericTextWatcher(fourEditText));
-
         fiveEditText.addTextChangedListener(new GenericTextWatcher(fiveEditText));
         sixEditText.addTextChangedListener(new GenericTextWatcher(sixEditText));
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    public String parseCode(String message) {
+        Pattern p = Pattern.compile("\\b\\d{4}\\b");
+        Matcher m = p.matcher(message);
+        String code = "";
+        while (m.find()) {
+            code = m.group(0);
+        }
+
+        return code;
+    }
+
 
     private void setListeners() {
         submitlay.setOnClickListener(this);
@@ -122,8 +169,32 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals("otp")) {
+                final String message = intent.getStringExtra("message");
+
+                String otp=intent.getStringExtra("message");
+                String code = parseCode(message);
+                String newString = otp.replace("Mazlow App OTP:", "");
+
+
+                Toast.makeText(context, "message"+newString, Toast.LENGTH_SHORT).show();
+
+            }
+        }
+    };
+
+
     private void initilize() {
 
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("otp"));
         prefs=new Prefs(this);
         lastwtodigits = findViewById(R.id.lasttwodigits);
         getphoenumber = getIntent().getStringExtra(Bean.MOBILE_NUMBER);

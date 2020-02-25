@@ -7,6 +7,8 @@ public interface Constants {
     final static String update_profile="updateProfile";
     final static String zipcodeaddress="searchAddress";
     final static String resenotp="sendOtp";
+    final static String postalcode="rapidaddress";
+    final static String chengenumber="phoneEmail";
 
 
 }

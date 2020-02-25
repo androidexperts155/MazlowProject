@@ -60,7 +60,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         if (position==0)
         {
 
-            String str = "With great<br><b>wellbeing,<br></b> comes great <br><b>finance</b>";
+            String str = "With great<br><b>wellbeing<br></b> comes great <br><b>finance</b>";
 //            String str = "<a>With great \n<b>wellbeing,\n </b>comes great\n<b>finance</b></a>";
 
 

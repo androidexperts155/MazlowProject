@@ -20,6 +20,7 @@ public class LoginPresenterImple implements LoginPresenter {
         this.context = context;
         dialog = M.showloader(context, "", false, false);
     }
+
     @Override
     public void doLogin(String phonenumber, String ccode, String pcode) {
           if (M.isNetworkAvailable(context)){

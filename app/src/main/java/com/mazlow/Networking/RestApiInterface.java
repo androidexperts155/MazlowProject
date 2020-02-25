@@ -5,6 +5,8 @@ import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.otp.models.CheckOtpResponseModel;
 import com.mazlow.search_address.model.AddressZipcodeResponse;
 import com.mazlow.signup.models.SignupResponseModel;
+import com.mazlow.signup.postalcode.model.PostalCodeResponse;
+import com.mazlow.ui.users.changephonenumber.model.ChangeNumberResponseModel;
 
 import org.json.JSONObject;
 
@@ -19,7 +21,9 @@ import retrofit2.http.Query;
 
 import static com.mazlow.Networking.Constants.Signup;
 import static com.mazlow.Networking.Constants.checkotp;
+import static com.mazlow.Networking.Constants.chengenumber;
 import static com.mazlow.Networking.Constants.login;
+import static com.mazlow.Networking.Constants.postalcode;
 import static com.mazlow.Networking.Constants.resenotp;
 import static com.mazlow.Networking.Constants.update_profile;
 import static com.mazlow.Networking.Constants.zipcodeaddress;
@@ -87,7 +91,14 @@ public interface RestApiInterface {
     Call<SignupResponseModel> resendotp(@Field("countryCode") String coutrycode,
                                         @Field("phoneNumber") String phone);
 
+    @GET(postalcode)
+    Call<PostalCodeResponse> postalcodeAddress(@Query("key") String phonenumber,
+                                               @Query("postcode") String ccode);
 
 
+    @FormUrlEncoded
+    @POST(chengenumber)
+    Call<ChangeNumberResponseModel> changeNumber(@Field("phoneNumber") String phonenumber,
+                                                 @Field("countryCode") String countrycode);
 }
 

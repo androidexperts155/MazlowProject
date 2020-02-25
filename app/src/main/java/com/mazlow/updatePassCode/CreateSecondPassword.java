@@ -42,7 +42,10 @@ public class CreateSecondPassword extends AppCompatActivity implements View.OnCl
         setListner();
         getDataFromIntent();
 
+
+
     }
+
 
     private void getDataFromIntent() {
         firstcoode = getIntent().getStringExtra(Bean.PASSCODE);
@@ -112,11 +115,9 @@ public class CreateSecondPassword extends AppCompatActivity implements View.OnCl
     }
 
     private void redirectuserToNextScreen() {
-
         Intent intent=new Intent(CreateSecondPassword.this, FirstPageActivity.class);
         startActivity(intent);
         finish();
-
     }
 
     @Override

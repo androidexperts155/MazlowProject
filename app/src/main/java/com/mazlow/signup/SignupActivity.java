@@ -1,4 +1,5 @@
 package com.mazlow.signup;
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,14 +13,18 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.Mazlow.R;
 import com.hbb20.CountryCodePicker;
+import com.mazlow.customclasses.BaseActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
+import com.mazlow.interfaces.PermissionListner;
 import com.mazlow.otp.OtpActivity;
 import com.mazlow.signup.models.SignupResponseModel;
+import com.mazlow.signup.postalcode.postalcodeView;
+import com.mazlow.ui.users.changephonenumber.ChangePhonenumber;
 
 import butterknife.BindView;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener, SignupView{
+public class SignupActivity extends BaseActivity implements View.OnClickListener, SignupView {
 
     EditText oneEditText;
     @BindView(R.id.otp_2)
@@ -55,7 +60,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.continue_btn)
     Button submitlay;
     @BindView(R.id.resendotp)
-    TextView resendotp;
+    TextView changenumber;
     String text;
     Boolean check = false;
     TextView lastwtodigits;
@@ -64,21 +69,42 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     CountryCodePicker ccp;
     String TYPE;
     SignupPresenterImple signupPresenterImple;
+    boolean permissincheck=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mobile_number);
         oneEditText = findViewById(R.id.et_phone);
         initilize();
+        askPermision();
         setListeners();
 
+    }
 
+    @Override
+    protected int myView() {
+        return R.layout.activity_mobile_number;
+    }
+
+    private void askPermision() {
+        checkMultiplePermisions(SignupActivity.this, Manifest.permission.RECEIVE_SMS,Manifest.permission.READ_SMS, new PermissionListner() {
+            @Override
+            public void OnPermissionGranted() {
+                permissincheck=true;
+            }
+
+            @Override
+            public void OnPermsionDenied() {
+
+                showSettingsDialog(SignupActivity.this);
+
+            }
+        });
     }
 
     private void setListeners() {
         submitlay.setOnClickListener(this);
-        resendotp.setOnClickListener(this);
+        changenumber.setOnClickListener(this);
         one.setOnClickListener(this);
         two.setOnClickListener(this);
         three.setOnClickListener(this);
@@ -102,7 +128,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         lastwtodigits = findViewById(R.id.lasttwodigits);
         ic_arrow_back = findViewById(R.id.img_back);
         submitlay = findViewById(R.id.continue_btn);
-        resendotp = findViewById(R.id.resendotp);
+        changenumber = findViewById(R.id.resendotp);
 
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
@@ -117,13 +143,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         clear = findViewById(R.id.clear);
 
 
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.continue_btn:
-               SignupApi();
+              checkPermission();
                 break;
             case R.id.one:
                 oneEditText.append("1");
@@ -159,13 +186,30 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 crealLastDigits();
                 break;
             case R.id.resendotp:
-                check = true;
+                intenttoChangePhone();
             break;
             case R.id.img_back:
                 finish();
             break;
         }
     }
+
+    private void intenttoChangePhone() {
+        Intent i=new Intent(getApplicationContext(), ChangePhonenumber.class);
+        startActivity(i);
+    }
+
+    private void checkPermission() {
+        if (permissincheck)
+        {
+            SignupApi();
+        }
+        else
+        {
+            askPermision();
+        }
+    }
+
     private void SignupApi() {
         country_code="+"+ccp.getSelectedCountryCode().toString();
         phonenumber = oneEditText.getText().toString().trim();
@@ -216,6 +260,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void noInternet(String tag) {
         M.networkDialog(this);
     }
+
+
 
     class GenericTextWatcher implements TextWatcher {
         private View view;

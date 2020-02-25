@@ -13,7 +13,7 @@
     <string name="login">Login</string>
     <string name="to_get_started_enter_your_mobile_number">To get started, enter your Mobile number</string>
     <string name="enter_the_6_digit_code_we_ve_sent_to_88">Enter the 6-digit code we’ve sent to +88**********</string>
-    <string name="create_our_passcode_for_your_masslife_account">Create our Passcode for your MassLife account</string>
+    <string name="create_our_passcode_for_your_masslife_account">Create your Passcode for your MasLife account</string>
     <string name="idverificationtext"><![CDATA[ID verification &   Facial comparison]]></string>
     <string name="maskife_text">Last step, for your security and ours MasLife uses Onfido integration to fully verify your identiy in minutes.</string>
     <string name="worldleadingdocument"><![CDATA[A world leading document ID verification & facial biometrics technology.]]></string>
