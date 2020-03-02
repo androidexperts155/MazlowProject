@@ -2,8 +2,8 @@ package com.mazlow.otp;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
+import android.telephony.SmsMessage;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -17,29 +17,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.Mazlow.R;
-import com.google.android.gms.auth.api.phone.SmsRetriever;
-import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
-import com.google.android.gms.common.api.CommonStatusCodes;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
-import com.mazlow.customclasses.MySMSBroadCastReceiver;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.otp.models.CheckOtpResponseModel;
 import com.mazlow.otp.resendotp.ResendOtpPresenterImplementation;
 import com.mazlow.otp.resendotp.ResendOtpView;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.ui.users.activities.CreateFirstPassword;
-import com.stfalcon.smsverifycatcher.OnSmsCatchListener;
-import com.stfalcon.smsverifycatcher.SmsVerifyCatcher;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,7 +36,7 @@ import java.util.regex.Pattern;
 import butterknife.BindView;
 
 
-public class OtpActivity extends AppCompatActivity implements View.OnClickListener,OtpView, ResendOtpView {
+public class OtpActivity extends AppCompatActivity implements View.OnClickListener,OtpView, ResendOtpView   {
     @BindView(R.id.otp_1)
     EditText oneEditText;
     @BindView(R.id.otp_2)
@@ -99,22 +88,19 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
     OtpPresenterImple otpPresenterImple;
     ResendOtpPresenterImplementation resendOtpPresenterImplementation;
-
-    MySMSBroadCastReceiver smsVerificationReceiver;
+    public static OtpActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
 
+        instance = this;
         fiveEditText = findViewById(R.id.otp_5);
         sixEditText = findViewById(R.id.otp_6);
         img_back =findViewById(R.id.img_back);
 
-        smsVerificationReceiver =new MySMSBroadCastReceiver();
-
-        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
-        registerReceiver(smsVerificationReceiver, intentFilter);
+        
 
         initilize();
         setListeners();
@@ -126,12 +112,24 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         fiveEditText.addTextChangedListener(new GenericTextWatcher(fiveEditText));
         sixEditText.addTextChangedListener(new GenericTextWatcher(sixEditText));
 
+
     }
+
+
+
+
 
     @Override
     protected void onStart() {
         super.onStart();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
 
     @Override
     protected void onStop() {
@@ -174,27 +172,10 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         super.onResume();
     }
 
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals("otp")) {
-                final String message = intent.getStringExtra("message");
-
-                String otp=intent.getStringExtra("message");
-                String code = parseCode(message);
-                String newString = otp.replace("Mazlow App OTP:", "");
-
-
-                Toast.makeText(context, "message"+newString, Toast.LENGTH_SHORT).show();
-
-            }
-        }
-    };
 
 
     private void initilize() {
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("otp"));
         prefs=new Prefs(this);
         lastwtodigits = findViewById(R.id.lasttwodigits);
         getphoenumber = getIntent().getStringExtra(Bean.MOBILE_NUMBER);
@@ -283,6 +264,8 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         });
 
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -657,6 +640,37 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         M.networkDialog(this);
     }
 
+    public void parsingcode(String otp) {
+
+        if (otp.length()==6)
+        {
+            int num = Integer.parseInt(otp);
+            String number = String.valueOf(num);
+            int first = Integer.parseInt(number.substring(0, 1));
+            oneEditText.setText(String.valueOf(first));
+            int second = Integer.parseInt(number.substring(1, 2));
+            twoEditText.setText(String.valueOf(second));
+            int third = Integer.parseInt(number.substring(2, 3));
+            threeEditText.setText(String.valueOf(third));
+            int four = Integer.parseInt(number.substring(3, 4));
+            fourEditText.setText(String.valueOf(four));
+            int five = Integer.parseInt(number.substring(4, 5));
+            fiveEditText.setText(String.valueOf(five));
+            int six = Integer.parseInt(number.substring(5, 6));
+            sixEditText.setText(String.valueOf(six));
+
+            mOtp=otp;
+            otpPresenterImple =new OtpPresenterImple(this,this);
+            otpPresenterImple.doOtp(getphoenumber,mOtp);
+        }
+        else
+        {
+
+        }
+
+    }
+
+
     public class GenericTextWatcher implements TextWatcher {
         private View view;
 
@@ -728,7 +742,6 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
             // TODO Auto-generated method stub
         }
-
     }
 
-}
+    }

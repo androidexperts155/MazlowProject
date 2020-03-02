@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar"/>
 
     <LinearLayout
         android:id="@+id/top_lay"
@@ -27,7 +27,7 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"
             android:textColor="@color/light_blue"
-            android:text="Enter your old phone number"
+            android:text="@string/to_get_started_enter_your_mobile_number"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 
@@ -67,7 +67,9 @@
                         android:layout_height="wrap_content"
                         app:ccp_showFlag="false"
                         android:autofillHints="Country"
-                        app:ccp_defaultNameCode="UK"
+                        app:ccp_autoDetectCountry="true"
+
+                        android:focusedByDefault="true"
                         app:ccp_showNameCode="false" />
 
                     <View
@@ -116,6 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
+            android:text="Changed your Phone number?"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/_12sdp" />
 

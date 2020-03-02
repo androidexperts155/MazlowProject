@@ -1,6 +1,9 @@
 package com.mazlow.signup;
 import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,7 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.Mazlow.R;
 import com.hbb20.CountryCodePicker;
 import com.mazlow.customclasses.BaseActivity;
@@ -19,12 +25,12 @@ import com.mazlow.customclasses.M;
 import com.mazlow.interfaces.PermissionListner;
 import com.mazlow.otp.OtpActivity;
 import com.mazlow.signup.models.SignupResponseModel;
-import com.mazlow.signup.postalcode.postalcodeView;
 import com.mazlow.ui.users.changephonenumber.ChangePhonenumber;
 
 import butterknife.BindView;
 
-public class SignupActivity extends BaseActivity implements View.OnClickListener, SignupView {
+public class SignupActivity extends BaseActivity implements View.OnClickListener, SignupView
+         {
 
     EditText oneEditText;
     @BindView(R.id.otp_2)
@@ -65,27 +71,45 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     Boolean check = false;
     TextView lastwtodigits;
     ImageView ic_arrow_back;
-    String phonenumber,country_code;
+    String phonenumber, country_code;
     CountryCodePicker ccp;
     String TYPE;
     SignupPresenterImple signupPresenterImple;
-    boolean permissincheck=false;
+    boolean permissincheck = false;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         oneEditText = findViewById(R.id.et_phone);
+
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter("otp"));
         initilize();
         askPermision();
         setListeners();
 
     }
 
-    @Override
+             private BroadcastReceiver receiver = new BroadcastReceiver() {
+                 @Override
+                 public void onReceive(Context context, Intent intent) {
+                     if (intent.getAction().equals("otp")) {
+
+//                         String otp=intent.getStringExtra("message");
+//                         Toast.makeText(context, otp, Toast.LENGTH_SHORT).show();
+
+
+                     }
+                 }
+             };
+
+
+             @Override
     protected int myView() {
         return R.layout.activity_mobile_number;
     }
-
     private void askPermision() {
         checkMultiplePermisions(SignupActivity.this, Manifest.permission.RECEIVE_SMS,Manifest.permission.READ_SMS, new PermissionListner() {
             @Override
@@ -95,9 +119,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
 
             @Override
             public void OnPermsionDenied() {
-
                 showSettingsDialog(SignupActivity.this);
-
             }
         });
     }
@@ -121,15 +143,12 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
 
     private void initilize() {
 
-
         ccp=findViewById(R.id.cpp);
         TYPE = getIntent().getStringExtra(Bean.LOGINTYPE);
-
         lastwtodigits = findViewById(R.id.lasttwodigits);
         ic_arrow_back = findViewById(R.id.img_back);
         submitlay = findViewById(R.id.continue_btn);
         changenumber = findViewById(R.id.resendotp);
-
         one = findViewById(R.id.one);
         two = findViewById(R.id.two);
         three = findViewById(R.id.three);
@@ -254,6 +273,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onError(String error) {
         M.showToast(SignupActivity.this,error);
+
     }
 
     @Override

@@ -10,5 +10,5 @@
     <color name="border_color">#4FE3C1</color>
     <color name="gray_color">#A4B7C5</color>
     <color name="black_color">#000000</color>
-
+    <color name="color_light_black">#20000000</color>
 </resources>

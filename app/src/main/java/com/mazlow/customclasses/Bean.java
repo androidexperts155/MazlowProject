@@ -2,8 +2,11 @@ package com.mazlow.customclasses;
 
 public class Bean {
 
+//   public static final String ONFIDO_API_TOKEN = "sdk_sandbox.mCLnca4AxSE.ybJExRKZdNLnkr9-lVUP2fUJ6edTQ_es";
 
-    public static final String ACCESS_TOKEN = "Token";
+ public  static  String ONFIDO_API_TOKEN = "sdk_sandbox.kIJ-pC6qgbC.hGUCBlp2G8BFzatSR2l5mx9VzskHuvSi";
+
+ public static final String ACCESS_TOKEN = "Token";
     public static final String LOGINTYPE = "LOGINTYPE";
     public static  final String PASSCODE="paascord";
     public static String MOBILE_NUMBER="mobile";

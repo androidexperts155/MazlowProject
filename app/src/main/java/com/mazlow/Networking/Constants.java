@@ -9,6 +9,9 @@ public interface Constants {
     final static String resenotp="sendOtp";
     final static String postalcode="rapidaddress";
     final static String chengenumber="phoneEmail";
-
+    final static String onfido="applicants";
+    final static String getprofile="getProfile";
+    final static String onfido_check="checks";
+    final static String subcriptionDiscount="subcriptionDiscount";
 
 }

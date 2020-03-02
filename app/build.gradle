@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
-def sdkVersion = '5.3.3'
+def sdkVersion = '5.1.0'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.MasLife"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -26,7 +26,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     splits {
         abi {
             enable true
@@ -34,7 +33,6 @@ android {
             include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
             universalApk true //generate an additional APK that contains all the ABIs
         }
-
     }
 }
 repositories {
@@ -74,16 +72,15 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth-api-phone:17.3.0'
 
 
-
     implementation 'com.karumi:dexter:4.2.0'
+
+    // gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
 
 
     // country code picker
     implementation 'com.hbb20:ccp:2.3.2'
-    dependencies {
-        implementation 'com.jakewharton:butterknife:8.8.1'
-        annotationProcessor 'com.jakewharton:butterknife:8.8.1'
-    }
+
     implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     // retrofit
@@ -96,5 +93,7 @@ dependencies {
         exclude group: 'com.android.support' // to avoid conflicts with your current support library
     }
 
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 }
 apply plugin: 'com.google.gms.google-services'

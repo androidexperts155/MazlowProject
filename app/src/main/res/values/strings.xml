@@ -70,6 +70,65 @@ Mazlow Ltd – Consent to processing Steps data
 YES I consent to processing of my Steps data so that my Steps data is taken from my device via the following Apps: Apple Health and Google Fit to provide you with tailored webinars, daily messages etc.\n
 NO I do not consent to processing of my Steps data.
 </string>
+    <string name="your_id_verfication_failed">Your ID verfication failed</string>
+    <string name="select_your_card">Select your card</string>
+    <string name="premiu_metal">Premium Metal</string>
+    <string name="you_will_get_access_to_mazlow_s_full_range_of_feature">You will get access to Mazlow\'s full range of feature</string>
+    <string name="your_monthly_fee_will_be_taken_out_of_your_mazlow_account_after_topping_up_and_each_month_around_the_10th">Your monthly fee will be taken out of your Mazlow account after topping up and each month around the 10th</string>
+    <string name="apply">Apply</string>
+    <string name="enter_referral_code">Enter referral code</string>
+    <string name="continue_top_up"><![CDATA[Continue & top up]]></string>
+    <string name="standard_card">Standard Card</string>
+    <string name="monthly">Monthly</string>
+    <string name="annual">Annual</string>
+    <string name="annual_subscription_descrition">Your discounted yearly fee will be taken out of your MasLife account after topping up and each year around the 10th of January</string>
+    <string name="initial_card_fee">initial card fee</string>
+    <string name="standar_card_discription">You will not have access to MasLife\'s full range of services. You can upgrade to premium at any time</string>
+    <string name="deducted_from_your_account">This will be deducted from your account after you top up.</string>
+    <string name="standard">Standard</string>
+    <string name="you_will_have_limited_access">You will only have access to some of Mazlow\'s features</string>
+    <string name="set_goals">Set goals and track your activity</string>
+    <string name="instant_spending"><![CDATA[Instant spending notifications & stats]]></string>
+    <string name="bugeting_tools">Budgeting tools</string>
+    <string name="mutliple_currencies"><![CDATA[Multiple currencies & live rates]]></string>
+    <string name="split_bills">Split bills with friends</string>
+    <string name="bank_transfer">Bank transfer</string>
+    <string name="instant_transfer">Instant transfer on MasLife</string>
+    <string name="freeze_mas_life_card">Freeze your MasLife card</string>
+    <string name="rewards_discount">Rewars and discount</string>
+    <string name="videos_meditation">Videos and Meditations</string>
+    <string name="daily_challenges">Daily Challenges</string>
+    <string name="personal_journey_development">Personal journey development</string>
+    <string name="premium">Premium</string>
+    <string name="confirm_subscription">Confirm Subscription</string>
+    <string name="please_confirm_the_purchase_of_your_mazlow_plastic_card">Please confirm the purchase of your Mazlow plastic card</string>
+    <string name="your_card_will_be_delivered_to_your_register_address">Your card will be delivered to your register address</string>
+    <string name="add_payment_method">Add Payment Method</string>
+    <string name="empty_referral_code">Please enter the referral code</string>
+
+
+
+
+    <integer-array name="cards_list">
+        <item>@drawable/ic_premium</item>
+        <item>@drawable/ic_standard</item>
+
+    </integer-array>
+
+    <string-array name="feature_list">
+        <item>@string/set_goals</item>
+        <item>@string/instant_spending</item>
+        <item>@string/bugeting_tools</item>
+        <item>@string/mutliple_currencies</item>
+        <item>@string/split_bills</item>
+        <item>@string/bank_transfer</item>
+        <item>@string/instant_transfer</item>
+        <item>@string/freeze_mas_life_card</item>
+        <item>@string/rewards_discount</item>
+        <item>@string/videos_meditation</item>
+        <item>@string/daily_challenges</item>
+        <item>@string/personal_journey_development</item>
+    </string-array>
 
 
     <string-array name="countries" formatted="false" translatable="false">
