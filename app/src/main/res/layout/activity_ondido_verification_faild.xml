@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.mazlow.onfido.verification_identity.ConductingVerificationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <com.mazlow.customclasses.MediumTextView
+                android:text="@string/your_id_verfication_failed"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:gravity="center"
+                android:textColor="@color/textcolor"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_marginTop="@dimen/_35sdp"
+                android:src="@drawable/onfidofailure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="You need to verify your identity again. "
+                android:textColor="@color/textcolor"
+                android:gravity="center"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <com.mazlow.customclasses.MediumTextView
+            android:id="@+id/tv_skipexplore"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:paddingRight="40dp"
+            android:padding="@dimen/_15sdp"
+            android:textAllCaps="false"
+            android:paddingLeft="40dp"
+            android:textSize="@dimen/TitleTexthightlight"
+            android:textColor="@color/textcolor"
+            android:text="Tap anywhere to continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

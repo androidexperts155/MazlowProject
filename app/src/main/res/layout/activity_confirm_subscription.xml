@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mazlow.payments_subscription.activities.ConfirmSubscription">
+
+    
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/linearLayoutToolBar"
+        android:gravity="center_vertical"
+        >
+        
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/imageViewBack"
+             android:layout_marginLeft="@dimen/_15sdp"
+            android:src="@drawable/ic_arrow_back"
+            />
+        
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/blue_color"
+            android:text="@string/confirm_subscription"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayoutDetail"
+        android:layout_below="@+id/linearLayoutToolBar"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/gray_border"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp">
+    
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18sdp"
+            android:gravity="center"
+            android:textColor="@color/blue_color"
+            android:text="@string/please_confirm_the_purchase_of_your_mazlow_plastic_card"
+            />
+        
+        
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/blue_color"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="Your account will be charged"
+            />
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewPrice"
+            android:textSize="@dimen/_22sdp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/blue_color"
+            android:text="£18.99"
+            />
+    
+    </LinearLayout>
+    
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/linearLayoutDetail"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/blue_color"
+        android:text="@string/your_card_will_be_delivered_to_your_register_address"
+        />
+    
+    
+    
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:text="@string/add_payment_method"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"
+        android:background="@drawable/all_side_round_blue_background"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

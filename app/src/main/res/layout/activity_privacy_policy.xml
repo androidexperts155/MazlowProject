@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mazlow.adduserdetails.PrivacyPolicyActivity">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="@dimen/margin10"
+            android:padding="@dimen/margin15"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_solid"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mazlow.customclasses.MediumTextView
+                android:textSize="@dimen/_14sdp"
+                android:text="Terms of Services"
+                android:textAllCaps="true"
+                android:textColor="@color/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.mazlow.customclasses.MediumTextView
+                android:text="Last updated: 19-Feb-2018"
+                android:textColor="@color/textcolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <View
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/gray_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+
+
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/textcolor"
+                android:id="@+id/textprivacyplociy"
+                android:text="@string/stylish_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <View
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/view"
+                android:background="@color/gray_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+
+            <com.mazlow.customclasses.MediumButton
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:id="@+id/acceptbtn"
+                android:background="@drawable/continue_btn"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingRight="40dp"
+                android:textAllCaps="false"
+                android:paddingLeft="40dp"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/textcolor"
+                android:text="Accept"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_36sdp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

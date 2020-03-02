@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mazlow.ui.users.activities.CheckEmailActivity">
+
+    <include layout="@layout/toolbar"></include>
+
+    <ImageView
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_centerInParent="true"
+        android:foregroundGravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:src="@drawable/verifyemail_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ImageView>
+
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_marginTop="@dimen/_25sdp"
+        android:id="@+id/lasttwodigits"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Check your email"
+        android:textColor="@color/light_blue"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <com.mazlow.customclasses.MediumTextView
+        android:id="@+id/textemail"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="To change your account's connected mobile number click the link we have sent  to abcd@gmail.com to verify your request. "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

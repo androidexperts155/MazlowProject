@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_marginTop="@dimen/margin10"
+            android:padding="@dimen/margin15"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_gray"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+
+            <TextView
+                android:layout_marginLeft="@dimen/margin5"
+                android:background="@drawable/circle_solid"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mazlow.customclasses.MediumTextView
+                    android:layout_marginTop="@dimen/margin15"
+                    android:id="@+id/lasttwodigits"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/idverificationtext"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <com.mazlow.customclasses.MediumTextView
+                    android:layout_marginTop="@dimen/margin15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:text="@string/maskife_text"
+                    android:textColor="@color/light_blue"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/gray_border"
+                    android:layout_marginRight="@dimen/margin20"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/identity_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.mazlow.customclasses.MediumTextView
+                        android:layout_marginTop="@dimen/margin15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/worldleadingdocument"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/margin15"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.mazlow.customclasses.MediumButton
+                            android:layout_gravity="center"
+                            android:id="@+id/continue_btn"
+                            android:background="@drawable/continue_btn"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:layout_marginBottom="@dimen/margin15"
+                            android:paddingRight="30dp"
+                            android:textAllCaps="false"
+                            android:paddingLeft="30dp"
+                            android:textSize="@dimen/_15sdp"
+                            android:textColor="@color/textcolor"
+                            android:text="@string/verify_my_identity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_35sdp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin15"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mazlow.customclasses.MediumTextView
+                    android:id="@+id/tv_skipexplore"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:paddingRight="40dp"
+                    android:padding="@dimen/_15sdp"
+                    android:textAllCaps="false"
+                    android:paddingLeft="40dp"
+                    android:textSize="@dimen/TitleTexthightlight"
+                    android:textColor="@color/textcolor"
+                    android:text="@string/skip_and_explore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

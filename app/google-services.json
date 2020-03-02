@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "689211483888",
+    "firebase_url": "https://mazlow-8f193.firebaseio.com",
+    "project_id": "mazlow-8f193",
+    "storage_bucket": "mazlow-8f193.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689211483888:android:7a2e120c8d3662ed578435",
+        "android_client_info": {
+          "package_name": "com.MasLife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689211483888-aqnv8v5563iqtiu1tp4jbk1vcdr0jac0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.MasLife",
+            "certificate_hash": "052efa6b146807a0f45f823a641f4c897f7cabe7"
+          }
+        },
+        {
+          "client_id": "689211483888-r2s984g9lmdtp95d4v0upus9lu3aoaoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmF2amz5tq1dW5ZFWZVchjJbX6B4qiyls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689211483888-r2s984g9lmdtp95d4v0upus9lu3aoaoi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "689211483888-9u87b9emhgd81qaj0f3506p0qvgrk9ev.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rvtech.Mazlow.app.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
