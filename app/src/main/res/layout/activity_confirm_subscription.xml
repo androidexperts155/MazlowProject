@@ -94,6 +94,7 @@
     
     
     <com.mazlow.customclasses.MediumTextView
+        android:id="@+id/tv_addpeyment"
         android:layout_width="@dimen/_180sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_alignParentBottom="true"

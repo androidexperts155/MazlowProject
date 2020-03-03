@@ -103,7 +103,6 @@ public class FourthSignupActivity extends AppCompatActivity implements View.OnCl
                         .build();
         client.startActivityForResult(this, 1, onfidoConfig);
 
-
     }
 
 

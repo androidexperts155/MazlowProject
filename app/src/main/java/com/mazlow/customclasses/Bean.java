@@ -24,6 +24,7 @@ public class Bean {
     public static String ADDRESS_LINE2="addresslin";
     public static String CITY="city";
     public static String POSTALCODE="postalcode";
+    public static String AMUNT="amount";
 
 
     }

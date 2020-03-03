@@ -21,14 +21,10 @@ public class PostalCodeImplementation implements PostalcodePresenter{
     Context context;
     Dialog dialog;
 
-
-    public PostalCodeImplementation(SecondPageActivity signupActivity, Context context) {
-        this.signupView = signupActivity;
+    public PostalCodeImplementation(postalcodeView signupView, Context context) {
+        this.signupView = signupView;
         this.context = context;
-        dialog = M.showloader(context, "", false, false);
     }
-
-
 
     @Override
     public void dopostalSearch(String phonenumber, String ccode) {

@@ -4,6 +4,7 @@ import com.mazlow.adduserdetails.model.UpdateUserDetails;
 import com.mazlow.onfido.model.OnFidoResponseModel;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.otp.models.CheckOtpResponseModel;
+import com.mazlow.payments_subscription.activities.billing_address.model.BillingAddressResponse;
 import com.mazlow.payments_subscription.models.CouponCodeDetailToServer;
 import com.mazlow.payments_subscription.models.apply_coupon_code.ApplyCouponCodeResponse;
 import com.mazlow.search_address.model.AddressZipcodeResponse;
@@ -33,6 +34,7 @@ import static com.mazlow.Networking.Constants.login;
 import static com.mazlow.Networking.Constants.onfido;
 import static com.mazlow.Networking.Constants.onfido_check;
 import static com.mazlow.Networking.Constants.postalcode;
+import static com.mazlow.Networking.Constants.registerandpay;
 import static com.mazlow.Networking.Constants.resenotp;
 import static com.mazlow.Networking.Constants.subcriptionDiscount;
 import static com.mazlow.Networking.Constants.update_profile;
@@ -136,4 +138,18 @@ public interface RestApiInterface {
     Call<ApplyCouponCodeResponse> applyCouponCode(@Header("Authorization") String token, @Body CouponCodeDetailToServer detailToServer);
 
 
+    @FormUrlEncoded
+    @POST(registerandpay)
+    Call<BillingAddressResponse> billingAddress(@Header("Authorization")String token,
+                                                @Field("amount") String amount,
+                                                @Field("city") String city,
+                                                @Field("address")  String address,
+                                                @Field("postalCode")  String postalCode,
+                                                @Field("countryCode") String countryCode,
+                                                @Field("transactionName")  String transactionName,
+                                                @Field("corporateDc") String corporateDc,
+                                                @Field("currencyCode") String currencyCode,
+                                                @Field("subscriptionId")  String subscriptionId);
+
 }
+

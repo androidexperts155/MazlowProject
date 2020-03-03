@@ -100,7 +100,7 @@
                         android:focusable="false"
                         android:gravity="center"
                         android:clickable="false"
-                        android:maxLength="10"
+                        android:maxLength="11"
                         android:textColorHint="@color/textcolor"
                         android:paddingBottom="13dp"
                         android:id="@+id/et_phone"

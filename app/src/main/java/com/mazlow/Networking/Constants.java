@@ -13,5 +13,6 @@ public interface Constants {
     final static String getprofile="getProfile";
     final static String onfido_check="checks";
     final static String subcriptionDiscount="subcriptionDiscount";
+    final static String registerandpay="registerAndPayBy";
 
 }

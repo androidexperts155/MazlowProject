@@ -24,27 +24,33 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:supportsRtl">
-        <activity android:name="com.mazlow.onfido.verification_failed.OndidoVerificationFailed"></activity>
-        <activity android:name="com.mazlow.onfido.verification_identity.ConductingVerificationActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.skipandexplore.SkipExploreActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.ui.users.activities.CheckEmailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.ui.users.changephonenumber.ChangePhonenumber"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.payments_subscription.activities.ConfirmSubscription"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name="com.mazlow.payments_subscription.activities.SubscriptionFeatureList"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.mazlow.onfido.activites.FourthSignupActivity"
-            android:screenOrientation="portrait">
+        <activity android:name="com.mazlow.payments_subscription.activities.payment.PaymentActivity"></activity>
+        <activity android:name="com.mazlow.payments_subscription.activities.billing_address.BillingAddress" />
+        <activity android:name="com.mazlow.onfido.verification_failed.OndidoVerificationFailed" />
+        <activity
+            android:name="com.mazlow.onfido.verification_identity.ConductingVerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.skipandexplore.SkipExploreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.ui.users.activities.CheckEmailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.ui.users.changephonenumber.ChangePhonenumber"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.payments_subscription.activities.ConfirmSubscription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.payments_subscription.activities.SubscriptionFeatureList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.onfido.activites.FourthSignupActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.mazlow.ui.users.activities.MainActivity" />
 
-        </activity>
-
-                <activity android:name="com.mazlow.payments_subscription.activities.select_cards.SelectCards"/>
-
-        <activity android:name="com.mazlow.ui.users.activities.MainActivity">
+        <activity android:name="com.mazlow.payments_subscription.activities.select_cards.SelectCards">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,42 +61,32 @@
         <activity
             android:name="com.mazlow.adduserdetails.PrivacyPolicyActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.adduserdetails.SecondPageActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name="com.mazlow.adduserdetails.FirstPageActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.login.model.LoginWithPhone"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.login.PassCodeActivity"
             android:screenOrientation="portrait" />
-
-
         <activity
             android:name="com.mazlow.otp.OtpActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.signup.SignupActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
             android:name="com.mazlow.ui.users.activities.WelcomeActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.ui.users.activities.CreateFirstPassword"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.mazlow.updatePassCode.CreateSecondPassword"
             android:screenOrientation="portrait" />

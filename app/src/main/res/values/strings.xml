@@ -107,8 +107,6 @@ NO I do not consent to processing of my Steps data.
     <string name="empty_referral_code">Please enter the referral code</string>
 
 
-
-
     <integer-array name="cards_list">
         <item>@drawable/ic_premium</item>
         <item>@drawable/ic_standard</item>
