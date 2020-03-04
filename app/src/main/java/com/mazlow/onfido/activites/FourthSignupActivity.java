@@ -158,10 +158,6 @@ public class FourthSignupActivity extends AppCompatActivity implements View.OnCl
     private void skipexploreActivity() {
         Intent intent = new Intent(FourthSignupActivity.this, SkipExploreActivity.class);
         startActivity(intent);
-
-//        Intent intent = new Intent(FourthSignupActivity.this, ConductingVerificationActivity.class);
-//        startActivity(intent);
-
     }
 
     @Override

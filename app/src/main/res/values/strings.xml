@@ -105,6 +105,11 @@ NO I do not consent to processing of my Steps data.
     <string name="your_card_will_be_delivered_to_your_register_address">Your card will be delivered to your register address</string>
     <string name="add_payment_method">Add Payment Method</string>
     <string name="empty_referral_code">Please enter the referral code</string>
+    <string name="thanks_for_your_patience">Thanks for your patience</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_payment">Payments</string>
+    <string name="menu_wellbeing">Wellbeing</string>
+    <string name="spent_today">Spent today</string>
 
 
     <integer-array name="cards_list">

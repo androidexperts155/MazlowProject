@@ -20,8 +20,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SubscriptionFeatureList extends AppCompatActivity {
-    List<FeatureDetail> featureDetailList = new ArrayList<>();
 
+    List<FeatureDetail> featureDetailList = new ArrayList<>();
 
     @BindView(R.id.textViewTitle)
     MediumTextView textViewTitle;

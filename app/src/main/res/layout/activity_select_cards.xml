@@ -65,11 +65,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/imageViewInfo"
                     android:layout_marginLeft="@dimen/_8sdp"
-                    android:src="@drawable/ic_clear_black_24dp"
-                    />
+                    android:src="@drawable/moreinfo_icon" />
+
 
             </LinearLayout>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

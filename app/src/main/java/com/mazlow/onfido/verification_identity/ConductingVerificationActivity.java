@@ -18,6 +18,7 @@ import com.mazlow.onfido.creating_check.CheckImplementationPresenter;
 import com.mazlow.onfido.creating_check.CreatingCheckview;
 import com.mazlow.onfido.model.OnFidoResponseModel;
 import com.mazlow.onfido.verification_failed.OndidoVerificationFailed;
+import com.mazlow.onfido.verification_success.VerificationSuccessed;
 import com.mazlow.payments_subscription.activities.select_cards.SelectCards;
 
 import org.json.JSONArray;
@@ -83,7 +84,7 @@ public class ConductingVerificationActivity extends AppCompatActivity implements
         {
             checkImplementationPresenter =new CheckImplementationPresenter(this,this);
             checkImplementationPresenter.doCheck("Token token="+ Bean.ONFIDO_API_TOKEN,application_id,"express",Mainjson);
-            Intent intent = new Intent(ConductingVerificationActivity.this, SelectCards.class);
+            Intent intent = new Intent(ConductingVerificationActivity.this, VerificationSuccessed.class);
             startActivity(intent);
             prefs.setString("type","1");
         }

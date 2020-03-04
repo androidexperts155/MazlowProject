@@ -24,6 +24,8 @@ public class PostalCodeImplementation implements PostalcodePresenter{
     public PostalCodeImplementation(postalcodeView signupView, Context context) {
         this.signupView = signupView;
         this.context = context;
+        dialog = M.showloader(context, "", false, false);
+
     }
 
     @Override
