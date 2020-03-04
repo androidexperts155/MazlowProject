@@ -7,8 +7,6 @@
     tools:context="com.mazlow.payments_subscription.activities.select_cards.SelectCards">
 
 
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -82,6 +80,7 @@
                 android:id="@+id/textViewCardDescription"
                 android:text="@string/you_will_get_access_to_mazlow_s_full_range_of_feature"
                 android:gravity="center"
+                android:textSize="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/light_blue"
                 />
@@ -89,7 +88,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 android:id="@+id/linearLayoutCard"
                 android:gravity="center"
                 >
@@ -98,8 +97,7 @@
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_60sdp"
                     android:id="@+id/relativeLayoutMonthly"
-                    android:layout_marginRight="@dimen/_8sdp"
-                    >
+                    android:layout_marginRight="@dimen/_8sdp">
 
                     <LinearLayout
                         android:layout_width="@dimen/_120sdp"
@@ -204,8 +202,7 @@
                     android:textSize="@dimen/_19sdp"
                     android:textColor="@color/blue_color"
                     android:id="@+id/textViewPrice"
-                    android:text="£199.00"
-                    />
+                    android:text="£199.00"/>
 
                 <com.mazlow.customclasses.MediumTextView
                     android:layout_width="wrap_content"
@@ -214,8 +211,10 @@
                     android:id="@+id/textViewSubscriptionType"
                     android:layout_marginLeft="@dimen/_8sdp"
                     android:textColor="@color/blue_color"
-                    android:text="/year"
-                    />
+                    android:text="/year" />
+
+
+
             </LinearLayout>
 
             <com.mazlow.customclasses.MediumTextView
@@ -223,16 +222,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/your_monthly_fee_will_be_taken_out_of_your_mazlow_account_after_topping_up_and_each_month_around_the_10th"
                 android:gravity="center"
+                android:textSize="@dimen/_10sdp"
                 android:id="@+id/textViewDiscription"
                 android:layout_marginLeft="@dimen/_20sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:textColor="@color/light_blue"
                 />
-
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
@@ -242,7 +238,7 @@
                 android:paddingLeft="@dimen/_8sdp"
                 android:gravity="center_vertical"
                 android:paddingRight="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 android:background="@drawable/continue_btn">
                 <com.mazlow.customclasses.MediumEdittext
                     android:layout_width="0dp"

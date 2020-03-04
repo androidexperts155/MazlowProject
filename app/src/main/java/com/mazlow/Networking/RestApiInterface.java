@@ -5,6 +5,7 @@ import com.mazlow.onfido.model.OnFidoResponseModel;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.otp.models.CheckOtpResponseModel;
 import com.mazlow.payments_subscription.activities.billing_address.model.BillingAddressResponse;
+import com.mazlow.payments_subscription.activities.thanksfor_patience.model.SubcriptionResponsemodel;
 import com.mazlow.payments_subscription.models.CouponCodeDetailToServer;
 import com.mazlow.payments_subscription.models.apply_coupon_code.ApplyCouponCodeResponse;
 import com.mazlow.search_address.model.AddressZipcodeResponse;
@@ -29,6 +30,7 @@ import retrofit2.http.Query;
 import static com.mazlow.Networking.Constants.Signup;
 import static com.mazlow.Networking.Constants.checkotp;
 import static com.mazlow.Networking.Constants.chengenumber;
+import static com.mazlow.Networking.Constants.get_subcrption;
 import static com.mazlow.Networking.Constants.getprofile;
 import static com.mazlow.Networking.Constants.login;
 import static com.mazlow.Networking.Constants.onfido;
@@ -151,5 +153,8 @@ public interface RestApiInterface {
                                                 @Field("currencyCode") String currencyCode,
                                                 @Field("subscriptionId")  String subscriptionId);
 
+    @FormUrlEncoded
+    @POST(get_subcrption)
+    Call<SubcriptionResponsemodel> getSubcription(@Header("Authorization") String token);
 }
 

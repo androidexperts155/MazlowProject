@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:layout_gravity="center"
-    tools:context="com.mazlow.payments_subscription.activities.ThanksForPatience">
+    tools:context="com.mazlow.payments_subscription.activities.thanksfor_patience.ThanksForPatience">
 
 
     <com.mazlow.customclasses.MediumTextView

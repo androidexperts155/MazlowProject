@@ -56,11 +56,11 @@
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"/>
 
+
                     <com.hbb20.CountryCodePicker
 
                         android:pointerIcon="none"
                         android:id="@+id/cpp"
-
                         app:ccp_textSize="@dimen/NormalTextSize"
                         app:ccp_contentColor="@color/textcolor"
                         android:layout_width="wrap_content"
@@ -70,7 +70,6 @@
                         android:paddingRight="@dimen/_10sdp"
                         android:autofillHints="Country"
                         app:ccp_autoDetectCountry="true"
-
                         android:focusedByDefault="true"
                         app:ccp_showNameCode="false" />
 

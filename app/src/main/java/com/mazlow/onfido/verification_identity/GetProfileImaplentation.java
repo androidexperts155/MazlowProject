@@ -15,15 +15,19 @@ import retrofit2.Response;
 
 public class GetProfileImaplentation implements GetProfilePrsenter {
 
+
     GetProfileView getProfileView;
     Context context;
 
-    public GetProfileImaplentation(ConductingVerificationActivity conductingVerificationActivity, ConductingVerificationActivity conductingVerificationActivity1) {
-        getProfileView = conductingVerificationActivity;
 
-        context =conductingVerificationActivity;
-
+    public GetProfileImaplentation(GetProfileView getProfileView, Context context) {
+        this.getProfileView = getProfileView;
+        this.context = context;
     }
+
+
+
+
 
     @Override
     public void onGetProfile(String token) {

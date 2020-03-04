@@ -3,7 +3,7 @@ package com.mazlow.login.model;
 
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings("unused")
+
 public class LoginResponseModel {
 
     @SerializedName("message")
