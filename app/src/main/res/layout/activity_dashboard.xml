@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mazlow.ui.dashboard.activity.DashboardActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_dashboard_bg"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        tools:context="com.mazlow.ui.dashboard.activity.DashboardActivity">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/ic_nav_menu"/>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:padding="@dimen/_3sdp"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/ic_notification"/>
+                    <View
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="0dp"/>
+                    <ImageView
+                        android:padding="@dimen/_3sdp"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:src="@drawable/ic_account"/>
+
+                </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+                   <com.mazlow.customclasses.MediumTextView
+                       android:gravity="center"
+                       android:text="Total Balance"
+                       android:textColor="@color/white"
+                       android:textSize="@dimen/_12sdp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                   <androidx.viewpager.widget.ViewPager
+                       android:id="@+id/viewpager_total_balance"
+                       android:layout_width="match_parent"
+                       android:layout_height="@dimen/_30sdp">
+
+                   </androidx.viewpager.widget.ViewPager>
+                   <com.google.android.material.tabs.TabLayout
+                       android:id="@+id/tab_layout"
+                       android:layout_width="match_parent"
+                       android:layout_height="@dimen/_10sdp"
+                       app:tabBackground="@drawable/tab_selector"
+
+                       app:tabGravity="center"
+                       app:tabIndicatorHeight="0dp"/>
+
+
+               </LinearLayout>
+
+            </RelativeLayout>
+            <LinearLayout
+
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp">
+
+
+                    <ImageView
+                        android:id="@+id/img_gif"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                    <LinearLayout
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.mazlow.customclasses.MediumTextView
+
+                            android:gravity="center"
+                            android:text="$ 10.00"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_20sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <com.mazlow.customclasses.MediumTextView
+                            android:gravity="center"
+                            android:text="@string/spent_today"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:visibility="gone"
+                        android:id="@+id/progressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/circular_progress_bar"
+                        android:background="@drawable/circle_shape"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:max="100"
+                        android:progress="100" />
+                </RelativeLayout>
+
+
+                <com.mazlow.customclasses.MediumButton
+                    android:alpha="5"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_gravity="center"
+                    android:id="@+id/continue_btn"
+                    android:background="@drawable/round_shape_whitecorner"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:layout_marginBottom="@dimen/margin15"
+                    android:paddingRight="30dp"
+                    android:textAllCaps="false"
+                    android:paddingLeft="30dp"
+                    android:textSize="@dimen/_15sdp"
+                    android:textColor="@color/white"
+                    android:text="Top up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"/>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:background="@color/white"
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="start"
+            app:labelVisibilityMode="unlabeled"
+            style="@style/BottomNavigationTheme"
+
+            />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

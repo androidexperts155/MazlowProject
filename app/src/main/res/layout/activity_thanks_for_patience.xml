@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    tools:context="com.mazlow.payments_subscription.activities.ThanksForPatience">
+
+
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_marginTop="@dimen/_40sdp"
+        android:id="@+id/lasttwodigits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="@string/thanks_for_your_patience"
+        android:textColor="@color/light_blue"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:src="@drawable/thanks_patience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_marginTop="@dimen/margine30"
+        android:gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="@dimen/margin15"
+        android:layout_width="match_parent"
+        android:text="We are processing your request."
+        android:textSize="@dimen/NormalTextSize"
+        android:layout_above="@+id/continue_btn"
+        android:textColor="@color/textcolor"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>

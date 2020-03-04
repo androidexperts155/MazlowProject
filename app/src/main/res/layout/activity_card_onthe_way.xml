@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_cliklayout"
+    android:orientation="vertical"
+    tools:context="com.mazlow.payments_subscription.activities.card_ontheway.CardOntheWayActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_marginTop="@dimen/_60sdp"
+            android:id="@+id/lasttwodigits"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:text="Congratulations, your card is on the way"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/primiumcardgif"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:layout_marginRight="@dimen/_45sdp"
+            android:layout_marginLeft="@dimen/_45sdp"
+            android:text="Your PREMIUM journey begins"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:text="Please activate your card once your received the package."
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.mazlow.customclasses.MediumTextView
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:text="Tap anywhere to continue"
+        android:textColor="@color/textcolor"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
