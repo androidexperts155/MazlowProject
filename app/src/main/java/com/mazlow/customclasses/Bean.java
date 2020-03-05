@@ -27,6 +27,9 @@ public class Bean {
     public static String AMUNT="amount";
 
 
+   public static String PROFILE_DATA="profileData";
+
+
     }
 
 

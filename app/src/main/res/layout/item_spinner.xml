@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.mazlow.customclasses.LightTextView
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/txt_title"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_topup_msg"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/textcolor"/>
+
+</LinearLayout>

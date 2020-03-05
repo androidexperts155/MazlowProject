@@ -15,7 +15,6 @@ import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.onfido.activites.FourthSignupActivity;
-import com.mazlow.ui.users.dashboard.activity.DashboardActivity;
 
 public class PassCodeActivity extends AppCompatActivity implements LoginView {
 
@@ -71,51 +70,7 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         loginPresenterImple.doLogin(phone,countycode,pin);
     }
 
-    private void redirectuserToNextScreen() {
-        Intent i=new Intent(getApplicationContext(), FirstPageActivity.class);
-        startActivity(i);
-        finish();
-
-    }
-
-    @Override
-    public void onSuccess(LoginResponseModel LoginResponseModel) {
-
-
-        if (LoginResponseModel.getUserInfo().getKycVerification().equals("verified"))
-        {
-            if (LoginResponseModel.getUserInfo().getSubscriptionId().equals(""))
-            {
-                saveData(LoginResponseModel);
-                fourthActivity(LoginResponseModel);
-            }
-            else if (!LoginResponseModel.getUserInfo().getSubscriptionId().equals(""))
-            {
-                saveData(LoginResponseModel);
-                HomeScreenNavigate();
-            }
-            else if(LoginResponseModel.getUserInfo().getFirstName().equals("")||LoginResponseModel.getUserInfo().getLastName().equals(""))
-            {
-                saveData(LoginResponseModel);
-                redirectuserToNextScreen();
-            }
-        }
-        else
-        {
-            saveData(LoginResponseModel);
-            redirectuserToNextScreen();
-        }
-
-
-    }
-
-    private void HomeScreenNavigate() {
-        Intent i=new Intent(getApplicationContext(), DashboardActivity.class);
-        startActivity(i);
-        finish();
-    }
-
-    private void saveData(LoginResponseModel loginResponseModel) {
+    private void redirectuserToNextScreen(LoginResponseModel loginResponseModel) {
         prefs.setString(Bean.ACCESS_TOKEN, loginResponseModel.getToken());
         prefs.setString(Bean.FIRST_NAME,loginResponseModel.getUserInfo().getFirstName());
         prefs.setString(Bean.LAST_NAME,loginResponseModel.getUserInfo().getLastName());
@@ -127,9 +82,43 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         prefs.setString(Bean.ADDRESS,loginResponseModel.getUserInfo().getAddress());
         prefs.setString(Bean.ADDRESS_LINE2,loginResponseModel.getUserInfo().getAddressline2());
         prefs.setString(Bean.DATEOF_BIRTH,loginResponseModel.getUserInfo().getDob());
+        Intent i=new Intent(getApplicationContext(), FirstPageActivity.class);
+        startActivity(i);
+        finish();
+
+    }
+
+    @Override
+    public void onSuccess(LoginResponseModel LoginResponseModel) {
+
+/*
+        String type=prefs.getString("type","");
+
+        if (type.equals("1"))
+        {
+            fourthActivity(LoginResponseModel);
+
+        }
+        else {
+            redirectuserToNextScreen(LoginResponseModel);
+        }
+*/
+        redirectuserToNextScreen(LoginResponseModel);
+
     }
 
     private void fourthActivity(LoginResponseModel loginResponseModel) {
+        prefs.setString(Bean.ACCESS_TOKEN, loginResponseModel.getToken());
+        prefs.setString(Bean.FIRST_NAME,loginResponseModel.getUserInfo().getFirstName());
+        prefs.setString(Bean.LAST_NAME,loginResponseModel.getUserInfo().getLastName());
+        prefs.setString(Bean.EMAIL_ADDRESS,loginResponseModel.getUserInfo().getEmail());
+        prefs.setString(Bean.COUNTRY,loginResponseModel.getUserInfo().getCountry());
+        prefs.setString(Bean.CITY,loginResponseModel.getUserInfo().getCity());
+        prefs.setString(Bean.COUNTRYCODE,loginResponseModel.getUserInfo().getCountryCode());
+        prefs.setString(Bean.POSTALCODE,loginResponseModel.getUserInfo().getPostalCode());
+        prefs.setString(Bean.ADDRESS,loginResponseModel.getUserInfo().getAddress());
+        prefs.setString(Bean.ADDRESS_LINE2,loginResponseModel.getUserInfo().getAddressline2());
+        prefs.setString(Bean.DATEOF_BIRTH,loginResponseModel.getUserInfo().getDob());
         Intent i=new Intent(getApplicationContext(), FourthSignupActivity.class);
         startActivity(i);
     }

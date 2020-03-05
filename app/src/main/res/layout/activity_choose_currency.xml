@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/linearLayoutToolBar"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/imageViewBack"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:src="@drawable/ic_arrow_back"
+            />
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/blue_color"
+            android:text="@string/choose_currency"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:padding="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_gbp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/ic_gbp_circle_flag"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+                   <com.mazlow.customclasses.MediumTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="GBP"
+                       android:textSize="@dimen/_12sdp"
+                       android:textColor="@color/textcolor"/>
+                   <com.mazlow.customclasses.LightTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="UK Sterling"
+                       android:textSize="@dimen/_8sdp"
+                       android:textColor="@color/blue_color"/>
+               </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_eur"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/ic_eur_circle_flag"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+                   <com.mazlow.customclasses.MediumTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="EUR"
+                       android:textSize="@dimen/_12sdp"
+                       android:textColor="@color/textcolor"/>
+                   <com.mazlow.customclasses.LightTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Euro"
+                       android:textSize="@dimen/_8sdp"
+                       android:textColor="@color/blue_color"/>
+               </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_usd"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/ic_usd_circle_flag"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+                   <com.mazlow.customclasses.MediumTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="USD"
+                       android:textSize="@dimen/_12sdp"
+                       android:textColor="@color/textcolor"/>
+                   <com.mazlow.customclasses.LightTextView
+
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="US Dollor"
+                       android:textSize="@dimen/_8sdp"
+                       android:textColor="@color/blue_color"/>
+               </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

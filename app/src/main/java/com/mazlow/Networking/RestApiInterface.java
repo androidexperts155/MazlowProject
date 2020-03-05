@@ -12,11 +12,12 @@ import com.mazlow.search_address.model.AddressZipcodeResponse;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.signup.postalcode.model.PostalCodeResponse;
 import com.mazlow.ui.users.changephonenumber.model.ChangeNumberResponseModel;
-import com.mazlow.ui.users.dashboard.set_goals.model.GoalResponseModel;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -29,10 +30,8 @@ import retrofit2.http.Query;
 import static com.mazlow.Networking.Constants.Signup;
 import static com.mazlow.Networking.Constants.checkotp;
 import static com.mazlow.Networking.Constants.chengenumber;
-import static com.mazlow.Networking.Constants.get_goals;
 import static com.mazlow.Networking.Constants.get_subcrption;
 import static com.mazlow.Networking.Constants.getprofile;
-import static com.mazlow.Networking.Constants.goal_list;
 import static com.mazlow.Networking.Constants.login;
 import static com.mazlow.Networking.Constants.onfido;
 import static com.mazlow.Networking.Constants.onfido_check;
@@ -157,8 +156,5 @@ public interface RestApiInterface {
     @FormUrlEncoded
     @POST(get_subcrption)
     Call<SubcriptionResponsemodel> getSubcription(@Header("Authorization") String token);
-
-    @GET(goal_list)
-    Call<GoalResponseModel> getGoals(@Header("Authorization") String token);
 }
 
