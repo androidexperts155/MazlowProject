@@ -110,6 +110,12 @@ NO I do not consent to processing of my Steps data.
     <string name="menu_payment">Payments</string>
     <string name="menu_wellbeing">Wellbeing</string>
     <string name="spent_today">Spent today</string>
+    <string name="What_do_you_need_to_do_today">What do you need to do today?</string>
+    <string name="card_not_activated">Your card is not activated</string>
+    <string name="activate_now">Activate now</string>
+    <string name="budget">Budgets</string>
+    <string name="your_next_challenges">Your next challenges</string>
+    <string name="coming_soon">Coming Soon</string>
 
 
     <integer-array name="cards_list">

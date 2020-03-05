@@ -1,0 +1,276 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/ic_dashboard_bg"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mazlow.ui.users.dashboard.fragments.HomeFragment">
+    <RelativeLayout
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.mazlow.customclasses.LightTextView
+                android:gravity="center"
+                android:text="Total Balance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_total_balance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp">
+
+            </androidx.viewpager.widget.ViewPager>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                app:tabBackground="@drawable/tab_selector"
+
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp">
+
+                <ImageView
+                    android:id="@+id/img_gif"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.mazlow.customclasses.MediumTextView
+
+                        android:gravity="center"
+                        android:text="$10.00"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.mazlow.customclasses.MediumTextView
+                        android:gravity="center"
+                        android:text="@string/spent_today"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:background="@drawable/circle_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    android:progress="100" />
+            </RelativeLayout>
+
+
+            <com.mazlow.customclasses.MediumTextView
+
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:background="@drawable/round_shape_whitecorner"
+
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/white"
+                android:text="Top up"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_25sdp"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.mazlow.customclasses.MediumTextView
+                    android:gravity="left"
+                    android:text="@string/What_do_you_need_to_do_today"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_activecard"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <com.mazlow.customclasses.MediumTextView
+                                android:gravity="center"
+                                android:text="@string/card_not_activated"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_10sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_20sdp"
+                                android:text="@string/activate_now"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_10sdp"
+                                android:background="@drawable/all_side_round_blue_background" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <View
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="0dp"/>
+                    <androidx.cardview.widget.CardView
+                        android:visibility="invisible"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="0dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <com.mazlow.customclasses.MediumTextView
+                                android:gravity="left"
+                                android:text="@string/budget"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/_12sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <com.mazlow.customclasses.MediumTextView
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_25sdp"
+                                android:text="@string/activate_now"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="@dimen/_12sdp"
+                                android:background="@drawable/all_side_round_blue_background"
+
+                                />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+              <LinearLayout
+                  android:layout_marginStart="@dimen/_20sdp"
+                  android:layout_marginEnd="@dimen/_20sdp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+                  <com.mazlow.customclasses.MediumTextView
+                      android:gravity="left"
+                      android:text="@string/your_next_challenges"
+                      android:textColor="@color/white"
+                      android:textSize="@dimen/_12sdp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+                  <com.mazlow.customclasses.MediumTextView
+
+                      android:layout_marginStart="@dimen/_5sdp"
+                      android:gravity="center"
+                      android:background="@drawable/circlue_bt_white"
+                      android:text="1"
+                      android:textColor="@color/black_color"
+                      android:textSize="@dimen/_10sdp"
+                      android:layout_width="@dimen/_15sdp"
+                      android:layout_height="@dimen/_15sdp"/>
+              </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/rv_next_challenges"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

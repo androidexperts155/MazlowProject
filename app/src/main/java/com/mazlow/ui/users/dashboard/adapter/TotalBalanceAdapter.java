@@ -39,7 +39,7 @@ public class TotalBalanceAdapter extends PagerAdapter {
         View itemView = layoutInflater.inflate(R.layout.item_total_balance, container, false);
 
        TextView textView= itemView.findViewById(R.id.txt_title);
-       textView.setText("$ 45.56");
+       textView.setText("$45.56");
 
         container.addView(itemView);
         return itemView;
