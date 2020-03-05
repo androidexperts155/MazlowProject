@@ -47,6 +47,9 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
         webSettings.setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+
 
         dialog.show();
 

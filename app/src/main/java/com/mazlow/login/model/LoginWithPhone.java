@@ -199,7 +199,8 @@ public class LoginWithPhone extends AppCompatActivity implements View.OnClickLis
             if (oneEditText.getText().toString().endsWith("-")) {
                 String tmp = oneEditText.getText().delete(phonenumber.length() - 2, Integer.parseInt(phonenumber)).toString();
                 oneEditText.setText(tmp);
-            } else {
+            }
+            else {
                 oneEditText.getText().delete(oneEditText.length() - 1, phonenumber.length());
             }
         }

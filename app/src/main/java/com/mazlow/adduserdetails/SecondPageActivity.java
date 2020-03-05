@@ -1,9 +1,5 @@
 package com.mazlow.adduserdetails;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,10 +21,12 @@ import com.mazlow.customclasses.BaseActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
-import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.signup.postalcode.PostalCodeImplementation;
 import com.mazlow.signup.postalcode.model.PostalCodeResponse;
+import com.mazlow.signup.postalcode.model.Thoroughfare;
 import com.mazlow.signup.postalcode.postalcodeView;
+
+import java.util.List;
 
 
 public class SecondPageActivity extends BaseActivity implements View.OnClickListener ,AddDetailsView, postalcodeView {
@@ -46,6 +44,8 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
     CountryCodePicker ccp;
     ImageView img_back;
     PostalCodeImplementation postalCodeImplementation;
+//    private Spinner spinnerOfferType;
+//    List<Thoroughfare> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +141,8 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
         et_city = findViewById(R.id.et_city);
         ccp= findViewById(R.id.listcountry);
         img_back= findViewById(R.id.img_back);
+//        spinnerOfferType =  findViewById(R.id.spinnerOfferType);
+
     }
 
     private void callFragment() {
@@ -189,7 +191,6 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
         String address2 = et_address2.getText().toString();
         String city = et_city.getText().toString();
         updateDetailPresenterImple.doUpdate(accesstoken,firstname,lastname,datebirth,email,"USA",postalcode,address1,address2,city,refreshedToken,Bean.DEVICETYPE);
-
     }
 
     @Override
@@ -221,6 +222,12 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
 
         et_city.setText(postalCodeResponse.getTown());
         et_streetand_number.setText(postalCodeResponse.getThoroughfares().get(0).getDeliveryPoints().get(0).getBuildingNumber()+" "+postalCodeResponse.getThoroughfares().get(0).getThoroughfareName()+ ""+postalCodeResponse.getThoroughfares().get(0).getThoroughfareDescriptor());
+
+//        list= postalCodeResponse.getThoroughfares();
+//        PostalCodeAdapter adapter = new PostalCodeAdapter(this, R.layout.postaladapter_view, list);
+//        spinnerOfferType.setAdapter(adapter);
+
+
     }
 
     @Override

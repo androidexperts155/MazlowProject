@@ -170,6 +170,8 @@
                     android:layout_marginLeft="@dimen/margin15"
                     android:layout_marginRight="@dimen/margin15"
                     android:layout_height="wrap_content">
+
+
                     <com.mazlow.customclasses.MediumEdittext
                         android:textColor="@color/textcolor"
                         android:textSize="@dimen/NormalTextSize"
