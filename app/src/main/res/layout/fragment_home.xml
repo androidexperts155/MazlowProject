@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <com.mazlow.customclasses.LightTextView
+                android:id="@+id/txt_total_balance_title"
                 android:gravity="center"
                 android:text="Total Balance"
                 android:textColor="@color/white"
@@ -55,6 +56,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/rr_spent"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp">
@@ -70,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <com.mazlow.customclasses.MediumTextView
-
+                        android:id="@+id/txt_today_spent"
                         android:gravity="center"
                         android:text="$10.00"
                         android:textColor="@color/white"
@@ -101,14 +103,14 @@
 
 
             <com.mazlow.customclasses.MediumTextView
-
+                android:id="@+id/txt_topup"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:gravity="center"
                 android:background="@drawable/round_shape_whitecorner"
 
                 android:textSize="@dimen/_15sdp"
                 android:textColor="@color/white"
-                android:text="Top up"
+                android:text="@string/top_up"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_25sdp"/>
 
@@ -222,7 +224,62 @@
 
             </LinearLayout>
 
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                android:layout_weight="1">
+                <LinearLayout
+
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <com.mazlow.customclasses.MediumTextView
+                        android:gravity="center"
+                        android:text="@string/start_your_gole"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.mazlow.customclasses.LightTextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/start_gole_msg"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/_8sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <com.mazlow.customclasses.MediumTextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:text="@string/start"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:background="@drawable/all_side_round_blue_background"
+
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
             <LinearLayout
+                tools:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

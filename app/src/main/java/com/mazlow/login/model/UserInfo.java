@@ -2,580 +2,637 @@
 package com.mazlow.login.model;
 
 import java.util.List;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings("unused")
 public class UserInfo {
 
-    @SerializedName("accountNumber")
-    private String mAccountNumber;
-    @SerializedName("address")
-    private String mAddress;
-    @SerializedName("addressline2")
-    private String mAddressline2;
-    @SerializedName("bic")
-    private String mBic;
-    @SerializedName("budgetNotiication")
-    private Boolean mBudgetNotiication;
-    @SerializedName("cardHolderId")
-    private String mCardHolderId;
-    @SerializedName("cardNumber")
-    private String mCardNumber;
-    @SerializedName("cardStatus")
-    private String mCardStatus;
-    @SerializedName("city")
-    private String mCity;
-    @SerializedName("country")
-    private String mCountry;
-    @SerializedName("countryCode")
-    private String mCountryCode;
-    @SerializedName("countryCode1")
-    private String mCountryCode1;
-    @SerializedName("createdAt")
-    private String mCreatedAt;
-    @SerializedName("currencyCode")
-    private String mCurrencyCode;
-    @SerializedName("cvv")
-    private String mCvv;
-    @SerializedName("deviceToken")
-    private String mDeviceToken;
-    @SerializedName("deviceType")
-    private String mDeviceType;
-    @SerializedName("dob")
-    private String mDob;
-    @SerializedName("EUR_balance")
-    private Long mEURBalance;
-    @SerializedName("EUR_wallet")
-    private Boolean mEURWallet;
-    @SerializedName("email")
-    private String mEmail;
-    @SerializedName("emailVerification")
-    private Boolean mEmailVerification;
-    @SerializedName("enableAccount")
-    private Boolean mEnableAccount;
-    @SerializedName("firstName")
-    private String mFirstName;
-    @SerializedName("GBP_balance")
-    private Long mGBPBalance;
-    @SerializedName("GBP_wallet")
-    private Boolean mGBPWallet;
-    @SerializedName("iban")
-    private String mIban;
-    @SerializedName("kycVerification")
-    private String mKycVerification;
-    @SerializedName("lastName")
-    private String mLastName;
     @SerializedName("onfido")
-    private Onfido mOnfido;
-    @SerializedName("otpCode")
-    private Long mOtpCode;
-    @SerializedName("passCode")
-    private String mPassCode;
-    @SerializedName("pfsToken")
-    private List<Object> mPfsToken;
+    @Expose
+    private Onfido onfido;
     @SerializedName("phoneNumber")
-    private String mPhoneNumber;
-    @SerializedName("phoneVerification")
-    private Boolean mPhoneVerification;
-    @SerializedName("points")
-    private Long mPoints;
+    @Expose
+    private String phoneNumber;
+    @SerializedName("countryCode")
+    @Expose
+    private String countryCode;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("passCode")
+    @Expose
+    private String passCode;
+    @SerializedName("firstName")
+    @Expose
+    private String firstName;
+    @SerializedName("lastName")
+    @Expose
+    private String lastName;
+    @SerializedName("dob")
+    @Expose
+    private String dob;
+    @SerializedName("city")
+    @Expose
+    private String city;
+    @SerializedName("country")
+    @Expose
+    private String country;
+    @SerializedName("countryCode1")
+    @Expose
+    private String countryCode1;
     @SerializedName("postalCode")
-    private String mPostalCode;
-    @SerializedName("potData")
-    private List<Object> mPotData;
-    @SerializedName("profileImage")
-    private String mProfileImage;
-    @SerializedName("resetPassCodeExpires")
-    private Object mResetPassCodeExpires;
-    @SerializedName("resetPassCodeToken")
-    private String mResetPassCodeToken;
-    @SerializedName("role")
-    private Long mRole;
-    @SerializedName("sortCode")
-    private String mSortCode;
-    @SerializedName("startCardDate")
-    private String mStartCardDate;
-    @SerializedName("status")
-    private Boolean mStatus;
+    @Expose
+    private String postalCode;
+    @SerializedName("address")
+    @Expose
+    private String address;
+    @SerializedName("addressline2")
+    @Expose
+    private String addressline2;
     @SerializedName("street")
-    private String mStreet;
-    @SerializedName("subscriptionExp")
-    private Boolean mSubscriptionExp;
-    @SerializedName("subscriptionExpDate")
-    private String mSubscriptionExpDate;
-    @SerializedName("subscriptionId")
-    private String mSubscriptionId;
-    @SerializedName("subscriptionPendingBalance")
-    private String mSubscriptionPendingBalance;
-    @SerializedName("subscriptionPlan")
-    private String mSubscriptionPlan;
+    @Expose
+    private String street;
+    @SerializedName("status")
+    @Expose
+    private Boolean status;
+    @SerializedName("enableAccount")
+    @Expose
+    private Boolean enableAccount;
+    @SerializedName("role")
+    @Expose
+    private Integer role;
+    @SerializedName("resetPassCodeToken")
+    @Expose
+    private String resetPassCodeToken;
+    @SerializedName("resetPassCodeExpires")
+    @Expose
+    private Object resetPassCodeExpires;
+    @SerializedName("deviceToken")
+    @Expose
+    private String deviceToken;
+    @SerializedName("deviceType")
+    @Expose
+    private String deviceType;
+    @SerializedName("otpCode")
+    @Expose
+    private Integer otpCode;
+    @SerializedName("phoneVerification")
+    @Expose
+    private Boolean phoneVerification;
+    @SerializedName("emailVerification")
+    @Expose
+    private Boolean emailVerification;
+    @SerializedName("profileImage")
+    @Expose
+    private String profileImage;
     @SerializedName("taxResident")
-    private String mTaxResident;
+    @Expose
+    private String taxResident;
+    @SerializedName("cardHolderId")
+    @Expose
+    private String cardHolderId;
+    @SerializedName("currencyCode")
+    @Expose
+    private String currencyCode;
+    @SerializedName("cardStatus")
+    @Expose
+    private String cardStatus;
+    @SerializedName("GBP_balance")
+    @Expose
+    private Integer gBPBalance;
     @SerializedName("USD_balance")
-    private Long mUSDBalance;
+    @Expose
+    private Integer uSDBalance;
+    @SerializedName("EUR_balance")
+    @Expose
+    private Integer eURBalance;
+    @SerializedName("GBP_wallet")
+    @Expose
+    private Boolean gBPWallet;
     @SerializedName("USD_wallet")
-    private Boolean mUSDWallet;
-    @SerializedName("updatedAt")
-    private String mUpdatedAt;
-    @SerializedName("__v")
-    private Long m_V;
+    @Expose
+    private Boolean uSDWallet;
+    @SerializedName("EUR_wallet")
+    @Expose
+    private Boolean eURWallet;
+    @SerializedName("kycVerification")
+    @Expose
+    private String kycVerification;
+    @SerializedName("startCardDate")
+    @Expose
+    private String startCardDate;
+    @SerializedName("subscriptionExp")
+    @Expose
+    private Boolean subscriptionExp;
+    @SerializedName("subscriptionPlan")
+    @Expose
+    private String subscriptionPlan;
+    @SerializedName("subscriptionId")
+    @Expose
+    private String subscriptionId;
+    @SerializedName("subscriptionExpDate")
+    @Expose
+    private String subscriptionExpDate;
+    @SerializedName("subscriptionPendingBalance")
+    @Expose
+    private String subscriptionPendingBalance;
+    @SerializedName("points")
+    @Expose
+    private Integer points;
+    @SerializedName("budgetNotiication")
+    @Expose
+    private Boolean budgetNotiication;
+    @SerializedName("cardNumber")
+    @Expose
+    private String cardNumber;
+    @SerializedName("accountNumber")
+    @Expose
+    private String accountNumber;
+    @SerializedName("sortCode")
+    @Expose
+    private String sortCode;
+    @SerializedName("bic")
+    @Expose
+    private String bic;
+    @SerializedName("iban")
+    @Expose
+    private String iban;
+    @SerializedName("cvv")
+    @Expose
+    private String cvv;
     @SerializedName("_id")
-    private String m_id;
-
-    public String getAccountNumber() {
-        return mAccountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        mAccountNumber = accountNumber;
-    }
-
-    public String getAddress() {
-        return mAddress;
-    }
-
-    public void setAddress(String address) {
-        mAddress = address;
-    }
-
-    public String getAddressline2() {
-        return mAddressline2;
-    }
-
-    public void setAddressline2(String addressline2) {
-        mAddressline2 = addressline2;
-    }
-
-    public String getBic() {
-        return mBic;
-    }
-
-    public void setBic(String bic) {
-        mBic = bic;
-    }
-
-    public Boolean getBudgetNotiication() {
-        return mBudgetNotiication;
-    }
-
-    public void setBudgetNotiication(Boolean budgetNotiication) {
-        mBudgetNotiication = budgetNotiication;
-    }
-
-    public String getCardHolderId() {
-        return mCardHolderId;
-    }
-
-    public void setCardHolderId(String cardHolderId) {
-        mCardHolderId = cardHolderId;
-    }
-
-    public String getCardNumber() {
-        return mCardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        mCardNumber = cardNumber;
-    }
-
-    public String getCardStatus() {
-        return mCardStatus;
-    }
-
-    public void setCardStatus(String cardStatus) {
-        mCardStatus = cardStatus;
-    }
-
-    public String getCity() {
-        return mCity;
-    }
-
-    public void setCity(String city) {
-        mCity = city;
-    }
-
-    public String getCountry() {
-        return mCountry;
-    }
-
-    public void setCountry(String country) {
-        mCountry = country;
-    }
-
-    public String getCountryCode() {
-        return mCountryCode;
-    }
-
-    public void setCountryCode(String countryCode) {
-        mCountryCode = countryCode;
-    }
-
-    public String getCountryCode1() {
-        return mCountryCode1;
-    }
-
-    public void setCountryCode1(String countryCode1) {
-        mCountryCode1 = countryCode1;
-    }
-
-    public String getCreatedAt() {
-        return mCreatedAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        mCreatedAt = createdAt;
-    }
-
-    public String getCurrencyCode() {
-        return mCurrencyCode;
-    }
-
-    public void setCurrencyCode(String currencyCode) {
-        mCurrencyCode = currencyCode;
-    }
-
-    public String getCvv() {
-        return mCvv;
-    }
-
-    public void setCvv(String cvv) {
-        mCvv = cvv;
-    }
-
-    public String getDeviceToken() {
-        return mDeviceToken;
-    }
-
-    public void setDeviceToken(String deviceToken) {
-        mDeviceToken = deviceToken;
-    }
-
-    public String getDeviceType() {
-        return mDeviceType;
-    }
-
-    public void setDeviceType(String deviceType) {
-        mDeviceType = deviceType;
-    }
-
-    public String getDob() {
-        return mDob;
-    }
-
-    public void setDob(String dob) {
-        mDob = dob;
-    }
-
-    public Long getEURBalance() {
-        return mEURBalance;
-    }
-
-    public void setEURBalance(Long eURBalance) {
-        mEURBalance = eURBalance;
-    }
-
-    public Boolean getEURWallet() {
-        return mEURWallet;
-    }
-
-    public void setEURWallet(Boolean eURWallet) {
-        mEURWallet = eURWallet;
-    }
-
-    public String getEmail() {
-        return mEmail;
-    }
-
-    public void setEmail(String email) {
-        mEmail = email;
-    }
-
-    public Boolean getEmailVerification() {
-        return mEmailVerification;
-    }
-
-    public void setEmailVerification(Boolean emailVerification) {
-        mEmailVerification = emailVerification;
-    }
-
-    public Boolean getEnableAccount() {
-        return mEnableAccount;
-    }
-
-    public void setEnableAccount(Boolean enableAccount) {
-        mEnableAccount = enableAccount;
-    }
-
-    public String getFirstName() {
-        return mFirstName;
-    }
-
-    public void setFirstName(String firstName) {
-        mFirstName = firstName;
-    }
-
-    public Long getGBPBalance() {
-        return mGBPBalance;
-    }
-
-    public void setGBPBalance(Long gBPBalance) {
-        mGBPBalance = gBPBalance;
-    }
-
-    public Boolean getGBPWallet() {
-        return mGBPWallet;
-    }
-
-    public void setGBPWallet(Boolean gBPWallet) {
-        mGBPWallet = gBPWallet;
-    }
-
-    public String getIban() {
-        return mIban;
-    }
-
-    public void setIban(String iban) {
-        mIban = iban;
-    }
-
-    public String getKycVerification() {
-        return mKycVerification;
-    }
-
-    public void setKycVerification(String kycVerification) {
-        mKycVerification = kycVerification;
-    }
-
-    public String getLastName() {
-        return mLastName;
-    }
-
-    public void setLastName(String lastName) {
-        mLastName = lastName;
-    }
+    @Expose
+    private String id;
+    @SerializedName("pfsToken")
+    @Expose
+    private List<PfsToken> pfsToken = null;
+    @SerializedName("potData")
+    @Expose
+    private List<Object> potData = null;
+    @SerializedName("createdAt")
+    @Expose
+    private String createdAt;
+    @SerializedName("updatedAt")
+    @Expose
+    private String updatedAt;
+    @SerializedName("__v")
+    @Expose
+    private Integer v;
 
     public Onfido getOnfido() {
-        return mOnfido;
+        return onfido;
     }
 
     public void setOnfido(Onfido onfido) {
-        mOnfido = onfido;
-    }
-
-    public Long getOtpCode() {
-        return mOtpCode;
-    }
-
-    public void setOtpCode(Long otpCode) {
-        mOtpCode = otpCode;
-    }
-
-    public String getPassCode() {
-        return mPassCode;
-    }
-
-    public void setPassCode(String passCode) {
-        mPassCode = passCode;
-    }
-
-    public List<Object> getPfsToken() {
-        return mPfsToken;
-    }
-
-    public void setPfsToken(List<Object> pfsToken) {
-        mPfsToken = pfsToken;
+        this.onfido = onfido;
     }
 
     public String getPhoneNumber() {
-        return mPhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        mPhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
-    public Boolean getPhoneVerification() {
-        return mPhoneVerification;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setPhoneVerification(Boolean phoneVerification) {
-        mPhoneVerification = phoneVerification;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
-    public Long getPoints() {
-        return mPoints;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPoints(Long points) {
-        mPoints = points;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassCode() {
+        return passCode;
+    }
+
+    public void setPassCode(String passCode) {
+        this.passCode = passCode;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCountryCode1() {
+        return countryCode1;
+    }
+
+    public void setCountryCode1(String countryCode1) {
+        this.countryCode1 = countryCode1;
     }
 
     public String getPostalCode() {
-        return mPostalCode;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        mPostalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
-    public List<Object> getPotData() {
-        return mPotData;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPotData(List<Object> potData) {
-        mPotData = potData;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getProfileImage() {
-        return mProfileImage;
+    public String getAddressline2() {
+        return addressline2;
     }
 
-    public void setProfileImage(String profileImage) {
-        mProfileImage = profileImage;
-    }
-
-    public Object getResetPassCodeExpires() {
-        return mResetPassCodeExpires;
-    }
-
-    public void setResetPassCodeExpires(Object resetPassCodeExpires) {
-        mResetPassCodeExpires = resetPassCodeExpires;
-    }
-
-    public String getResetPassCodeToken() {
-        return mResetPassCodeToken;
-    }
-
-    public void setResetPassCodeToken(String resetPassCodeToken) {
-        mResetPassCodeToken = resetPassCodeToken;
-    }
-
-    public Long getRole() {
-        return mRole;
-    }
-
-    public void setRole(Long role) {
-        mRole = role;
-    }
-
-    public String getSortCode() {
-        return mSortCode;
-    }
-
-    public void setSortCode(String sortCode) {
-        mSortCode = sortCode;
-    }
-
-    public String getStartCardDate() {
-        return mStartCardDate;
-    }
-
-    public void setStartCardDate(String startCardDate) {
-        mStartCardDate = startCardDate;
-    }
-
-    public Boolean getStatus() {
-        return mStatus;
-    }
-
-    public void setStatus(Boolean status) {
-        mStatus = status;
+    public void setAddressline2(String addressline2) {
+        this.addressline2 = addressline2;
     }
 
     public String getStreet() {
-        return mStreet;
+        return street;
     }
 
     public void setStreet(String street) {
-        mStreet = street;
+        this.street = street;
     }
 
-    public Boolean getSubscriptionExp() {
-        return mSubscriptionExp;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setSubscriptionExp(Boolean subscriptionExp) {
-        mSubscriptionExp = subscriptionExp;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
-    public String getSubscriptionExpDate() {
-        return mSubscriptionExpDate;
+    public Boolean getEnableAccount() {
+        return enableAccount;
     }
 
-    public void setSubscriptionExpDate(String subscriptionExpDate) {
-        mSubscriptionExpDate = subscriptionExpDate;
+    public void setEnableAccount(Boolean enableAccount) {
+        this.enableAccount = enableAccount;
     }
 
-    public String getSubscriptionId() {
-        return mSubscriptionId;
+    public Integer getRole() {
+        return role;
     }
 
-    public void setSubscriptionId(String subscriptionId) {
-        mSubscriptionId = subscriptionId;
+    public void setRole(Integer role) {
+        this.role = role;
     }
 
-    public String getSubscriptionPendingBalance() {
-        return mSubscriptionPendingBalance;
+    public String getResetPassCodeToken() {
+        return resetPassCodeToken;
     }
 
-    public void setSubscriptionPendingBalance(String subscriptionPendingBalance) {
-        mSubscriptionPendingBalance = subscriptionPendingBalance;
+    public void setResetPassCodeToken(String resetPassCodeToken) {
+        this.resetPassCodeToken = resetPassCodeToken;
     }
 
-    public String getSubscriptionPlan() {
-        return mSubscriptionPlan;
+    public Object getResetPassCodeExpires() {
+        return resetPassCodeExpires;
     }
 
-    public void setSubscriptionPlan(String subscriptionPlan) {
-        mSubscriptionPlan = subscriptionPlan;
+    public void setResetPassCodeExpires(Object resetPassCodeExpires) {
+        this.resetPassCodeExpires = resetPassCodeExpires;
+    }
+
+    public String getDeviceToken() {
+        return deviceToken;
+    }
+
+    public void setDeviceToken(String deviceToken) {
+        this.deviceToken = deviceToken;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
+
+    public Integer getOtpCode() {
+        return otpCode;
+    }
+
+    public void setOtpCode(Integer otpCode) {
+        this.otpCode = otpCode;
+    }
+
+    public Boolean getPhoneVerification() {
+        return phoneVerification;
+    }
+
+    public void setPhoneVerification(Boolean phoneVerification) {
+        this.phoneVerification = phoneVerification;
+    }
+
+    public Boolean getEmailVerification() {
+        return emailVerification;
+    }
+
+    public void setEmailVerification(Boolean emailVerification) {
+        this.emailVerification = emailVerification;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 
     public String getTaxResident() {
-        return mTaxResident;
+        return taxResident;
     }
 
     public void setTaxResident(String taxResident) {
-        mTaxResident = taxResident;
+        this.taxResident = taxResident;
     }
 
-    public Long getUSDBalance() {
-        return mUSDBalance;
+    public String getCardHolderId() {
+        return cardHolderId;
     }
 
-    public void setUSDBalance(Long uSDBalance) {
-        mUSDBalance = uSDBalance;
+    public void setCardHolderId(String cardHolderId) {
+        this.cardHolderId = cardHolderId;
+    }
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    public String getCardStatus() {
+        return cardStatus;
+    }
+
+    public void setCardStatus(String cardStatus) {
+        this.cardStatus = cardStatus;
+    }
+
+    public Integer getGBPBalance() {
+        return gBPBalance;
+    }
+
+    public void setGBPBalance(Integer gBPBalance) {
+        this.gBPBalance = gBPBalance;
+    }
+
+    public Integer getUSDBalance() {
+        return uSDBalance;
+    }
+
+    public void setUSDBalance(Integer uSDBalance) {
+        this.uSDBalance = uSDBalance;
+    }
+
+    public Integer getEURBalance() {
+        return eURBalance;
+    }
+
+    public void setEURBalance(Integer eURBalance) {
+        this.eURBalance = eURBalance;
+    }
+
+    public Boolean getGBPWallet() {
+        return gBPWallet;
+    }
+
+    public void setGBPWallet(Boolean gBPWallet) {
+        this.gBPWallet = gBPWallet;
     }
 
     public Boolean getUSDWallet() {
-        return mUSDWallet;
+        return uSDWallet;
     }
 
     public void setUSDWallet(Boolean uSDWallet) {
-        mUSDWallet = uSDWallet;
+        this.uSDWallet = uSDWallet;
+    }
+
+    public Boolean getEURWallet() {
+        return eURWallet;
+    }
+
+    public void setEURWallet(Boolean eURWallet) {
+        this.eURWallet = eURWallet;
+    }
+
+    public String getKycVerification() {
+        return kycVerification;
+    }
+
+    public void setKycVerification(String kycVerification) {
+        this.kycVerification = kycVerification;
+    }
+
+    public String getStartCardDate() {
+        return startCardDate;
+    }
+
+    public void setStartCardDate(String startCardDate) {
+        this.startCardDate = startCardDate;
+    }
+
+    public Boolean getSubscriptionExp() {
+        return subscriptionExp;
+    }
+
+    public void setSubscriptionExp(Boolean subscriptionExp) {
+        this.subscriptionExp = subscriptionExp;
+    }
+
+    public String getSubscriptionPlan() {
+        return subscriptionPlan;
+    }
+
+    public void setSubscriptionPlan(String subscriptionPlan) {
+        this.subscriptionPlan = subscriptionPlan;
+    }
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
+    public String getSubscriptionExpDate() {
+        return subscriptionExpDate;
+    }
+
+    public void setSubscriptionExpDate(String subscriptionExpDate) {
+        this.subscriptionExpDate = subscriptionExpDate;
+    }
+
+    public String getSubscriptionPendingBalance() {
+        return subscriptionPendingBalance;
+    }
+
+    public void setSubscriptionPendingBalance(String subscriptionPendingBalance) {
+        this.subscriptionPendingBalance = subscriptionPendingBalance;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+    public Boolean getBudgetNotiication() {
+        return budgetNotiication;
+    }
+
+    public void setBudgetNotiication(Boolean budgetNotiication) {
+        this.budgetNotiication = budgetNotiication;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getSortCode() {
+        return sortCode;
+    }
+
+    public void setSortCode(String sortCode) {
+        this.sortCode = sortCode;
+    }
+
+    public String getBic() {
+        return bic;
+    }
+
+    public void setBic(String bic) {
+        this.bic = bic;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    public String getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public List<PfsToken> getPfsToken() {
+        return pfsToken;
+    }
+
+    public void setPfsToken(List<PfsToken> pfsToken) {
+        this.pfsToken = pfsToken;
+    }
+
+    public List<Object> getPotData() {
+        return potData;
+    }
+
+    public void setPotData(List<Object> potData) {
+        this.potData = potData;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
-        return mUpdatedAt;
+        return updatedAt;
     }
 
     public void setUpdatedAt(String updatedAt) {
-        mUpdatedAt = updatedAt;
+        this.updatedAt = updatedAt;
     }
 
-    public Long get_V() {
-        return m_V;
+    public Integer getV() {
+        return v;
     }
 
-    public void set_V(Long _V) {
-        m_V = _V;
-    }
-
-    public String get_id() {
-        return m_id;
-    }
-
-    public void set_id(String _id) {
-        m_id = _id;
+    public void setV(Integer v) {
+        this.v = v;
     }
 
 }

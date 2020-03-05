@@ -1,50 +1,114 @@
 
 package com.mazlow.login.model;
 
+import java.util.List;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
 
 public class LoginResponseModel {
 
-    @SerializedName("message")
-    private String mMessage;
     @SerializedName("success")
-    private Boolean mSuccess;
+    @Expose
+    private Boolean success;
+
+
+    @SerializedName("message")
+    @Expose
+    private String message;
+
     @SerializedName("token")
-    private String mToken;
-    @SerializedName("userInfo")
-    private UserInfo mUserInfo;
-
-    public String getMessage() {
-        return mMessage;
-    }
-
-    public void setMessage(String message) {
-        mMessage = message;
-    }
-
-    public Boolean getSuccess() {
-        return mSuccess;
-    }
-
-    public void setSuccess(Boolean success) {
-        mSuccess = success;
-    }
+    @Expose
+    private String token;
 
     public String getToken() {
-        return mToken;
+        return token;
     }
 
     public void setToken(String token) {
-        mToken = token;
+        this.token = token;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @SerializedName("userInfo")
+    @Expose
+    private UserInfo userInfo;
+    @SerializedName("todaySpend")
+    @Expose
+    private TodaySpend todaySpend;
+    @SerializedName("savingPotInfo")
+    @Expose
+    private Object savingPotInfo;
+    @SerializedName("isGoalSet")
+    @Expose
+    private Boolean isGoalSet;
+    @SerializedName("dayChallenges")
+    @Expose
+    private List<DayChallenge> dayChallenges = null;
+    @SerializedName("userchal")
+    @Expose
+    private Userchal userchal;
+
+    public Boolean getSuccess() {
+        return success;
+    }
+
+    public void setSuccess(Boolean success) {
+        this.success = success;
     }
 
     public UserInfo getUserInfo() {
-        return mUserInfo;
+        return userInfo;
     }
 
     public void setUserInfo(UserInfo userInfo) {
-        mUserInfo = userInfo;
+        this.userInfo = userInfo;
+    }
+
+    public TodaySpend getTodaySpend() {
+        return todaySpend;
+    }
+
+    public void setTodaySpend(TodaySpend todaySpend) {
+        this.todaySpend = todaySpend;
+    }
+
+    public Object getSavingPotInfo() {
+        return savingPotInfo;
+    }
+
+    public void setSavingPotInfo(Object savingPotInfo) {
+        this.savingPotInfo = savingPotInfo;
+    }
+
+    public Boolean getIsGoalSet() {
+        return isGoalSet;
+    }
+
+    public void setIsGoalSet(Boolean isGoalSet) {
+        this.isGoalSet = isGoalSet;
+    }
+
+    public List<DayChallenge> getDayChallenges() {
+        return dayChallenges;
+    }
+
+    public void setDayChallenges(List<DayChallenge> dayChallenges) {
+        this.dayChallenges = dayChallenges;
+    }
+
+    public Userchal getUserchal() {
+        return userchal;
+    }
+
+    public void setUserchal(Userchal userchal) {
+        this.userchal = userchal;
     }
 
 }

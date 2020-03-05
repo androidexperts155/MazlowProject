@@ -1,30 +1,32 @@
 
 package com.mazlow.login.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@SuppressWarnings("unused")
 public class Onfido {
 
     @SerializedName("applicantId")
-    private String mApplicantId;
+    @Expose
+    private String applicantId;
     @SerializedName("checkId")
-    private String mCheckId;
+    @Expose
+    private String checkId;
 
     public String getApplicantId() {
-        return mApplicantId;
+        return applicantId;
     }
 
     public void setApplicantId(String applicantId) {
-        mApplicantId = applicantId;
+        this.applicantId = applicantId;
     }
 
     public String getCheckId() {
-        return mCheckId;
+        return checkId;
     }
 
     public void setCheckId(String checkId) {
-        mCheckId = checkId;
+        this.checkId = checkId;
     }
 
 }

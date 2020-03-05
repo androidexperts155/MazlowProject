@@ -74,19 +74,19 @@ public class LoginPresenterImple implements LoginPresenter {
                 public void onResponse(Call<LoginResponseModel> call, Response<LoginResponseModel> response) {
                     dialog.dismiss();
                     if (response.isSuccessful()) {
-                        LoginResponseModel LoginResponseModel=response.body();
+                        LoginResponseModel loginResponseModel=response.body();
                         if (response!=null&&response.body().getSuccess()==true) {
                             if (response.body().getMessage().equals("User logIn successfully")){
-                                loginView.onSuccess(LoginResponseModel);
+                                loginView.onSuccess(loginResponseModel);
                             }
                             else
                             {
-                                loginView.onError(LoginResponseModel.getMessage());
+                                loginView.onError(loginResponseModel.getMessage());
                             }
                         }
                         else
                         {
-                            loginView.onError(LoginResponseModel.getMessage());
+                            loginView.onError(loginResponseModel.getMessage());
                         }
                     }
                 }

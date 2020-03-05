@@ -11,19 +11,24 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.Mazlow.R;
+import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+
+import java.util.ArrayList;
 
 public class TotalBalanceAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
+    ArrayList<TotalBalanceModel> dataList;
 
-    public TotalBalanceAdapter(Context context) {
+    public TotalBalanceAdapter(Context context, ArrayList<TotalBalanceModel> balanceModelArrayList) {
         this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        dataList=balanceModelArrayList;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return dataList.size();
     }
 
     @Override
@@ -35,11 +40,22 @@ public class TotalBalanceAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-
+        TotalBalanceModel item = dataList.get(position);
         View itemView = layoutInflater.inflate(R.layout.item_total_balance, container, false);
 
        TextView textView= itemView.findViewById(R.id.txt_title);
-       textView.setText("$45.56");
+       String price= String.valueOf((item.balance/100))+"."+String.valueOf((item.balance%100));
+       textView.setText(item.currencySymbol+" "+price);
+
+        if(item.active){
+            textView.setAlpha(1);
+
+
+        }else {
+            textView.setAlpha(0.5f);
+
+        }
+
 
         container.addView(itemView);
         return itemView;
