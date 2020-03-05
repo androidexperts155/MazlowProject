@@ -129,7 +129,7 @@
                             app:ccp_showPhoneCode="false"
                             android:autofillHints="Country"
                             app:ccp_autoDetectCountry="true"
-
+                            android:focusedByDefault="true"
                             app:ccp_showNameCode="true" />
 
                     </LinearLayout>

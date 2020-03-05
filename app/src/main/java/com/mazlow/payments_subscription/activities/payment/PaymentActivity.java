@@ -1,7 +1,5 @@
 package com.mazlow.payments_subscription.activities.payment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +8,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.Mazlow.R;
 import com.mazlow.customclasses.BaseActivity;
-import com.mazlow.customclasses.KKViewPager;
 import com.mazlow.customclasses.M;
-import com.mazlow.payments_subscription.activities.ThanksForPatience;
+import com.mazlow.payments_subscription.activities.thanksfor_patience.ThanksForPatience;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

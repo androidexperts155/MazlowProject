@@ -24,22 +24,18 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:supportsRtl">
-
-
         <activity android:name="com.mazlow.onfido.verification_success.VerificationSuccessed"></activity>
         <activity android:name="com.mazlow.payments_subscription.activities.card_ontheway.CardOntheWayActivity" />
-        <activity android:name="com.mazlow.payments_subscription.activities.ThanksForPatience" />
+        <activity android:name="com.mazlow.payments_subscription.activities.thanksfor_patience.ThanksForPatience"/>
+
         <activity android:name="com.mazlow.payments_subscription.activities.payment.PaymentActivity" />
         <activity android:name="com.mazlow.payments_subscription.activities.billing_address.BillingAddress" />
         <activity android:name="com.mazlow.onfido.verification_failed.OndidoVerificationFailed" />
-        <activity
-            android:name="com.mazlow.onfido.verification_identity.ConductingVerificationActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.mazlow.skipandexplore.SkipExploreActivity"
-            android:screenOrientation="portrait" />
 
-        <activity android:name="com.mazlow.ui.users.dashboard.activity.DashboardActivity">
+
+        <activity android:name="com.mazlow.payments_subscription.activities.select_cards.SelectCards"/>
+
+        <activity android:name="com.mazlow.ui.users.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,6 +43,14 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.mazlow.onfido.verification_identity.ConductingVerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mazlow.skipandexplore.SkipExploreActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="com.mazlow.ui.users.dashboard.activity.DashboardActivity"/>
 
         <activity
             android:name="com.mazlow.ui.users.activities.CheckEmailActivity"
@@ -63,11 +67,6 @@
         <activity
             android:name="com.mazlow.onfido.activites.FourthSignupActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.mazlow.payments_subscription.activities.select_cards.SelectCards"/>
-
-        <activity android:name="com.mazlow.ui.users.activities.MainActivity">
-
-        </activity>
 
         <activity
             android:name="com.mazlow.adduserdetails.PrivacyPolicyActivity"

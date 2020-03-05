@@ -58,7 +58,6 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
             getDataFromintent();
         }
 
-
         setData();
     }
 
