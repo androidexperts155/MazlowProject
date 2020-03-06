@@ -108,7 +108,8 @@ public class SelectCards extends AppCompatActivity implements SelectCardView {
     }
 
     @OnClick(R.id.relativeLayoutMonthly)
-    void onRelativeLayoutMonthlyClick() {
+    void onRelativeLayoutMonthlyClick()
+    {
         isMonthlyActive = true;
         handleMonthlyYearlyClick();
 

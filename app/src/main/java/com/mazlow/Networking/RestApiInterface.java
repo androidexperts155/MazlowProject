@@ -13,7 +13,6 @@ import com.mazlow.search_address.model.AddressZipcodeResponse;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.signup.postalcode.model.PostalCodeResponse;
 import com.mazlow.ui.users.addmoney.models.MyCardModel;
-import com.mazlow.ui.users.addmoney.models.topupmodel.TopupWallet;
 import com.mazlow.ui.users.changephonenumber.model.ChangeNumberResponseModel;
 
 import org.json.JSONArray;
@@ -39,7 +38,6 @@ import static com.mazlow.Networking.Constants.getprofile;
 import static com.mazlow.Networking.Constants.login;
 import static com.mazlow.Networking.Constants.onfido;
 import static com.mazlow.Networking.Constants.onfido_check;
-import static com.mazlow.Networking.Constants.paybytoken;
 import static com.mazlow.Networking.Constants.postalcode;
 import static com.mazlow.Networking.Constants.registerandpay;
 import static com.mazlow.Networking.Constants.resenotp;
@@ -160,6 +158,11 @@ public interface RestApiInterface {
                                                 @Field("currencyCode") String currencyCode,
                                                 @Field("subscriptionId")  String subscriptionId);
 
+
+
+    @GET(goalList)
+    Call<GoalResponseModel> getGoals(@Header("Authorization")String token);
+
     @FormUrlEncoded
     @POST(get_subcrption)
     Call<SubcriptionResponsemodel> getSubcription(@Header("Authorization") String token);
@@ -170,7 +173,14 @@ public interface RestApiInterface {
     @GET(getCard)
     Call<MyCardModel> getCard(@Header("Authorization")String token);
 
+    @FormUrlEncoded
+    @POST(add_goal)
+    Call<ConfirmGoalResponse> addGoal(@Header("Authorization")String token,
+                                      @Field("goalId") String ids);
 
+
+    @GET(notification_type)
+    Call<NotificationResponseModel> userNotification(@Header("Authorization")String token);
     @FormUrlEncoded
     @POST(paybytoken)
     Call<TopupWallet> paybytoken(@Header("Authorization")String token,

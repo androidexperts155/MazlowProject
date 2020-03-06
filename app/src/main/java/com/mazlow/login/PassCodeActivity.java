@@ -9,14 +9,12 @@ import com.Mazlow.R;
 import com.andrognito.pinlockview.IndicatorDots;
 import com.andrognito.pinlockview.PinLockListener;
 import com.andrognito.pinlockview.PinLockView;
-import com.google.gson.Gson;
 import com.mazlow.adduserdetails.FirstPageActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.M;
 import com.mazlow.customclasses.Prefs;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.onfido.activites.FourthSignupActivity;
-import com.mazlow.ui.users.dashboard.activity.DashboardActivity;
 
 public class PassCodeActivity extends AppCompatActivity implements LoginView {
 
@@ -84,54 +82,32 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         prefs.setString(Bean.ADDRESS,loginResponseModel.getUserInfo().getAddress());
         prefs.setString(Bean.ADDRESS_LINE2,loginResponseModel.getUserInfo().getAddressline2());
         prefs.setString(Bean.DATEOF_BIRTH,loginResponseModel.getUserInfo().getDob());
-        saveProfileData(loginResponseModel);
         Intent i=new Intent(getApplicationContext(), FirstPageActivity.class);
         startActivity(i);
         finish();
 
     }
 
-    private void saveProfileData(LoginResponseModel loginResponseModel) {
-        Gson gson = new Gson();
-        String prfiledata = gson.toJson(loginResponseModel);
-        prefs.setString(Bean.PROFILE_DATA,prfiledata);
-    }
-
     @Override
     public void onSuccess(LoginResponseModel LoginResponseModel) {
-////RRG
+
+/*
         String type=prefs.getString("type","");
 
-        if (LoginResponseModel.getUserInfo().getKycVerification().equals("verified"))
+        if (type.equals("1"))
         {
-            if (LoginResponseModel.getUserInfo().getSubscriptionId().equals(""))
-            {
-                saveData(LoginResponseModel);
-            }
-           else if (!LoginResponseModel.getUserInfo().getSubscriptionId().equals(""))
-            {
-                saveData(LoginResponseModel);
-                Homeage(LoginResponseModel);
-            }
-           else if (LoginResponseModel.getUserInfo().getEmail().equals("")||LoginResponseModel.getUserInfo().getFirstName().equals("")||LoginResponseModel.getUserInfo().getLastName().equals(""))
-            {
-                redirectuserToNextScreen(LoginResponseModel);
-            }
+            fourthActivity(LoginResponseModel);
+
         }
         else {
             redirectuserToNextScreen(LoginResponseModel);
         }
+*/
+        redirectuserToNextScreen(LoginResponseModel);
 
     }
 
-    private void Homeage(LoginResponseModel loginResponseModel) {
-
-
-        Intent i=new Intent(getApplicationContext(), DashboardActivity.class);
-        startActivity(i);
-    }
-
-    private void saveData(LoginResponseModel loginResponseModel) {
+    private void fourthActivity(LoginResponseModel loginResponseModel) {
         prefs.setString(Bean.ACCESS_TOKEN, loginResponseModel.getToken());
         prefs.setString(Bean.FIRST_NAME,loginResponseModel.getUserInfo().getFirstName());
         prefs.setString(Bean.LAST_NAME,loginResponseModel.getUserInfo().getLastName());
@@ -143,6 +119,8 @@ public class PassCodeActivity extends AppCompatActivity implements LoginView {
         prefs.setString(Bean.ADDRESS,loginResponseModel.getUserInfo().getAddress());
         prefs.setString(Bean.ADDRESS_LINE2,loginResponseModel.getUserInfo().getAddressline2());
         prefs.setString(Bean.DATEOF_BIRTH,loginResponseModel.getUserInfo().getDob());
+        Intent i=new Intent(getApplicationContext(), FourthSignupActivity.class);
+        startActivity(i);
     }
 
     @Override

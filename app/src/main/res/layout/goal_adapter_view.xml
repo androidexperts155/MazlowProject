@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/dashed_shape"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+
+
+        <com.mazlow.customclasses.LightTextView
+            android:id="@+id/tvtitle"
+            android:textColor="@color/light_blue"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:text="I’d like to spend less every month"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_relative"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/lightgray_circleshape"
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp">
+
+            <ImageView
+                android:id="@+id/imagView"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_add_gray"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"></ImageView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

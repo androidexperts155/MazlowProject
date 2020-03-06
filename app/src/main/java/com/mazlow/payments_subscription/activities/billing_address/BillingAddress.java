@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.Mazlow.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -25,7 +24,6 @@ import com.mazlow.payments_subscription.activities.payment.PaymentActivity;
 import com.mazlow.signup.postalcode.PostalCodeImplementation;
 import com.mazlow.signup.postalcode.model.PostalCodeResponse;
 import com.mazlow.signup.postalcode.postalcodeView;
-
 public class BillingAddress extends BaseActivity implements View.OnClickListener, postalcodeView,BillingAddrssView {
 
     Button continue_btn;

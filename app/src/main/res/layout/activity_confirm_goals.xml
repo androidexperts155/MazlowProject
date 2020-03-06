@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context="com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <com.mazlow.customclasses.MediumTextView
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/textcolor"
+            android:layout_gravity="center"
+            android:text="Confirm your goals"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/imageback"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_close_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/textcolor"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Financial Goal"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/goalselected_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp">
+
+
+                <com.mazlow.customclasses.LightTextView
+                    android:id="@+id/tvtitle"
+                    android:textColor="@color/light_blue"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:text="I’d like to spend less every month"
+                    android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                    android:id="@+id/layout_relative"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/goal_seletced"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp">
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/description_tv1"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/border_color"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Set your monthly budget with our budgeting tools"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@color/gray_color"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/textcolor"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Wellbeing Goals"
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/goalselected_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp">
+
+
+                <com.mazlow.customclasses.LightTextView
+                    android:id="@+id/tvtitle_wellbeing1"
+                    android:textColor="@color/light_blue"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:text="I’d like to spend less every month"
+                    android:layout_height="wrap_content"/>
+
+
+                <RelativeLayout
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/goal_seletced"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp">
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+            <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/tv_descriptio2"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/border_color"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Set your monthly budget with our budgeting tools"
+                android:layout_height="wrap_content"/>
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/goalselected_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp">
+
+
+                <com.mazlow.customclasses.LightTextView
+                    android:id="@+id/tvtitle_wellbeing2"
+                    android:textColor="@color/light_blue"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:text="I’d like to spend less every month"
+                    android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/goal_seletced"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp">
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/tv_description3"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/border_color"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Set your monthly budget with our budgeting tools"
+                android:layout_height="wrap_content"/>
+
+
+            <com.mazlow.customclasses.MediumButton
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin15"
+                android:id="@+id/btn_next"
+                android:background="@drawable/all_side_round_blue_background"
+                android:gravity="center"
+                android:paddingRight="40dp"
+                android:textSize="@dimen/_16sdp"
+                android:textAllCaps="false"
+                android:paddingLeft="40dp"
+                android:textColor="@color/white"
+                android:text="Confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_36sdp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
