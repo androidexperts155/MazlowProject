@@ -1,5 +1,6 @@
 package com.mazlow.Networking;
 
+import com.google.gson.JsonElement;
 import com.mazlow.adduserdetails.model.UpdateUserDetails;
 import com.mazlow.onfido.model.OnFidoResponseModel;
 import com.mazlow.login.model.LoginResponseModel;
@@ -11,7 +12,11 @@ import com.mazlow.payments_subscription.models.apply_coupon_code.ApplyCouponCode
 import com.mazlow.search_address.model.AddressZipcodeResponse;
 import com.mazlow.signup.models.SignupResponseModel;
 import com.mazlow.signup.postalcode.model.PostalCodeResponse;
+import com.mazlow.ui.users.addmoney.models.MyCardModel;
 import com.mazlow.ui.users.changephonenumber.model.ChangeNumberResponseModel;
+import com.mazlow.ui.users.dashboard.notification.model.NotificationResponseModel;
+import com.mazlow.ui.users.dashboard.set_goals.confirm_goals.model.ConfirmGoalResponse;
+import com.mazlow.ui.users.dashboard.set_goals.model.GoalResponseModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,17 +33,22 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 import static com.mazlow.Networking.Constants.Signup;
+import static com.mazlow.Networking.Constants.add_goal;
 import static com.mazlow.Networking.Constants.checkotp;
 import static com.mazlow.Networking.Constants.chengenumber;
+import static com.mazlow.Networking.Constants.getCard;
 import static com.mazlow.Networking.Constants.get_subcrption;
 import static com.mazlow.Networking.Constants.getprofile;
+import static com.mazlow.Networking.Constants.goalList;
 import static com.mazlow.Networking.Constants.login;
+import static com.mazlow.Networking.Constants.notification_type;
 import static com.mazlow.Networking.Constants.onfido;
 import static com.mazlow.Networking.Constants.onfido_check;
 import static com.mazlow.Networking.Constants.postalcode;
 import static com.mazlow.Networking.Constants.registerandpay;
 import static com.mazlow.Networking.Constants.resenotp;
 import static com.mazlow.Networking.Constants.subcriptionDiscount;
+import static com.mazlow.Networking.Constants.updateStatement;
 import static com.mazlow.Networking.Constants.update_profile;
 import static com.mazlow.Networking.Constants.zipcodeaddress;
 public interface RestApiInterface {
@@ -153,8 +163,28 @@ public interface RestApiInterface {
                                                 @Field("currencyCode") String currencyCode,
                                                 @Field("subscriptionId")  String subscriptionId);
 
+
+
+    @GET(goalList)
+    Call<GoalResponseModel> getGoals(@Header("Authorization")String token);
+
     @FormUrlEncoded
     @POST(get_subcrption)
     Call<SubcriptionResponsemodel> getSubcription(@Header("Authorization") String token);
+
+    @POST(updateStatement)
+    Call<JsonElement> updateStatement(@Header("Authorization")String token);
+
+    @GET(getCard)
+    Call<MyCardModel> getCard(@Header("Authorization")String token);
+
+    @FormUrlEncoded
+    @POST(add_goal)
+    Call<ConfirmGoalResponse> addGoal(@Header("Authorization")String token,
+                                      @Field("goalId") String ids);
+
+
+    @GET(notification_type)
+    Call<NotificationResponseModel> userNotification(@Header("Authorization")String token);
 }
 

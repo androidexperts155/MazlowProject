@@ -2,6 +2,8 @@ package com.mazlow.ui.users.dashboard.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,12 +20,17 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.Mazlow.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.mazlow.customclasses.KKViewPager;
+import com.mazlow.payments_subscription.adapter.CardsAdapter;
 import com.mazlow.ui.users.dashboard.fragments.HomeFragment;
+import com.mazlow.ui.users.dashboard.notification.NotificationActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,12 +50,17 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
     RelativeLayout rr_menu;
     @BindView(R.id.rr_screen)
     RelativeLayout rr_screen;
+    @BindView(R.id.bottomshet_click)
+    ImageView bottomshet_click;
+    @BindView(R.id.click_notification)
+    ImageView click_notification;
+
 
     int screenWidth = 1280;
     int screenSpace = 200;
     boolean isOpen = false;
     int navAnimationDuration = 300;
-
+    KKViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +139,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
 
     }
 
-    @OnClick({R.id.img_nav_bt,R.id.img_nav_close})
+    @OnClick({R.id.img_nav_bt, R.id.img_nav_close})
     void toggleNavMenu() {
         if (isOpen) {
             isOpen=false;
@@ -144,6 +156,44 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
             rr_screen.animate().alpha(0.5f).setDuration(navAnimationDuration).start();
         }
 
+    }
+
+    @OnClick(R.id.bottomshet_click)
+    public void showBottomSheetDialog() {
+        final Dialog d = new BottomSheetDialog(this,R.style.BottomSheetDialog);
+        d.setContentView(R.layout.home_bottom_sheet_dialog);
+         viewPager = d.findViewById(R.id.viewPager);
+        setUpViewPager();
+        d.show();
+    }
+
+    @OnClick(R.id.click_notification)
+    void clickNotification()
+    {
+        startActivity(new Intent(DashboardActivity.this, NotificationActivity.class));
+    }
+
+    private void setUpViewPager() {
+        CardsAdapter adapter = new CardsAdapter(this);
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
 

@@ -210,9 +210,7 @@
                                 android:textColor="@android:color/white"
                                 android:textSize="@dimen/_12sdp"
                                 android:background="@drawable/all_side_round_blue_background"
-
                                 />
-
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>

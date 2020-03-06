@@ -1,19 +1,24 @@
 package com.mazlow.Networking;
 
 public interface Constants {
-    final static String Signup="signUp";
-    final static String checkotp="checkOTP";
-    final static String login="logIn";
-    final static String update_profile="updateProfile";
-    final static String zipcodeaddress="searchAddress";
-    final static String resenotp="sendOtp";
-    final static String postalcode="rapidaddress";
-    final static String chengenumber="phoneEmail";
-    final static String onfido="applicants";
-    final static String getprofile="getProfile";
-    final static String onfido_check="checks";
-    final static String subcriptionDiscount="subcriptionDiscount";
-    final static String registerandpay="registerAndPayBy";
-    final static String get_subcrption="getSubscriptionData";
+    String Signup="signUp";
+    String checkotp="checkOTP";
+    String login="logIn";
+    String update_profile="updateProfile";
+    String zipcodeaddress="searchAddress";
+    String resenotp="sendOtp";
+    String postalcode="rapidaddress";
+    String chengenumber="phoneEmail";
+    String onfido="applicants";
+    String getprofile="getProfile";
+    String onfido_check="checks";
+    String subcriptionDiscount="subcriptionDiscount";
+    String registerandpay="registerAndPayBy";
+    String get_subcrption="getSubscriptionData";
+    String updateStatement="updateStatement";
+    String getCard="getCard";
+    String goalList="goalList";
+    String add_goal="addUserGoal";
+    String notification_type="notificationTypes";
 
 }

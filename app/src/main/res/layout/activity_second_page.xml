@@ -76,7 +76,6 @@
                     android:layout_marginLeft="@dimen/_15sdp"
                     android:textColor="@color/textcolor"
                     android:singleLine="true"
-                    android:entries="@array/countries"
                     android:textSize="@dimen/NormalTextSize"
                     android:textColorHint="@color/textcolor"
                     android:hint="@string/country"
