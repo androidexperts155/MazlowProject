@@ -219,6 +219,12 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        homeFragmentPresenter.updateStatement(token);
+
+    }
 
     private void updateui() {
         profileData= getSaveProfile();
