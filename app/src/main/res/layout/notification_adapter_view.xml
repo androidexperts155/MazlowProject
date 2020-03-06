@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/ic_tick"
+            android:layout_marginLeft="5dp"
+            app:civ_border_width="1dp"
+            android:id="@+id/imgeview"
+            app:civ_border_color="@color/gray_color"
+            android:layout_marginTop="@dimen/margin5"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"/>
+
+
+        <com.mazlow.customclasses.MediumTextView
+            android:id="@+id/tv_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/imgeview"
+            android:text="Topup Successfullly done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray_color"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="3 hours ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <com.mazlow.customclasses.MediumTextView
+            android:textSize="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@+id/tv_title"
+            android:id="@+id/tv_description"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/imgeview"
+            android:text="Topup Successfullly done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <View
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/tv_description"
+            android:background="@color/gray_color"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"></View>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

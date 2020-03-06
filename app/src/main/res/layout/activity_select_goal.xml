@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    tools:context="com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity">
+    <include layout="@layout/toolbar_withcross"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="Let’s start by setting goals from each section that help you to acheive financial success "
+                android:textColor="@color/light_blue"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/textcolor"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Financial Goal"
+                android:layout_height="wrap_content"/>
+            <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/tv_select_financal_gaol"
+                android:textColor="@color/color_light_black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Select goal 1"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myList"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_height="wrap_content"/>
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/textcolor"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Wellbeing Goals"
+                android:layout_height="wrap_content"/>
+            <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/tv_selected2"
+                android:textColor="@color/color_light_black"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_12sdp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:text="Select 2 goals"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/myList2"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_height="wrap_content"/>
+            <com.mazlow.customclasses.MediumButton
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin15"
+                android:id="@+id/btn_next"
+                android:background="@drawable/continue_btn"
+
+                android:gravity="center"
+                android:paddingRight="40dp"
+                android:textSize="@dimen/_16sdp"
+
+                android:textAllCaps="false"
+                android:paddingLeft="40dp"
+                android:textColor="@color/textcolor"
+                android:text="Next"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_36sdp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
