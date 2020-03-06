@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +26,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.Prefs;
+import com.mazlow.login.model.DayChallenge;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.onfido.verification_identity.GetProfileImaplentation;
 import com.mazlow.onfido.verification_identity.GetProfileView;
@@ -35,6 +37,7 @@ import com.mazlow.ui.users.dashboard.fragments.models.NextChallengesModel;
 import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,15 +56,29 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     TextView txt_total_balance_title;
     @BindView(R.id.txt_today_spent)
     TextView txt_today_spent;
+    @BindView(R.id.txt_exchange)
+    TextView txt_exchange;
+    @BindView(R.id.txt_transfer)
+    TextView txt_transfer;
 
     @BindView(R.id.rr_spent)
     RelativeLayout rr_spent;
+    @BindView(R.id.ll_activate_card)
+    LinearLayout ll_activate_card;
+    @BindView(R.id.ll_activad_card)
+    LinearLayout ll_activad_card;
+    @BindView(R.id.cv_set_gole)
+    CardView cv_set_gole;
+    @BindView(R.id.ll_daily_challenge)
+    LinearLayout ll_daily_challenge;
+    @BindView(R.id.txt_challenge_count)
+    TextView txt_challenge_count;
 
 
     LoginResponseModel profileData;
     TotalBalanceAdapter totalBalanceAdapter;
     NextChallengesAdapter nextChallengesAdapter;
-    ArrayList<NextChallengesModel> nextChallengesArrayList=new ArrayList<>();
+    ArrayList<DayChallenge> nextChallengesArrayList=new ArrayList<>();
 
     HomeFragmentPresenter homeFragmentPresenter;
     GetProfileImaplentation getProfileImaplentation;
@@ -94,12 +111,14 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
         homeFragmentPresenter=new HomeFragmentPresenter(getActivity(),this);
         getProfileImaplentation =new GetProfileImaplentation(this,getActivity());
 
-         token = prefs.getString(Bean.ACCESS_TOKEN, "");
+        token = prefs.getString(Bean.ACCESS_TOKEN, "");
+
         Glide.with(getActivity()).load(R.drawable.gif_circle)
                 .transform(new CircleCrop())
                 .into(img_gif);
         initChallengesRecycleView();
         initTotalBalanceViewPager();
+
         homeFragmentPresenter.updateStatement(token);
     }
 
@@ -108,7 +127,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
         rv_next_challenges.setNestedScrollingEnabled(true);
         nextChallengesAdapter=new NextChallengesAdapter(getActivity(), nextChallengesArrayList, new NextChallengesAdapter.AddItemClickListener() {
             @Override
-            public void OnItemClicked(NextChallengesModel nextChallengesModel){
+            public void OnItemClicked(DayChallenge nextChallengesModel){
 
             }
         });
@@ -129,6 +148,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
             @Override
             public void onPageSelected(int position) {
                 TotalBalanceModel item = balanceModelArrayList.get(position);
+
 
                 setTodaySpentData(item);
 
@@ -197,6 +217,29 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
         parseTotleBalance(profileData);
 
 
+        if(profileData.getUserInfo().getCardStatus().equals("1")){
+            ll_activate_card.setVisibility(View.GONE);
+            ll_activad_card.setVisibility(View.VISIBLE);
+
+        }else {
+            ll_activate_card.setVisibility(View.VISIBLE);
+            ll_activad_card.setVisibility(View.GONE);
+        }
+
+        if(profileData.getIsGoalSet()){
+            cv_set_gole.setVisibility(View.GONE);
+            ll_daily_challenge.setVisibility(View.VISIBLE);
+        }else{
+            cv_set_gole.setVisibility(View.VISIBLE);
+            ll_daily_challenge.setVisibility(View.GONE);
+        }
+
+        List<DayChallenge> tmpList=profileData.getDayChallenges();
+        tmpList.remove(0);
+        nextChallengesArrayList.addAll(tmpList);
+
+        txt_challenge_count.setText(nextChallengesArrayList.size()+"");
+        nextChallengesAdapter.notifyDataSetChanged();
 
     }
 
@@ -251,8 +294,23 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     }
 
     private void setTodaySpentData(TotalBalanceModel item) {
+        String tmpPrice = String.valueOf((item.balance/100))+"."+String.valueOf((item.balance%100));
+        txt_exchange.setText(item.currencySymbol+" "+tmpPrice);
+        txt_transfer.setText(item.currencySymbol+" "+tmpPrice);
 
-        String price= String.valueOf((item.balance/100))+"."+String.valueOf((item.balance%100));
+        String price="";
+        if(item.currency.equals("GBP")){
+             price= String.valueOf((profileData.getTodaySpend().getTodaySpendGBP()/100))+"."+String.valueOf((profileData.getTodaySpend().getTodaySpendGBP()%100));
+
+        }else   if(item.currency.equals("EUR")){
+            price= String.valueOf((profileData.getTodaySpend().getTodaySpendEUR()/100))+"."+String.valueOf((profileData.getTodaySpend().getTodaySpendEUR()%100));
+
+        }else   if(item.currency.equals("USD")){
+            price= String.valueOf((profileData.getTodaySpend().getTodaySpendUSD()/100))+"."+String.valueOf((profileData.getTodaySpend().getTodaySpendUSD()%100));
+
+        }
+
+
         txt_today_spent.setText(item.currencySymbol+" "+price);
         if(item.active){
             rr_spent.setAlpha(1);

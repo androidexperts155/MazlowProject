@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -16,14 +19,19 @@ import android.widget.Toast;
 
 import com.Mazlow.R;
 import com.google.gson.Gson;
+import com.mazlow.customclasses.BaseActivity;
 import com.mazlow.customclasses.Bean;
 import com.mazlow.customclasses.Prefs;
+import com.mazlow.customviews.CurrencyEditText;
 import com.mazlow.login.model.LoginResponseModel;
+import com.mazlow.payments_subscription.activities.payment.PaymentActivity;
 import com.mazlow.ui.users.addmoney.adapter.CustomArrayAdapter;
 import com.mazlow.ui.users.addmoney.models.CardDetail;
 import com.mazlow.ui.users.addmoney.models.MyCardModel;
+import com.mazlow.ui.users.addmoney.models.topupmodel.TopupWallet;
 import com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity;
 import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+import com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity;
 
 import java.util.ArrayList;
 
@@ -31,7 +39,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActivityView{
+public class AddMoneyActivity extends BaseActivity implements AddMoneyActivityView, AdapterView.OnItemSelectedListener {
     @BindView(R.id.imageViewBack)
     ImageView imageViewBack;
 
@@ -41,21 +49,40 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
     @BindView(R.id.txt_title)
     TextView txt_title;
 
+    @BindView(R.id.txt_selected_card)
+    TextView txt_selected_card;
+
     @BindView(R.id.txt_balance)
     TextView txt_balance;
     @BindView(R.id.ll_select_currency)
     LinearLayout ll_select_currency;
+
+    @BindView(R.id.ll_select_card)
+    LinearLayout ll_select_card;
+
     @BindView(R.id.sp_select_card)
     Spinner sp_select_card;
-    CustomArrayAdapter spinnerAdapter;
 
+    @BindView(R.id.et_price)
+    CurrencyEditText et_price;
+
+    @BindView(R.id.btn_topup)
+    Button btn_topup;
+
+
+
+
+    CustomArrayAdapter spinnerAdapter;
     int currencyRequestCode=1256;
+    int selectCardRequest=1251;
     Prefs prefs;
     String token = "";
 
     LoginResponseModel profileData;
     ArrayList<TotalBalanceModel> balanceModelArrayList = new ArrayList<>();
     String selected = "GBP";
+    String currencySymbol = "";
+    int selectedCardPostion=0;
     AdMoneyPresenterImplementation adMoneyPresenterImplementation;
 
     ArrayList<CardDetail> cardDetailsList=new ArrayList<>();
@@ -74,9 +101,7 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
         adMoneyPresenterImplementation=new AdMoneyPresenterImplementation(this,this);
         profileData = getSaveProfile();
         parseTotleBalance(profileData);
-
         adMoneyPresenterImplementation.getCard(token);
-
         CardDetail cardDetail= new CardDetail();
         cardDetail.setPfsToken("");
         cardDetailsList.add(cardDetail);
@@ -87,28 +112,83 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
         //sp_select_card
         spinnerAdapter = new CustomArrayAdapter(this,
                 R.layout.item_spinner,cardDetailsList );
+
+
+
         sp_select_card.setAdapter(spinnerAdapter);
+    }
 
-        sp_select_card.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                Toast.makeText(AddMoneyActivity.this, "", Toast.LENGTH_SHORT).show();
+    @OnClick({R.id.imageViewBack,R.id.ll_select_card,R.id.ll_select_currency,R.id.btn_topup,R.id.txt_selected_card})
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.imageViewBack:
+                onBackPressed();
+                break;
+            case R.id.ll_select_currency:
+                Intent intent=new Intent(this, ChooseCurrencyActivity.class);
+                startActivityForResult(intent,currencyRequestCode);
+                break;
+            case R.id.ll_select_card:
+                sp_select_card.performClick();
+                break;
+            case R.id.btn_topup:
+                requestTopUp();
+                break;
+
+            case R.id.txt_selected_card:
+                String tmpAmount=et_price.getText().toString();
+                if(tmpAmount.equals("")){
+                    tmpAmount="0.00";
+                }
+                double amount= Double.parseDouble(tmpAmount);
+                if(amount<10.00){
+                    showAlertDialog(null,"Please add minimum amount of "+currencySymbol+"10.00");
+                }else{
+
+
+                    Intent intent1=new Intent(this,SelectTopupMethodActivity.class);
+                    intent1.putExtra("cardList",cardDetailsList);
+
+                    Bundle bundle=new Bundle();
+                    bundle.putString("amount", String.valueOf(amount));
+                    bundle.putString("currencySymbol",currencySymbol);
+                    bundle.putString("currency",selected);
+
+                    intent1.putExtra("data", bundle);
+                    intent1.putExtra("from", "topup");
+
+
+                    startActivityForResult(intent1,selectCardRequest);
+
+
+
+
+                }
+                break;
+        }
+
+    }
+
+    private void requestTopUp() {
+        String tmpAmount=et_price.getText().toString();
+        if(tmpAmount.equals("")){
+            tmpAmount="0.00";
+        }
+        double amount= Double.parseDouble(tmpAmount);
+        if(amount<10.00){
+            showAlertDialog(null,"Please add minimum amount of "+currencySymbol+"10.00");
+        }else{
+
+            if(selectedCardPostion==0){
+                showAlertDialog(null,"Please select a card to add amount.");
+
+            }else {
+                adMoneyPresenterImplementation.topUpWallet(token, String.valueOf(amount),selected,cardDetailsList.get(selectedCardPostion).getPfsToken());
             }
+        }
 
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
     }
 
-    @OnClick(R.id.imageViewBack)
-    public void backpress() {
-        onBackPressed();
-    }
-    @OnClick(R.id.ll_select_currency)
-    public void selectCurrency() {
-        Intent intent=new Intent(this, ChooseCurrencyActivity.class);
-        startActivityForResult(intent,currencyRequestCode);
-    }
 
     private void updateUi() {
 
@@ -140,7 +220,7 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
             if(item.currency.equals(currency)){
                 String price= String.valueOf((item.balance/100))+"."+String.valueOf((item.balance%100));
                 txt_balance.setText( "Balance "+item.currencySymbol+" "+price);
-
+                currencySymbol=item.currencySymbol;
                 break;
             }
         }
@@ -201,6 +281,14 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
                 }
 
             }
+
+            if(requestCode==selectCardRequest){
+                if(data!=null){
+                  int  postion=data.getIntExtra("cardPostion",0);
+                  sp_select_card.setSelection(postion);
+                }
+
+            }
             updateUi();
         }
     }
@@ -211,20 +299,71 @@ public class AddMoneyActivity extends AppCompatActivity implements AddMoneyActiv
         CardDetail cardDetail= new CardDetail();
         cardDetail.setPfsToken("");
         cardDetailsList.add(cardDetail);
-        cardDetailsList.addAll( myCardModel.getCardDetails());
+        cardDetailsList.addAll(myCardModel.getCardDetails());
 
-
-        spinnerAdapter.notifyDataSetChanged();
-
+        sp_select_card.setOnItemSelectedListener(this);
     }
 
     @Override
     public void getCardOnError() {
-
+        sp_select_card.setOnItemSelectedListener(this);
     }
 
     @Override
     public void getCardNoInternet() {
+        sp_select_card.setOnItemSelectedListener(this);
+    }
+
+    @Override
+    public void topUpOnSuccess(TopupWallet model) {
+        Log.e("Topup","topUpOnSuccess") ;
+        String tmpAmount=et_price.getText().toString();
+        if(tmpAmount.equals("")){
+            tmpAmount="0.00";
+        }
+        double amount= Double.parseDouble(tmpAmount);
+        Bundle bundle=new Bundle();
+        bundle.putString("amount", String.valueOf(amount));
+        bundle.putString("currencySymbol",currencySymbol);
+
+        Intent intent= new Intent(this, PaymentActivity.class);
+        intent.putExtra("data", bundle);
+        intent.putExtra("from", "topup");
+        intent.putExtra("url", model.getResponse().getPaymentUrl());
+        intent.putExtra("referenceCode", model.getResponse().getReferenceCode());
+        startActivity(intent);
+
+
+
+
+    }
+
+    @Override
+    public void topUpOnError() {
+        Log.e("Topup","topUpOnError") ;
+    }
+
+    @Override
+    public void topUpNoInternet() {
+        Log.e("Topup","topUpNoInternet") ;
+    }
+
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+        selectedCardPostion=pos;
+        if(selectedCardPostion==0){
+            txt_selected_card.setText(getResources().getString(R.string.add_topup_msg));
+        }else {
+            txt_selected_card.setText(cardDetailsList.get(selectedCardPostion).getCardNumber());
+        }
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

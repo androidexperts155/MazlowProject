@@ -24,7 +24,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:supportsRtl">
-        <activity android:name="com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity"></activity>
+        <activity android:name="com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity"></activity>
+        <activity android:name="com.mazlow.ui.users.topupsuccess.TopUpSuccessActivity" />
+        <activity android:name="com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity" />
         <activity
             android:name="com.mazlow.ui.users.addmoney.AddMoneyActivity"
             android:windowSoftInputMode="stateHidden" />

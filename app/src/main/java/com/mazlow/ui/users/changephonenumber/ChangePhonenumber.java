@@ -75,6 +75,7 @@ public class ChangePhonenumber extends BaseActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mobile_number);
         oneEditText = findViewById(R.id.et_phone);
         initilize();
         askPermision();
@@ -83,10 +84,7 @@ public class ChangePhonenumber extends BaseActivity implements View.OnClickListe
 
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_mobile_number;
-    }
+
 
     private void askPermision() {
         checkMultiplePermisions(ChangePhonenumber.this, Manifest.permission.RECEIVE_SMS, Manifest.permission.READ_SMS, new PermissionListner() {

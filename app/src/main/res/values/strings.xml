@@ -123,6 +123,10 @@ NO I do not consent to processing of my Steps data.
     <string name="start">Start</string>
     <string name="add_topup_msg">Please add a top up method</string>
     <string name="top_up">Top up</string>
+    <string name="tap_any_where_to_continue">Tap anywhere to continue\"</string>
+    <string name="payment">Payment</string>
+    <string name="bank_or_credit_card">Bank or credit card</string>
+    <string name="add_new_card">Add new card</string>
 
 
     <integer-array name="cards_list">

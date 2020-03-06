@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
             <com.mazlow.customclasses.LightTextView
+                android:id="@+id/txt_title"
                 android:gravity="center"
                 android:text="Steps upto"
                 android:textColor="@color/textcolor"
@@ -65,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <com.mazlow.customclasses.MediumTextView
+                android:id="@+id/txt_amount"
                 android:gravity="center"
                 android:text="3000"
                 android:textColor="@color/textcolor"

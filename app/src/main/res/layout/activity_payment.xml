@@ -9,6 +9,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_toolbar"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,9 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <com.mazlow.customclasses.MediumTextView
+            android:id="@+id/txt_title"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:text="Enter your billing address"
+            android:text="@string/payment"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 

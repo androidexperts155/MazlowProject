@@ -4,7 +4,9 @@ package com.mazlow.ui.users.addmoney.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CardDetail {
+import java.io.Serializable;
+
+public class CardDetail  implements Serializable {
 
     @SerializedName("pfsToken")
     @Expose

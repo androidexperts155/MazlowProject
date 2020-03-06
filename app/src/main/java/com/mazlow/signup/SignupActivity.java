@@ -82,6 +82,7 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mobile_number);
         oneEditText = findViewById(R.id.et_phone);
 
 
@@ -106,10 +107,6 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
              };
 
 
-             @Override
-    protected int myView() {
-        return R.layout.activity_mobile_number;
-    }
     private void askPermision() {
         checkMultiplePermisions(SignupActivity.this, Manifest.permission.RECEIVE_SMS,Manifest.permission.READ_SMS, new PermissionListner() {
             @Override

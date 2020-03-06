@@ -82,7 +82,7 @@
                 <com.mazlow.customviews.CurrencyEditText
 
                     android:focusableInTouchMode="true"
-                    android:id="@+id/et_perweek"
+                    android:id="@+id/et_price"
                     android:gravity="right"
                     android:layout_width="match_parent"
                     android:hint="00.00"
@@ -112,6 +112,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_select_card"
                 android:padding="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_60sdp"
                 android:layout_width="match_parent"
@@ -119,14 +120,34 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:background="@drawable/light_gray_border">
-
-                <Spinner
+                <RelativeLayout
                     android:layout_weight="1"
-                    android:id="@+id/sp_select_card"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:spinnerMode="dropdown"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:visibility="invisible"
+
+                        android:id="@+id/sp_select_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/white"
+                        android:spinnerMode="dropdown"/>
+                    <com.mazlow.customclasses.LightTextView
+                        android:id="@+id/txt_selected_card"
+                        android:padding="@dimen/_5sdp"
+
+                        android:paddingTop="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:gravity="left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_topup_msg"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/textcolor"/>
+                </RelativeLayout>
+
+
+
 
                 <ImageView
                 android:layout_width="@dimen/_12sdp"
@@ -139,7 +160,9 @@
 
     </ScrollView>
 
-    <com.mazlow.customclasses.MediumTextView
+    <com.mazlow.customclasses.MediumButton
+        android:id="@+id/btn_topup"
+        android:textAllCaps="false"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_20sdp"

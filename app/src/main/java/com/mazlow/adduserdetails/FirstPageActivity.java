@@ -24,6 +24,7 @@ public class FirstPageActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first_page);
 
         findIds();
         setListner();
@@ -49,10 +50,7 @@ public class FirstPageActivity extends BaseActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_first_page;
-    }
+
 
     private void setListner() {
         continue_btn.setOnClickListener(this);

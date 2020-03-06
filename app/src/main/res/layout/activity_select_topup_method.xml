@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/linearLayoutToolBar"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/imageViewBack"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:src="@drawable/ic_arrow_back"
+            />
+
+        <com.mazlow.customclasses.MediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_17sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/blue_color"
+            android:text="@string/add_money_to_your_account"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_20sdp"
+            android:orientation="vertical">
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:textColor="@color/blue_color"
+                android:text="@string/bank_or_credit_card"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/rv_card_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/ll_add_new_card"
+                android:layout_marginTop="@dimen/_30sdp"
+
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/light_gray_border">
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+
+                    />
+                <com.mazlow.customclasses.LightTextView
+                    android:id="@+id/txt_card"
+                    android:padding="@dimen/_5sdp"
+
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_new_card"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/textcolor"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -15,6 +15,7 @@ public class CheckEmailActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_check_email);
 
         String email=getIntent().getStringExtra(Bean.EMAIL_ADDRESS);
         inilize();
@@ -23,10 +24,7 @@ public class CheckEmailActivity extends BaseActivity implements View.OnClickList
 
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_check_email;
-    }
+
 
     private void setListner() {
         img_back.setOnClickListener(this);

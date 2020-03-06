@@ -8,11 +8,14 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.Mazlow.R;
 import com.mazlow.customclasses.BaseActivity;
 import com.mazlow.customclasses.M;
 import com.mazlow.payments_subscription.activities.thanksfor_patience.ThanksForPatience;
+import com.mazlow.ui.users.topupsuccess.TopUpSuccessActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,10 +25,15 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
 
     @BindView(R.id.img_back)
     ImageView img_back;
+    @BindView(R.id.rl_toolbar)
+    RelativeLayout rl_toolbar;
+    @BindView(R.id.txt_title)
+    TextView txt_title;
+
     @BindView(R.id.webview)
     WebView webView;
 
-    String url,referenceCode;
+    String url,referenceCode,from;
     Dialog dialog;
 
 
@@ -35,10 +43,17 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         ButterKnife.bind(this);
-
         setListner();
         getValueFromintent();
         wenview();
+        init();
+    }
+
+    private void init() {
+        if(from.equals("topup")) {
+            rl_toolbar.setVisibility(View.VISIBLE);
+            txt_title.setText(getResources().getString(R.string.payment));
+        }
     }
 
     private void wenview() {
@@ -47,6 +62,8 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
         webSettings.setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
 
         dialog.show();
 
@@ -81,9 +98,18 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
         {
             if(url.contains("getpfsPaySuccess") && referenceCode != "");
             {
-                Intent intent= new Intent(this, ThanksForPatience.class);
-                startActivity(intent);
-                finish();
+                if(from.equals("topup")){
+                    Intent intent= new Intent(this, TopUpSuccessActivity.class);
+                    intent.putExtra("from","topup");
+                    intent.putExtra("data",getIntent().getBundleExtra("data"));
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent= new Intent(this, ThanksForPatience.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         }
     }
@@ -91,12 +117,10 @@ public class PaymentActivity extends BaseActivity implements View.OnClickListene
     private void getValueFromintent() {
         url=getIntent().getStringExtra("url");
         referenceCode=getIntent().getStringExtra("referenceCode");
+        from=getIntent().getStringExtra("from");
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_payment;
-    }
+
 
     private void setListner() {
         img_back.setOnClickListener(this);

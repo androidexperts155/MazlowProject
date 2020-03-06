@@ -1,6 +1,7 @@
 package com.mazlow.customclasses;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -92,6 +93,9 @@ public class M {
         });
         dialog.show();
     }
+
+
+
 
     public static String changeDateOnly(String inputString) {
         String[] date1 = new String[1];

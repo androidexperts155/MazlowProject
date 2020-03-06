@@ -10,6 +10,7 @@ import com.mazlow.Networking.RestApiInterface;
 import com.mazlow.customclasses.M;
 import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.ui.users.addmoney.models.MyCardModel;
+import com.mazlow.ui.users.addmoney.models.topupmodel.TopupWallet;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -71,5 +72,52 @@ public class AdMoneyPresenterImplementation implements AdMoneyPresenter {
             addMoneyActivityView.getCardNoInternet();
 
         }
+    }
+
+    @Override
+    public void topUpWallet(String access_token, String amount, String currencyCode, String pfsToken) {
+
+        if (M.isNetworkAvailable(activity)) {
+            dialog.show();
+            RestApiInterface apiInterface = RestApiClientAuth.Retrofit().create(RestApiInterface.class);
+            Call<TopupWallet> call = apiInterface.paybytoken(access_token,amount,currencyCode,pfsToken);
+            call.enqueue(new Callback<TopupWallet>() {
+                @Override
+                public void onResponse(Call<TopupWallet> call, Response<TopupWallet> response) {
+                    dialog.dismiss();
+                    if (response.isSuccessful()) {
+
+
+
+                     if(response.body().getSuccess()){
+
+                            addMoneyActivityView.topUpOnSuccess(response.body());
+
+
+                        }else{
+                            addMoneyActivityView.topUpOnError();
+                        }
+
+
+
+                    } else {
+                        addMoneyActivityView.topUpOnError();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<TopupWallet> call, Throwable t) {
+                    dialog.dismiss();
+                    Log.e("error", String.valueOf(t));
+                    addMoneyActivityView.topUpOnError();
+                }
+            });
+        }
+        else {
+            addMoneyActivityView.topUpNoInternet();
+
+        }
+
+
     }
 }

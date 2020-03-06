@@ -36,13 +36,9 @@ import java.util.List;
 public abstract class BaseActivity extends AppCompatActivity {
 
     String emailpattren = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(myView());
-    }
 
-    protected abstract int myView();
+
+
 
     public void showToast(String msg){
         try {
@@ -177,6 +173,27 @@ public abstract class BaseActivity extends AppCompatActivity {
         Uri uri = Uri.fromParts("package", context.getPackageName(), null);
         intent.setData(uri);
         context.startActivity(intent);
+    }
+
+    public  AlertDialog showAlertDialog(String title,String msg){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        if(title!=null){
+            builder.setTitle(title);
+        }
+
+        builder.setCancelable(false);
+        builder.setMessage(msg);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+
+
+                    }
+                }
+        );
+
+      return   builder.show();
     }
 
 }

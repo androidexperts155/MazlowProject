@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginTop="@dimen/_20sdp"
+
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/light_gray_border">
+        <com.mazlow.customclasses.LightTextView
+            android:id="@+id/txt_card"
+            android:padding="@dimen/_5sdp"
+
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/textcolor"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

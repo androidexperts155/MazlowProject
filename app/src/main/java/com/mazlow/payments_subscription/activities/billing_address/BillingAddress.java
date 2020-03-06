@@ -48,6 +48,8 @@ public class BillingAddress extends BaseActivity implements View.OnClickListener
     String currencyCode="GBP";
     TextView tv_title;
 
+    String from="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,24 @@ public class BillingAddress extends BaseActivity implements View.OnClickListener
         setListner();
 
         if (getIntent()!=null){
-            getDataFromintent();
+            from=getIntent().getStringExtra("from");
+            if(from.equals("topup")){
+
+              Bundle bundle=  getIntent().getBundleExtra("data");
+                subcription_id="5d9c79107f4f0b25490558d4";
+                amount=bundle.getString("amount");
+                currencyCode= bundle.getString("currency");
+
+            }else{
+
+                subcription_id=getIntent().getStringExtra("subcription_id");
+                amount=getIntent().getStringExtra("amount");
+                getDataFromintent();
+            }
+
+
+
+
         }
 
 
@@ -81,10 +100,7 @@ public class BillingAddress extends BaseActivity implements View.OnClickListener
         token =prefs.getString(Bean.ACCESS_TOKEN,"");
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_second_page;
-    }
+
 
     private void getDataFromintent() {
         firstname = getIntent().getStringExtra(Bean.FIRST_NAME);
@@ -147,8 +163,7 @@ public class BillingAddress extends BaseActivity implements View.OnClickListener
     }
 
     private void findIds() {
-        subcription_id=getIntent().getStringExtra("subcription_id");
-        amount=getIntent().getStringExtra("amount");
+
         continue_btn =findViewById(R.id.continue_btn);
         rootlayout = findViewById(R.id.rootlayout);
         et_country = findViewById(R.id.et_country);
@@ -239,6 +254,9 @@ public class BillingAddress extends BaseActivity implements View.OnClickListener
 
     private void gotoPaymentActivity(BillingAddressResponse billingAddressResponse) {
         Intent intent= new Intent(this, PaymentActivity.class);
+        intent.putExtra("data", getIntent().getBundleExtra("data"));
+        intent.putExtra("from", "topup");
+
         intent.putExtra("url", billingAddressResponse.getResponse().getPaymentUrl());
         intent.putExtra("referenceCode", billingAddressResponse.getResponse().getReferenceCode());
         startActivity(intent);

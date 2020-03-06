@@ -50,6 +50,7 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second_page);
         findIds();
         initView();
         setListner();
@@ -72,10 +73,7 @@ public class SecondPageActivity extends BaseActivity implements View.OnClickList
         }
     }
 
-    @Override
-    protected int myView() {
-        return R.layout.activity_second_page;
-    }
+
     private void getDataFromintent() {
         firstname = getIntent().getStringExtra(Bean.FIRST_NAME);
         lastname = getIntent().getStringExtra(Bean.LAST_NAME);

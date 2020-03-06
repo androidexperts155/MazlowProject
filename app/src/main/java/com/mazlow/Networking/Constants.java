@@ -17,5 +17,6 @@ public interface Constants {
  String get_subcrption="getSubscriptionData";
  String updateStatement="updateStatement";
  String getCard="getCard";
+ String paybytoken="paybytoken";
 
 }
