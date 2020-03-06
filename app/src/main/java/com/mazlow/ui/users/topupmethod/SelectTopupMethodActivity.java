@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.Mazlow.R;
@@ -25,6 +26,9 @@ public class SelectTopupMethodActivity extends AppCompatActivity {
     RecyclerView rv_card_list;
     @BindView(R.id.ll_add_new_card)
     LinearLayout ll_add_new_card;
+    @BindView(R.id.imageViewBack)
+    ImageView imageViewBack;
+
 
 
     SaveCardAdapter saveCardAdapter;
@@ -56,7 +60,7 @@ public class SelectTopupMethodActivity extends AppCompatActivity {
         rv_card_list.setAdapter(saveCardAdapter);
     }
 
-    @OnClick(R.id.ll_add_new_card)
+    @OnClick({R.id.ll_add_new_card,R.id.imageViewBack})
     void onClick(View view){
         switch (view.getId()) {
             case R.id.ll_add_new_card:
@@ -64,10 +68,10 @@ public class SelectTopupMethodActivity extends AppCompatActivity {
                 intent1.putExtra("data", getIntent().getBundleExtra("data"));
                 intent1.putExtra("from", "topup");
                 startActivity(intent1);
-
-
-
                 break;
+
+            case R.id.imageViewBack:
+                onBackPressed();
         }
 
     }

@@ -127,6 +127,7 @@ NO I do not consent to processing of my Steps data.
     <string name="payment">Payment</string>
     <string name="bank_or_credit_card">Bank or credit card</string>
     <string name="add_new_card">Add new card</string>
+    <string name="select_your_topup_method">Select your top up method</string>
 
 
     <integer-array name="cards_list">

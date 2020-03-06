@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context="com.mazlow.ui.users.addmoney.AddMoneyActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:id="@+id/linearLayoutToolBar"
@@ -25,13 +25,13 @@
         <com.mazlow.customclasses.MediumTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_17sdp"
+            android:textSize="@dimen/_15sdp"
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/blue_color"
             android:text="@string/add_money_to_your_account"
             />
-    </LinearLayout>
+    </RelativeLayout>
     <ScrollView
         android:layout_weight="1"
         android:layout_width="match_parent"

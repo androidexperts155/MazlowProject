@@ -14,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -35,6 +36,7 @@ import com.mazlow.ui.users.dashboard.adapter.TotalBalanceAdapter;
 import com.mazlow.ui.users.dashboard.fragments.adapters.NextChallengesAdapter;
 import com.mazlow.ui.users.dashboard.fragments.models.NextChallengesModel;
 import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+import com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +75,8 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     LinearLayout ll_daily_challenge;
     @BindView(R.id.txt_challenge_count)
     TextView txt_challenge_count;
+    @BindView(R.id.bt_select_gole)
+    Button bt_select_gole;
 
 
     LoginResponseModel profileData;
@@ -166,6 +170,11 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     @OnClick(R.id.txt_topup)
     void openTopup(){
         startActivity(new Intent(getActivity(), AddMoneyActivity.class));
+    }
+
+    @OnClick(R.id.bt_select_gole)
+    void selectGole(){
+        startActivity(new Intent(getActivity(), SelectGoalActivity.class));
     }
 
     @Override

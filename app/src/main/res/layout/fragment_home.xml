@@ -463,7 +463,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 
-                    <com.mazlow.customclasses.MediumTextView
+                    <com.mazlow.customclasses.MediumButton
+                        android:id="@+id/bt_select_gole"
                         android:layout_marginTop="@dimen/_10sdp"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_20sdp"

@@ -35,6 +35,7 @@ public class UpdateDetailPresenterImple implements UpdateDetailPresenter {
                     if (response.isSuccessful()) {
                         UpdateUserDetails signupResponseModel=response.body();
                         if (response!=null&&response.body().getSuccess()==true) {
+                            //rrg
                             if (response.body().getMessage().equals("User updated successfully")){
                                 addDetailsView.onSucess(signupResponseModel);
                             }
