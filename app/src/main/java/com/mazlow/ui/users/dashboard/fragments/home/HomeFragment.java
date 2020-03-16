@@ -1,4 +1,4 @@
-package com.mazlow.ui.users.dashboard.fragments;
+package com.mazlow.ui.users.dashboard.fragments.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,10 +33,10 @@ import com.mazlow.onfido.verification_identity.GetProfileImaplentation;
 import com.mazlow.onfido.verification_identity.GetProfileView;
 import com.mazlow.ui.users.addmoney.AddMoneyActivity;
 import com.mazlow.ui.users.dashboard.adapter.TotalBalanceAdapter;
-import com.mazlow.ui.users.dashboard.fragments.adapters.NextChallengesAdapter;
-import com.mazlow.ui.users.dashboard.fragments.models.NextChallengesModel;
-import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+import com.mazlow.ui.users.dashboard.fragments.home.adapters.NextChallengesAdapter;
+import com.mazlow.ui.users.dashboard.fragments.home.models.TotalBalanceModel;
 import com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity;
+import com.mazlow.ui.users.selectbeneficiary.SelectBeneficiaryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +77,8 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     TextView txt_challenge_count;
     @BindView(R.id.bt_select_gole)
     Button bt_select_gole;
+    @BindView(R.id.cv_transfer)
+    CardView cv_transfer;
 
 
     LoginResponseModel profileData;
@@ -177,6 +179,11 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
         startActivity(new Intent(getActivity(), SelectGoalActivity.class));
     }
 
+    @OnClick(R.id.cv_transfer)
+    void transfer(){
+        startActivity(new Intent(getActivity(), SelectBeneficiaryActivity.class));
+    }
+
     @Override
     public void getUpdateStatementSuccess() {
         getProfileImaplentation.onGetProfile(token);
@@ -222,7 +229,7 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
     @Override
     public void onResume() {
         super.onResume();
-        homeFragmentPresenter.updateStatement(token);
+//        homeFragmentPresenter.updateStatement(token);
 
     }
 
@@ -232,29 +239,72 @@ public class HomeFragment extends Fragment implements HomeFragmentView, GetProfi
         parseTotleBalance(profileData);
 
 
-        if(profileData.getUserInfo().getCardStatus().equals("1")){
-            ll_activate_card.setVisibility(View.GONE);
-            ll_activad_card.setVisibility(View.VISIBLE);
+        if(profileData.getUserInfo()!=null)
+        {
+            if(profileData.getUserInfo().getCardStatus().equals("1")){
+                ll_activate_card.setVisibility(View.GONE);
+                ll_activad_card.setVisibility(View.VISIBLE);
 
-        }else {
-            ll_activate_card.setVisibility(View.VISIBLE);
-            ll_activad_card.setVisibility(View.GONE);
+            }else {
+                ll_activate_card.setVisibility(View.VISIBLE);
+                ll_activad_card.setVisibility(View.GONE);
+            }
+
+            if(profileData.getIsGoalSet()){
+                cv_set_gole.setVisibility(View.GONE);
+                ll_daily_challenge.setVisibility(View.VISIBLE);
+            }else{
+                cv_set_gole.setVisibility(View.VISIBLE);
+                ll_daily_challenge.setVisibility(View.GONE);
+            }
+
+            List<DayChallenge> tmpList=profileData.getDayChallenges();
+            tmpList.remove(0);
+            nextChallengesArrayList.addAll(tmpList);
+
+            sortNextChallengesArrayList();
+            txt_challenge_count.setText(nextChallengesArrayList.size()+"");
+            nextChallengesAdapter.notifyDataSetChanged();
         }
 
-        if(profileData.getIsGoalSet()){
-            cv_set_gole.setVisibility(View.GONE);
-            ll_daily_challenge.setVisibility(View.VISIBLE);
-        }else{
-            cv_set_gole.setVisibility(View.VISIBLE);
-            ll_daily_challenge.setVisibility(View.GONE);
+
+
+
+    }
+
+    private void sortNextChallengesArrayList() {
+
+
+        ArrayList<DayChallenge> tmp=new ArrayList<>();
+        for(int i=0;i<nextChallengesArrayList.size();i++){
+            DayChallenge item=nextChallengesArrayList.get(i);
+            switch (item.getName()){
+                case "Medidation":
+                    tmp.add(item);
+                    break;
+
+                case "Steps":
+
+                    tmp.add(item);
+                    break;
+
+                case "Savings Pot":
+
+                    tmp.add(item);
+                    break;
+
+                case "Daily Budget":
+                    tmp.add(item);
+                    break;
+                default:
+                    tmp.add(item);
+                    break;
+            }
+
+
         }
-
-        List<DayChallenge> tmpList=profileData.getDayChallenges();
-        tmpList.remove(0);
-        nextChallengesArrayList.addAll(tmpList);
-
-        txt_challenge_count.setText(nextChallengesArrayList.size()+"");
-        nextChallengesAdapter.notifyDataSetChanged();
+        nextChallengesArrayList.clear();
+        nextChallengesArrayList.addAll(tmp);
 
     }
 

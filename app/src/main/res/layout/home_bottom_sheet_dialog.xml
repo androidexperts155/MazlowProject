@@ -2,229 +2,249 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:gravity="center_horizontal"
     android:background="@drawable/topleft_topright_cornershape"
     android:layout_height="match_parent">
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="@dimen/_5sdp"
+      android:gravity="center">
+      <View
+          android:padding="@dimen/_5sdp"
+          android:layout_marginTop="@dimen/_15sdp"
+          android:background="@color/gray_color"
+          android:layout_width="@dimen/_100sdp"
+          android:layout_height="2dp"></View>
+  </LinearLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <View
-            android:layout_marginTop="@dimen/_15sdp"
-            android:background="@color/gray_color"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="2dp"></View>
-
-        <RelativeLayout
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:background="@drawable/sky_blue_circle_solid"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp">
-            <ImageView
-                android:src="@drawable/account_seleted"
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"></ImageView>
-        </RelativeLayout>
-
-        <TextView
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@color/textcolor"
-            android:text="Hello, Jhon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.mazlow.customclasses.KKViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_150sdp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/_4sdp"/>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_marginTop="@dimen/_10sdp"
-            android:weightSum="3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/sky_blue_circle_solid"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp">
                 <ImageView
+                    android:src="@drawable/account_seleted"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"></ImageView>
+            </RelativeLayout>
 
-                    android:layout_gravity="center"
-                    android:src="@drawable/freez_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></ImageView>
+            <TextView
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/textcolor"
+                android:text="Hello, Jhon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-
-                <com.mazlow.customclasses.MediumTextView
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:text="Freez"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/textcolor"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-
-                    android:layout_gravity="center"
-                    android:src="@drawable/locak_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></ImageView>
-
-                <com.mazlow.customclasses.MediumTextView
-                    android:layout_marginTop="@dimen/_10sdp"
-
-                    android:layout_width="wrap_content"
-                    android:text="Pin"
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/textcolor"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
+            <com.mazlow.customclasses.KKViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_4sdp"/>
 
             <LinearLayout
-                android:gravity="center"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:weightSum="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/carddetail_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></ImageView>
-                <com.mazlow.customclasses.MediumTextView
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
-                    android:text="Card details "
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/textcolor"
-                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+
+                        android:layout_gravity="center"
+                        android:src="@drawable/freez_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageView>
+
+
+                    <com.mazlow.customclasses.MediumTextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:text="Freez"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/textcolor"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+
+                        android:layout_gravity="center"
+                        android:src="@drawable/locak_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <com.mazlow.customclasses.MediumTextView
+                        android:layout_marginTop="@dimen/_10sdp"
+
+                        android:layout_width="wrap_content"
+                        android:text="Pin"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/textcolor"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:src="@drawable/carddetail_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageView>
+                    <com.mazlow.customclasses.MediumTextView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="wrap_content"
+                        android:text="Card details "
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="@color/textcolor"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
-
+            <View
+                android:background="#2D6FAB"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
         </LinearLayout>
-        <View
-            android:background="#2D6FAB"
-            android:layout_marginTop="@dimen/_25sdp"
+
+        <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"></View>
+            android:layout_height="@dimen/_55sdp">
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_width="wrap_content"
+                android:text="Manage subscription "
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/textcolor"
+                android:layout_height="wrap_content"/>
+
+
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="#2D6FAB"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+
+            <ImageView
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:src="@drawable/next_arrow_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp">
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_width="wrap_content"
+                android:text="Mazlow account details"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/textcolor"
+                android:layout_height="wrap_content"/>
+
+
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="#2D6FAB"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"></View>
+            <ImageView
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:src="@drawable/next_arrow_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp">
+
+            <com.mazlow.customclasses.MediumTextView
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_width="wrap_content"
+                android:text="Help"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/textcolor"
+                android:layout_height="wrap_content"/>
+
+
+            <ImageView
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:src="@drawable/next_arrow_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
+
+        </RelativeLayout>
     </LinearLayout>
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp">
-
-        <com.mazlow.customclasses.MediumTextView
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_width="wrap_content"
-            android:text="Manage subscription "
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/textcolor"
-            android:layout_height="wrap_content"/>
-
-
-        <View
-            android:layout_alignParentBottom="true"
-            android:background="#2D6FAB"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"></View>
-
-        <ImageView
-            android:layout_marginRight="@dimen/_20sdp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:src="@drawable/next_arrow_blue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></ImageView>
-
-
-    </RelativeLayout>
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp">
-
-        <com.mazlow.customclasses.MediumTextView
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_width="wrap_content"
-            android:text="Mazlow account details"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/textcolor"
-            android:layout_height="wrap_content"/>
-
-
-        <View
-            android:layout_alignParentBottom="true"
-            android:background="#2D6FAB"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"></View>
-        <ImageView
-            android:layout_marginRight="@dimen/_20sdp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:src="@drawable/next_arrow_blue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></ImageView>
-
-
-    </RelativeLayout>
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_55sdp">
-
-        <com.mazlow.customclasses.MediumTextView
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_width="wrap_content"
-            android:text="Help"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="@color/textcolor"
-            android:layout_height="wrap_content"/>
-
-
-        <ImageView
-            android:layout_marginRight="@dimen/_20sdp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center"
-            android:src="@drawable/next_arrow_blue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></ImageView>
-
-    </RelativeLayout>
+</ScrollView>
 
 
 </LinearLayout>

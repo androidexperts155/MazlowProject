@@ -37,6 +37,7 @@ import static com.mazlow.Networking.Constants.Signup;
 import static com.mazlow.Networking.Constants.add_goal;
 import static com.mazlow.Networking.Constants.checkotp;
 import static com.mazlow.Networking.Constants.chengenumber;
+import static com.mazlow.Networking.Constants.getBeneficiaries;
 import static com.mazlow.Networking.Constants.getCard;
 import static com.mazlow.Networking.Constants.get_subcrption;
 import static com.mazlow.Networking.Constants.getprofile;
@@ -189,12 +190,16 @@ public interface RestApiInterface {
 
     @GET(notification_type)
     Call<NotificationResponseModel> userNotification(@Header("Authorization")String token);
+
     @FormUrlEncoded
     @POST(paybytoken)
     Call<TopupWallet> paybytoken(@Header("Authorization")String token,
                                  @Field("amount") String amount,
                                  @Field("currencyCode") String currencyCode,
                                  @Field("pfsToken") String pfsToken);
+
+    @GET(getBeneficiaries)
+    Call<JsonElement> getBeneficiaries(@Header("Authorization")String token);
 
 }
 

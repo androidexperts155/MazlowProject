@@ -1,7 +1,6 @@
 package com.mazlow.ui.users.addmoney;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,12 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.Mazlow.R;
 import com.google.gson.Gson;
@@ -30,7 +27,7 @@ import com.mazlow.ui.users.addmoney.models.CardDetail;
 import com.mazlow.ui.users.addmoney.models.MyCardModel;
 import com.mazlow.ui.users.addmoney.models.topupmodel.TopupWallet;
 import com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity;
-import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+import com.mazlow.ui.users.dashboard.fragments.home.models.TotalBalanceModel;
 import com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity;
 
 import java.util.ArrayList;

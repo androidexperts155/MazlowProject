@@ -128,6 +128,10 @@ NO I do not consent to processing of my Steps data.
     <string name="bank_or_credit_card">Bank or credit card</string>
     <string name="add_new_card">Add new card</string>
     <string name="select_your_topup_method">Select your top up method</string>
+    <string name="transfer">Transfer</string>
+    <string name="contacts">Contacts</string>
+    <string name="search_maslife_contacts">Search MasLife Contacts</string>
+    <string name="selectbeneficiary">Select beneficiary</string>
 
 
     <integer-array name="cards_list">

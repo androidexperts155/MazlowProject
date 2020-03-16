@@ -19,8 +19,8 @@ import com.mazlow.login.model.LoginResponseModel;
 import com.mazlow.onfido.verification_identity.GetProfileImaplentation;
 import com.mazlow.onfido.verification_identity.GetProfileView;
 import com.mazlow.ui.users.dashboard.activity.DashboardActivity;
-import com.mazlow.ui.users.dashboard.fragments.HomeFragmentPresenter;
-import com.mazlow.ui.users.dashboard.fragments.HomeFragmentView;
+import com.mazlow.ui.users.dashboard.fragments.home.HomeFragmentPresenter;
+import com.mazlow.ui.users.dashboard.fragments.home.HomeFragmentView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

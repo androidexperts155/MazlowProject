@@ -12,12 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.Mazlow.R;
 import com.mazlow.ui.users.addmoney.models.CardDetail;
-import com.mazlow.ui.users.dashboard.fragments.adapters.NextChallengesAdapter;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class SaveCardAdapter extends RecyclerView.Adapter<SaveCardAdapter.MyViewHolder> {
 

@@ -24,14 +24,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:supportsRtl">
-        <activity android:name="com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity"></activity>
+        <activity android:name="com.mazlow.ui.users.selectbeneficiary.SelectBeneficiaryActivity"></activity>
+        <activity android:name="com.mazlow.ui.users.topupmethod.SelectTopupMethodActivity" />
         <activity android:name="com.mazlow.ui.users.topupsuccess.TopUpSuccessActivity" />
         <activity android:name="com.mazlow.ui.users.choosecurrency.ChooseCurrencyActivity" />
-
-        <activity android:name="com.mazlow.ui.users.dashboard.notification.NotificationActivity"/>
-        <activity android:name="com.mazlow.ui.users.dashboard.set_goals.confirm_goals.ConfirmGoalsActivity"/>
-        <activity android:name="com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity"/>
-
+        <activity android:name="com.mazlow.ui.users.dashboard.notification.NotificationActivity" />
+        <activity android:name="com.mazlow.ui.users.dashboard.set_goals.confirm_goals.ConfirmGoalsActivity" />
+        <activity android:name="com.mazlow.ui.users.dashboard.set_goals.SelectGoalActivity" />
         <activity
             android:name="com.mazlow.ui.users.addmoney.AddMoneyActivity"
             android:windowSoftInputMode="stateHidden" />
@@ -42,12 +41,10 @@
         <activity android:name="com.mazlow.payments_subscription.activities.billing_address.BillingAddress" />
         <activity android:name="com.mazlow.onfido.verification_failed.OndidoVerificationFailed" />
         <activity android:name="com.mazlow.payments_subscription.activities.select_cards.SelectCards" />
-        <activity android:name="com.mazlow.ui.users.activities.MainActivity" >
-
-        </activity>
+        <activity android:name="com.mazlow.ui.users.activities.MainActivity"></activity>
         <activity
             android:name="com.mazlow.onfido.verification_identity.ConductingVerificationActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="locked" />
         <activity
             android:name="com.mazlow.skipandexplore.SkipExploreActivity"
             android:screenOrientation="portrait" />

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.Mazlow.R;
-import com.mazlow.ui.users.dashboard.fragments.models.TotalBalanceModel;
+import com.mazlow.ui.users.dashboard.fragments.home.models.TotalBalanceModel;
 
 import java.util.ArrayList;
 

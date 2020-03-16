@@ -1,4 +1,4 @@
-package com.mazlow.ui.users.dashboard.fragments;
+package com.mazlow.ui.users.dashboard.fragments.home;
 
 public interface HomeFragmentView {
     void getUpdateStatementSuccess();

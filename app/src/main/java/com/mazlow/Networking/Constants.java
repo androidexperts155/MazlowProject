@@ -21,4 +21,5 @@ public interface Constants {
     String add_goal="addUserGoal";
     String notification_type="notificationTypes";
     String paybytoken="paybytoken";
+    String getBeneficiaries="getBeneficiaries";
 }

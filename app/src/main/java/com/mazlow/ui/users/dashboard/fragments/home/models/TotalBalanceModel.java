@@ -1,4 +1,4 @@
-package com.mazlow.ui.users.dashboard.fragments.models;
+package com.mazlow.ui.users.dashboard.fragments.home.models;
 
 public class TotalBalanceModel {
     public boolean active=false;

@@ -58,7 +58,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/click_notification"
                             android:padding="@dimen/_3sdp"
                             android:layout_width="@dimen/_30sdp"
@@ -67,7 +67,7 @@
                         <View
                             android:layout_width="@dimen/_10sdp"
                             android:layout_height="0dp"/>
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/bottomshet_click"
                             android:padding="@dimen/_3sdp"
                             android:layout_width="@dimen/_30sdp"

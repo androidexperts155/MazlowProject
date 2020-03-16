@@ -1,10 +1,7 @@
 package com.mazlow.ui.users.dashboard.activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,8 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -29,7 +24,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.mazlow.customclasses.KKViewPager;
 import com.mazlow.payments_subscription.adapter.CardsAdapter;
-import com.mazlow.ui.users.dashboard.fragments.HomeFragment;
+import com.mazlow.ui.users.dashboard.fragments.home.HomeFragment;
+import com.mazlow.ui.users.dashboard.fragments.payments.PaymentFragment;
 import com.mazlow.ui.users.dashboard.notification.NotificationActivity;
 
 import butterknife.BindView;
@@ -122,7 +118,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
                 break;
             case R.id.navigation_payment:
                 menuItem.setIcon(R.drawable.ic_payment_selected);
-                fragment = new HomeFragment();
+                fragment = new PaymentFragment();
                 break;
             case R.id.navigation_wellbeing:
                 menuItem.setIcon(R.drawable.ic_wellbeing_selected);
