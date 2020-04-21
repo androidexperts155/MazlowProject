@@ -1,0 +1,159 @@
+<resources>
+    <string name="app_name">MasLife</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_your_passcode_for_your_maslife_account">Enter your Passcode for your MasLife account</string>
+    <string name="valid_phone">Please enter valid phone number</string>
+    <string name="valid_otp">Please Enter OTP</string>
+    <string name="otp6_digit">Please Enter valid OTP</string>
+    <string name="entersixdigitscode">Enter the 6-digit code we\'ve sent to </string>
+    <string name="MasLife">MasLife</string>
+    <string name="join_MasLife">Join MasLife</string>
+    <string name="login">Login</string>
+    <string name="to_get_started_enter_your_mobile_number">To get started, enter your mobile number</string>
+    <string name="enter_the_6_digit_code_we_ve_sent_to_88">Enter the 6-digit code we’ve sent to +88**********</string>
+    <string name="create_our_passcode_for_your_masslife_account">Create your Passcode for your MasLife account</string>
+    <string name="idverificationtext"><![CDATA[ID verification &   Facial comparison]]></string>
+    <string name="maskife_text">Last step, for your security and ours MasLife uses Onfido integration to fully verify your identiy in minutes.</string>
+    <string name="worldleadingdocument"><![CDATA[A world leading document ID verification & facial biometrics technology.]]></string>
+    <string name="verify_my_identity">Verify my identity</string>
+    <string name="skip_and_explore">Skip and explore</string>
+    <string name="internet_string"><![CDATA[Unable to connect to MasLife .Check your internet connection & try again]]></string>
+    <string name="ok">OK</string>
+    <string name="reenterpasscode">Re-enter your passcode for your MasLife account</string>
+    <string name="codenotmatched">Passcode not matched</string>
+    <string name="country">Country</string>
+    <string name="postal_code">Postal code</string>
+    <string name="street_and_number">Street and Number</string>
+    <string name="address_line_2_optional">Address line 2(Optional)</string>
+    <string name="city">City</string>
+    <string name="wearerequredbylow">We are required by law to collect data about your location to prevent money laundering</string>
+    <string name="what_s_your_home_address">What\'s your home address?</string>
+    <string name="legal_first_name">Legal first name</string>
+    <string name="legal_last_name">Legal last name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="email_address">Email address</string>
+    <string name="re_enter_email_address">Re-enter email address</string>
+    <string name="anterfirstname">Please enter first name</string>
+    <string name="enterlastname">Please enter last name</string>
+    <string name="entervalidemail">enter valid email address</string>
+    <string name="emptyemail">Please enter email address</string>
+    <string name="emptyretypemail">Please retype enter email address</string>
+    <string name="choosedate">Please select your date of birth</string>
+    <string name="emailnotnatched">email not matched</string>
+    <string name="choosecountry">Please choose your country</string>
+    <string name="enterpostalcode">Please enter postal code</string>
+    <string name="enteremailandphone">Please enter your city and email address</string>
+    <string name="entercity">Please enter city</string>
+
+    <string name="stylish_text">MasLife Ltd – Consent to installation of the App
+Under data protection laws, we are required to provide you with certain information about who we are, how we process your personal data and for what purposes, and your rights in relation to your personal data. This information is provided in MasLife Ltd - Mobile Application Privacy Policy and it is important that you read that information.
+Before installation of this App, please indicate your consent to our processing of your personal data (including your name, contact details, financial and device information) as described in the policy [LINK TO PDF OF POLICY].\n
+YES I consent to the installation of the Maslife App for financial, mental and physical wellbeing.\n
+NO I do not consent to the installation of the App.
+How you can withdraw consent\n
+Once you provide consent by selecting "YES", you may change your mind and withdraw consent at any time by contacting us on 08001694216 or by email contact@maslife.com but that will not affect the lawfulness of any processing carried out before you withdraw your consent.\n\n
+
+MasLife Ltd – Consent to processing Location Data
+YES I consent to processing of my Location Data (including details of my current location disclosed by GPS technology) so that location-enabled Services are activated to provide you with local currency conversion rates, location of payment vendors, security information etc.
+NO I do not consent to processing of my Location Data and location-enabled Services are disabled in my settings.
+Location Data\n\n
+
+MasLife Ltd – Consent to processing Steps data
+YES I consent to processing of my Steps data so that my Steps data is taken from my device via the following Apps: Apple Health and Google Fit to provide you with tailored webinars, daily messages etc.\n
+YES I consent to processing of my Location Data (including details of my current location disclosed by GPS technology) so that location-enabled Services are activated to provide you with local currency conversion rates, location of payment vendors, security information etc.
+NO I do not consent to processing of my Location Data and location-enabled Services are disabled in my settings.\n
+Location Data\n\n
+
+MasLife Ltd – Consent to processing Steps data
+YES I consent to processing of my Steps data so that my Steps data is taken from my device via the following Apps: Apple Health and Google Fit to provide you with tailored webinars, daily messages etc.\n
+NO I do not consent to processing of my Steps data.
+</string>
+    <string name="your_id_verfication_failed">Your ID verfication failed</string>
+    <string name="select_your_card">Select your card</string>
+    <string name="premiu_metal">Premium Metal</string>
+    <string name="you_will_get_access_to_mazlow_s_full_range_of_feature">You will get access to MasLife\'s full range of feature</string>
+    <string name="your_monthly_fee_will_be_taken_out_of_your_mazlow_account_after_topping_up_and_each_month_around_the_10th">Your monthly fee will be taken out of your MasLife account after topping up and each month around the 10th</string>
+    <string name="apply">Apply</string>
+    <string name="enter_referral_code">Enter referral code</string>
+    <string name="continue_top_up"><![CDATA[Continue & top up]]></string>
+    <string name="standard_card">Standard Card</string>
+    <string name="monthly">Monthly</string>
+    <string name="annual">Annual</string>
+    <string name="annual_subscription_descrition">Your discounted yearly fee will be taken out of your MasLife account after topping up and each year around the 10th of January</string>
+    <string name="initial_card_fee">initial card fee</string>
+    <string name="standar_card_discription">You will not have access to MasLife\'s full range of services. You can upgrade to premium at any time</string>
+    <string name="deducted_from_your_account">This will be deducted from your account after you top up.</string>
+    <string name="standard">Standard</string>
+    <string name="you_will_have_limited_access">You will only have access to some of MasLife\'s features</string>
+    <string name="set_goals">Set goals and track your activity</string>
+    <string name="instant_spending"><![CDATA[Instant spending notifications & stats]]></string>
+    <string name="bugeting_tools">Budgeting tools</string>
+    <string name="mutliple_currencies"><![CDATA[Multiple currencies & live rates]]></string>
+    <string name="split_bills">Split bills with friends</string>
+    <string name="bank_transfer">Bank transfer</string>
+    <string name="instant_transfer">Instant transfer on MasLife</string>
+    <string name="freeze_mas_life_card">Freeze your MasLife card</string>
+    <string name="rewards_discount">Rewars and discount</string>
+    <string name="videos_meditation">Videos and Meditations</string>
+    <string name="daily_challenges">Daily Challenges</string>
+    <string name="personal_journey_development">Personal journey development</string>
+    <string name="premium">Premium</string>
+    <string name="confirm_subscription">Confirm Subscription</string>
+    <string name="please_confirm_the_purchase_of_your_mazlow_plastic_card">Please confirm the purchase of your MasLife plastic card</string>
+    <string name="your_card_will_be_delivered_to_your_register_address">Your card will be delivered to your register address</string>
+    <string name="add_payment_method">Add Payment Method</string>
+    <string name="empty_referral_code">Please enter the referral code</string>
+    <string name="thanks_for_your_patience">Thanks for your patience</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_payment">Payments</string>
+    <string name="menu_wellbeing">Wellbeing</string>
+    <string name="spent_today">Spent today</string>
+    <string name="What_do_you_need_to_do_today">What do you need to do today?</string>
+    <string name="card_not_activated">Your card is not activated</string>
+    <string name="activate_now">Activate now</string>
+    <string name="budget">Budgets</string>
+    <string name="your_next_challenges">Your next challenges</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="add_money_to_your_account">Add money to your account</string>
+    <string name="choose_currency">Choose Currency</string>
+    <string name="start_your_gole">Set your goals</string>
+    <string name="start_gole_msg">Let’s start by setting goals from each section that help you to acheive financial success</string>
+    <string name="start">Start</string>
+    <string name="add_topup_msg">Please add a top up method</string>
+    <string name="top_up">Top up</string>
+    <string name="tap_any_where_to_continue">Tap anywhere to continue\"</string>
+    <string name="payment">Payment</string>
+    <string name="bank_or_credit_card">Bank or credit card</string>
+    <string name="add_new_card">Add new card</string>
+    <string name="select_your_topup_method">Select your top up method</string>
+    <string name="transfer">Transfer</string>
+    <string name="contacts">Contacts</string>
+    <string name="search_maslife_contacts">Search MasLife Contacts</string>
+    <string name="selectbeneficiary">Select beneficiary</string>
+
+
+    <integer-array name="cards_list">
+        <item>@drawable/cardprimium</item>
+        <item>@drawable/cardprimium</item>
+
+    </integer-array>
+
+    <string-array name="feature_list">
+        <item>@string/set_goals</item>
+        <item>@string/instant_spending</item>
+        <item>@string/bugeting_tools</item>
+        <item>@string/mutliple_currencies</item>
+        <item>@string/split_bills</item>
+        <item>@string/bank_transfer</item>
+        <item>@string/instant_transfer</item>
+        <item>@string/freeze_mas_life_card</item>
+        <item>@string/rewards_discount</item>
+        <item>@string/videos_meditation</item>
+        <item>@string/daily_challenges</item>
+        <item>@string/personal_journey_development</item>
+    </string-array>
+
+
+</resources>
